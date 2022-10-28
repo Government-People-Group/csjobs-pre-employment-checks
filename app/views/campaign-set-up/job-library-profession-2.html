@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+<h1 class="govuk-heading-l">Recommended job titles</h1>
+{% set titledetailsHTML %}
+You can find out about job roles on the <a href="https://www.civil-service-careers.gov.uk/">Civil Service Careers</a> site.
+{% endset %}
+{% set otherHtml %}
+{{ govukInput({
+  id: "other",
+  name: "other",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Enter job title"
+  }
+}) }}
+{% endset %}
+
+{{ govukRadios({
+  idPrefix: "job-title",
+  name: "jobTitle",
+  fieldset: {
+    legend: {
+      text: "Select a job title",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    html: titledetailsHTML
+  },
+  items: [
+    {
+      value: "content",
+      text: "Content designer"
+    },
+    {
+      value: "content-strategist",
+      text: "Content strategist"
+    },
+    {
+      value: "graphic",
+      text: "Graphic designer"
+    },
+    {
+      value: "interaction-designer",
+      text: "Interaction designer"
+    },
+    {
+      value: "service",
+      text: "Service designer"
+    },
+    {
+      value: "technical",
+      text: "Technical writer"
+    },
+    {
+      value: "researcher",
+      text: "User researcher"
+    },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+
+{% endblock %}

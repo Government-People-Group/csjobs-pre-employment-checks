@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sifting – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<span class="govuk-caption-l">1001334</span>
+<h1 class="govuk-heading-l">Lead delivery manager</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Applicants to invite to interview</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="1001334-applicant-1">Applicant 1</a></li>
+          <li><a href="">Applicant 4</a></li>
+          <li><a href="">Applicant 5</a></li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Tested at interview</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Essential criteria<br> (10 minutes)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Experience working in user-centered design</li>
+                <li>knowledge of design principles</li>
+                </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Technical skills<br> (5 minutes)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>experience creating GOV.UK prototypes</li>
+                </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Behaviours<br> (15 minutes)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Seeing the bigger picture</li>
+                <li>Leadership</li>
+                </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Strengths<br> (5 minutes)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Analytical</li>
+                <li>Challenger</li>
+                <li>Problem solver</li>
+                </ul>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Interview activity<br> (15 minutes)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Presentation
+            </dd>
+          </div>
+        </dl>
+        <p>Expected interview length based on questions and presentation: <b>50 minutes</b></p>
+{% set otherHTML %}
+{{ govukInput({
+  label: {
+    text: "How long should the interview be?"
+  },
+  id: "other",
+  name: "other"
+}) }}
+{% endset %}
+        {{ govukRadios({
+          idPrefix: "interview-length",
+          name: "interview-length",
+          fieldset: {
+            legend: {
+              text: "Do you want to change the length of the interview?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: otherHTML
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true
+            }
+          ]
+        }) }}
+
+  {{ govukTextarea({
+    name: "presentation",
+    id: "presentation",
+    label: {
+      text: "Interview activity",
+      classes: "govuk-label--m",
+      isPageHeading: false
+    },
+    hint: {
+      text: "You selected a presentation activity for the interview. Explain the presentation required, including how long it should take. This will be visible to candidates"
+    }
+  }) }}
+
+  {{ govukButton({
+    text: "Submit interview invites",
+    href: "1001334-interview-questions"
+  }) }}
+            </div>
+            </div>
+{% endblock %}

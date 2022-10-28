@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "success-profiles"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Advert set up</span>
+    <h1 class="govuk-heading-l">About the role
+    </h1>
+<p>This information will be shown on the advert.</p>
+    {% set roleHTML %}
+This information would be prepopulated based on the job title. You can change this information and format it, including bullet points and underlining text.
+{% endset %}
+    {{ govukCharacterCount({
+  name: "more-detail",
+  id: "more-detail",
+  maxlength: 1000,
+  label: {
+    text: "What are you looking for in a candidate?",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  value: roleHTML
+}) }}
+
+{{ govukCharacterCount({
+name: "more-detail",
+id: "more-detail",
+maxlength: 1000,
+label: {
+text: "What are the responsibilities of the role?",
+classes: "govuk-label--m",
+isPageHeading: false
+},
+hint: {
+text: "Include common tasks and expectations."
+},
+value: "This information would be prepopulated based on the job title. You can change this information and format it, including bullet points and underlining text."
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "essential-criteria"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

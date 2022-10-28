@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "pre-sift-questions"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Advert set up</span>
+    {{ govukInput({
+      label: {
+        text: "Add supporting information to the advert",
+        classes: "govuk-label--l",
+        isPageHeading: true
+      },
+      hint: {
+        text: "This could be a link to a video or department specific website. This will be visible to candidates."
+      },
+      classes: "govuk-input--width-20",
+      id: "job-profession",
+      name: "job-profession",
+      value: "www.linkedin.com/homeoffice"
+    }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add more information</a>
+    </p>
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "assessment-methods"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

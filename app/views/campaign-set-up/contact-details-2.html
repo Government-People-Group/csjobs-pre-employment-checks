@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "contact-details"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Contract information</span>
+    <h1 class="govuk-heading-l"></h1>
+
+    {{ govukRadios({
+      idPrefix: "updates",
+      name: "updates",
+      fieldset: {
+        legend: {
+          text: "Would you like anyone else to receive updates on the vacancy?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "This is in addition to the post creator, main contact, and panel members"
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+<div id="conditional">
+    {{ govukInput({
+      label: {
+        text: "Enter the email address for updates",
+        classes: "govuk-label--m",
+        isPageHeading: false
+      },
+      id: "event-name",
+      name: "event-name"
+    }) }}
+
+
+        {{ govukRadios({
+          idPrefix: "detail",
+          name: "detail",
+          fieldset: {
+            legend: {
+              text: "What updates would you like them to receive?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "This is in addition to the post creator, main contact, and panel members"
+          },
+          items: [
+            {
+              value: "all",
+              text: "All updates"
+            },
+            {
+              value: "end",
+              text: "Applications at close of advert only"
+            }
+          ]
+        }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link govuk-link--no-visited-state">Add another email</a>
+    </p>
+
+</div>
+
+{{ govukButton({
+  text: "Continue",
+  href: "reserved-status"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

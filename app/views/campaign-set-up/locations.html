@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "reserve-list"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Contract information</span>
+    <h1 class="govuk-heading-l">Where is the role based?</h1>
+
+    {% set numberHTML %}
+    {{ govukInput({
+  id: "number",
+  name: "number",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "How many locations?"
+  }
+}) }}
+{% endset %}
+
+{{ govukRadios({
+  idPrefix: "remote",
+  name: "remote",
+  fieldset: {
+    legend: {
+      text: "Is the role remote based?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "remote",
+      text: "Yes, remote only"
+    },
+    {
+      value: "hybrid",
+      text: "Hybrid, a blend of in-office and remote working"
+    },
+    {
+      value: "office",
+      text: "No, office based only"
+    }
+  ]
+}) }}
+    {{ govukRadios({
+      idPrefix: "uk",
+      name: "uk",
+      fieldset: {
+        legend: {
+          text: "Is the role based in the UK?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: ukHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+<div id="conditional">
+  {{ govukRadios({
+    idPrefix: "location-count",
+    name: "location-count",
+    fieldset: {
+      legend: {
+        text: "Is the role based in a single location?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No, the role is available in multiple locations",
+        conditional: {
+          html: numberHTML
+        }
+      }
+    ]
+  }) }}
+  </div>
+
+{{ govukButton({
+  text: "Continue",
+  href: "locations-2"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}

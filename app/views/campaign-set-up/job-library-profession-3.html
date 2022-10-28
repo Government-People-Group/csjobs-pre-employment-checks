@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<form action="" method="post">
+<h1 class="govuk-heading-l">Find a job role</h1>
+
+{{ govukRadios({
+  idPrefix: "level",
+  name: "level",
+  fieldset: {
+    legend: {
+      text: "Select the grade of the role",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "associate",
+      text: "Grade AO or equivalent"
+    },
+    {
+      value: "junior",
+      text: "Grade EO or equivalent"
+    },
+    {
+      value: "mid",
+      text: "Grade HEO or equivalent"
+    },
+    {
+      value: "senior",
+      text: "Grade SEO or equivalent"
+    },
+    {
+      value: "lead",
+      text: "Grade G7 or equivalent"
+    },
+    {
+      value: "head",
+      text: "Grade G6 or equivalent"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+  text: "Continue",
+  href: "templates"
+}) }}
+</form>
+</div>
+</div>
+<p><a href="/campaign-set-up/sign-out">Save and sign out</a></p>
+
+{% endblock %}

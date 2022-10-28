@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "online-tests"
+        }) }}
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Attraction methods</span>
+{% set otherHTML %}
+{{ govukTextarea({
+  name: "other",
+  id: "other",
+  label: {
+    text: "Tell us where else you'd like to advertise the role",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  hint: {
+    text: "You may be contacted to provide more details, including approval."
+  }
+}) }}
+{% endset %}
+
+    {{ govukCheckboxes({
+      idPrefix: "attraction",
+      name: "attraction",
+      fieldset: {
+        legend: {
+          text: "Where do you want to advertise the vacancy?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "Select all that apply."
+      },
+      items: [
+      {
+        value: "csjobs",
+        text: "Civil Service Jobs"
+      },
+      {
+          value: "linkedin",
+          text: "LinkedIn"
+        },
+        {
+          value: "indeed",
+          text: "Indeed"
+        },
+        {
+          value: "monster",
+          text: "Monster Jobs"
+        },
+        {
+          value: "other",
+          text: "Other",
+          conditional: {
+            html: otherHTML
+          }
+        }
+      ]
+    }) }}
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "interviews"
+}) }}
+{{ govukButton({
+  text: "Preview advert",
+  classes: "govuk-button--secondary",
+  href: "review-advert"
+}) }}
+<p><a href="/campaign-set-up/task-list">Save and return to task-list</a></p>
+
+</div>
+</div>
+{% endblock %}
