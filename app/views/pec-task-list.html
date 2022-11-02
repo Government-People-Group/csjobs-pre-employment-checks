@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Create a job – Civil service jobs – GOV.UK Prototype Kit
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
 {{ govukPhaseBanner({
@@ -45,7 +45,7 @@
     </h1>
 
     <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Checks incomplete</h2>
-    <p class="govuk-body govuk-!-margin-bottom-7">You have completed 0 of 14 sections.</p>
+    <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 10 checks. 4 checks are not needed.</p>
 
     <ol class="app-task-list">
       <li>
@@ -54,59 +54,234 @@
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="basic-details" aria-describedby="eligibility-status">
-                Previous Civil Service Employment
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Previous Civil Service Employment
+                </span>
+              </summary>
+
+              <div class="moj-timeline">
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Application requires confirmation</h2>
+
+                    <p class="moj-timeline__byline">by Joe Bloggs</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non felis risus. Curabitur nec ante vitae felis ullamcorper tincidunt.</p>
+
+                  </div>
+
+                </div>
+
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Application review in progress</h2>
+
+                    <p class="moj-timeline__byline">by Caseworker 1</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">Your application is being reviewed by one of our case workers.</div>
+
+                </div>
+
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Application received</h2>
+
+                    <p class="moj-timeline__byline">by Caseworker 1</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
+                  </p>
+
+                  <div class="moj-timeline__description">Your application has been received – reference MOJ-1234-5678</div>
+
+                </div>
+
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Application submitted</h2>
+
+                    <p class="moj-timeline__byline">by Joe Bloggs</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-05-28T10:45:00.000Z">28 May 2019 at 10:45am</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <details class="govuk-details govuk-!-margin-bottom-0">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Application details
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Ut quam nunc, vulputate ac metus pharetra, posuere maximus velit. <a class="govuk-link" href="#">Etiam nec interdum velit.</a> Suspendisse molestie lectus in eros ornare
+                      </div>
+                    </details>
+                  </div>
+
+                </div>
+
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Documents uploaded</h2>
+
+                    <p class="moj-timeline__byline">by Joe Bloggs</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-05-28T10:15:00.000Z">28 May 2019 at 10:15am</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <ul class="moj-timeline__documents">
+                      <li class="moj-timeline__document-item">
+                        <a class="govuk-link" href="#">
+                          <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                            <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                          </svg>
+                          Document 1
+                        </a>
+                      </li>
+                      <li class="moj-timeline__document-item">
+                        <a class="govuk-link" href="#">
+                          <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                            <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                          </svg>
+                          Document 2
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Application started</h2>
+
+                    <p class="moj-timeline__byline">by Joe Bloggs</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-05-21T13:15:00.000Z">21 May 2019 at 1:15pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li><a class="govuk-link" href="#">Item 1</a></li>
+                      <li><a class="govuk-link" href="#">Item 2</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+
+            </details>
             <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                Overseas History
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Overseas History
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                Employment History
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Employment History
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                Pensions
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Pensions
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                Self-employment
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <a href="self-employment" aria-describedby="eligibility-status">
+                  Self employment
+                </a>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                Review Overseas History
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  DBS
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                CSEF
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  CSEF
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
           </li>
           <li class="app-task-list__item">
@@ -116,19 +291,29 @@
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                NEN
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  NEN
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
           </li>
           <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-              <a href="job-entry" aria-describedby="read-declaration-status">
-                Posting Request
-              </a>
-            </span>
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Posting Request
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
             <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
           </li>
           </ul>

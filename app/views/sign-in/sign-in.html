@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Create a job advert – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Sign in to your Civil Service Recruitment account</h1>
+
+{{ govukInput({
+  label: {
+    text: "Email address",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  id: "email",
+  name: "email",
+  classes: "govuk-!-width-one-half"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Password",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  id: "password",
+  name: "password",
+  type: "password",
+  classes: "govuk-!-width-one-half"
+}) }}
+
+
+
+{{ govukButton({
+  text: "Continue",
+  href: "sign-in-mfa"
+}) }}
+<p><a href="#">Register a new account</a></p>
+<p><a href="#">Forgotten your password?</a></p>
+</div>
+</div>
+{% endblock %}

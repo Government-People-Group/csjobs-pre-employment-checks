@@ -22,6 +22,19 @@ $govuk-assets-path: '/govuk/assets/';
 @import "accessible-autocomplete";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.govuk-details__summary:before {
+border-style: none;
+padding-left: 0px;
+}
+
+.govuk-details[open] > .govuk-details__summary:before {
+  border-style: none;
+}
+
+.govuk-details__summary {
+padding-left: 0px;
+}
+
 .dwp-key-details-bar {
 background-color: #1d70b8;
 color: #fff;
@@ -137,7 +150,7 @@ float: left;
 clear: both;
 margin-top: 5px;
 }
-} 
+}
 
 
 .csr-page-subtitle {
