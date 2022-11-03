@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-grs.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l" style="margin-bottom:25px">
+      Self-employment<span>{% if data['self-employed-status'] == 'completed' %}
+        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Completed</strong>
+      {% elif data['self-employed-status'] == 'not-started' %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Not started</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">In progress</strong>
+      {% endif %}</span>
+    </h1><br>
+
+
+<form action="" method="post">
+
+  {% if data['self-employed-status'] == 'completed' %}
+      {{ govukRadios({
+        name: "status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "in-progress~/grs/pec-task-list?self-employed-status=in-progress",
+          text: "In progress"
+        },
+          {
+            value: "not-started~/grs/pec-task-list?self-employed-status=not-started",
+            text: "Not started"
+          }
+        ]
+      }) }}
+  {% elif data['self-employed-status'] == 'not-started' %}
+      {{ govukRadios({
+        name: "status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "completed~/grs/pec-task-list?self-employed-status=completed",
+            text: "Completed"
+          },
+          {
+            value: "in-progress~/grs/pec-task-list?self-employed-status=in-progress",
+            text: "In progress"
+          }
+        ]
+    }) }}
+  {% else %}
+      {{ govukRadios({
+        name: "status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "completed~/grs/pec-task-list?self-employed-status=completed",
+            text: "Completed"
+          },
+          {
+            value: "not-started~/grs/pec-task-list?self-employed-status=not-started",
+            text: "Not started"
+          }
+        ]
+      }) }}
+  {% endif %}
+
+
+<br>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="self-employment">Back</a>
+</div>
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

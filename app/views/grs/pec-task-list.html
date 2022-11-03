@@ -1,0 +1,282 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Save and sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-grs.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Pre-employment checks
+    </h1>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Overall status</h2>
+    <p class="govuk-body govuk-!-margin-bottom-7">3 of 10 checks have been completed.</p>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          <span class="app-task-list__section-number">1. </span> Checks needed
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Previous Civil Service Employment
+                </span>
+              </summary>
+
+              <div class="moj-timeline">
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Marked as completed</h2>
+
+                    <p class="moj-timeline__byline">by Joe Bloggs</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non felis risus. Curabitur nec ante vitae felis ullamcorper tincidunt.</p>
+
+                  </div>
+
+                </div>
+
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Check in progress</h2>
+
+                    <p class="moj-timeline__byline">by Caseworker 1</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">Curabitur nec ante vitae felis ullamcorper tincidunt.</div>
+
+                </div>
+
+                <div class="moj-timeline__item" style="padding-bottom:0px">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Check started</h2>
+
+                    <p class="moj-timeline__byline">by Caseworker 1</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
+                  </p>
+
+                  <div class="moj-timeline__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+                </div>
+
+
+
+
+              </div>
+
+            </details>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Overseas History
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Employment History
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Pensions
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <a href="self-employment" aria-describedby="eligibility-status">
+                  Self employment
+                </a>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            {% if data['self-employed-status'] == 'completed' %}
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+            {% elif data['self-employed-status'] == 'not-started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  DBS
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  CSEF
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+                CRC
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  NEN
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Posting Request
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+          </li>
+          </ul>
+          </li>
+          <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">2. </span> Checks not needed
+            </h2>
+            <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      Bankruptcy
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      Health Reference
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      NSV
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      Additional Check
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not needed</strong>
+                  </li>
+
+                </ul>
+                </li>
+
+</ol>
+  </div>
+</div>
+
+{% endblock %}

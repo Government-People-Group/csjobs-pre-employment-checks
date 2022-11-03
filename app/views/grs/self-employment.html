@@ -31,7 +31,7 @@
           href: "javascript:history.go(-1)"
         }) }}
 
-        {% include 'includes/key-details.html' %}
+        {% include 'includes/key-details-grs.html' %}
 
         {% endblock %}
 {% block content %}
@@ -40,10 +40,18 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl" style="margin-bottom:5px">
-      Self-employment
+    <h1 class="govuk-heading-l" style="margin-bottom:25px">
+      Self-employment<span>{% if data['self-employed-status'] == 'completed' %}
+        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Completed</strong>
+      {% elif data['self-employed-status'] == 'not-started' %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Not started</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">In progress</strong>
+      {% endif %}</span>
     </h1>
-<p><strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none; margin-bottom:25px">Not started</strong></p>
+
+
+
 
               <div class="moj-timeline">
                 <div class="moj-timeline__item">
@@ -66,39 +74,7 @@
 
                 </div>
 
-                <div class="moj-timeline__item">
 
-                  <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Application review in progress</h2>
-
-                    <p class="moj-timeline__byline">by Caseworker 1</p>
-
-                  </div>
-
-                  <p class="moj-timeline__date">
-                    <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
-                  </p>
-
-                  <div class="moj-timeline__description">Your application is being reviewed by one of our case workers.</div>
-
-                </div>
-
-                <div class="moj-timeline__item">
-
-                  <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Application received</h2>
-
-                    <p class="moj-timeline__byline">by Caseworker 1</p>
-
-                  </div>
-
-                  <p class="moj-timeline__date">
-                    <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
-                  </p>
-
-                  <div class="moj-timeline__description">Your application has been received – reference MOJ-1234-5678</div>
-
-                </div>
 
                 <div class="moj-timeline__item">
 
@@ -164,7 +140,7 @@
 
                 </div>
 
-                <div class="moj-timeline__item">
+                <div class="moj-timeline__item"  style="padding-bottom:0px">
 
                   <div class="moj-timeline__header">
                     <h2 class="moj-timeline__title">Application started</h2>
@@ -185,6 +161,15 @@
                   </div>
 
                 </div>
+              </div>
+
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Change status",
+                  href: "change-status"
+                }) }}
+
+                <a class="govuk-link" href="pec-task-list">Back</a>
               </div>
 
 
