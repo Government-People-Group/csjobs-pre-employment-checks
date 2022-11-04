@@ -38,12 +38,12 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-l" style="margin-bottom:25px">
-      Self-employment<span>{% if data['self-employed-status'] == 'completed' %}
+      Previous Civil Service Employment<span>{% if data['prev-cs-status'] == 'completed' %}
         <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Completed</strong>
-      {% elif data['self-employed-status'] == 'not-started' %}
+      {% elif data['prev-cs-status'] == 'not-started' %}
         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Not started</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">In progress</strong>
@@ -53,9 +53,9 @@
 
 <form action="" method="post">
 
-  {% if data['self-employed-status'] == 'completed' %}
+  {% if data['prev-cs-status'] == 'completed' %}
       {{ govukRadios({
-        name: "se-status",
+        name: "cs-status",
         fieldset: {
           legend: {
             text: "Change status to:",
@@ -65,18 +65,18 @@
         },
         items: [
         {
-          value: "in-progress~/grs/pec-task-list?self-employed-status=in-progress",
+          value: "in-progress~/grs/pec-task-list?prev-cs-status=in-progress",
           text: "In progress"
         },
           {
-            value: "not-started~/grs/pec-task-list?self-employed-status=not-started",
+            value: "not-started~/grs/pec-task-list?prev-cs-status=not-started",
             text: "Not started"
           }
         ]
       }) }}
   {% elif data['self-employed-status'] == 'not-started' %}
       {{ govukRadios({
-        name: "se-status",
+        name: "cs-status",
         fieldset: {
           legend: {
             text: "Change status to:",
@@ -86,18 +86,18 @@
         },
         items: [
           {
-            value: "completed~/grs/pec-task-list?self-employed-status=completed",
+            value: "completed~/grs/pec-task-list?prev-cs-status=completed",
             text: "Completed"
           },
           {
-            value: "in-progress~/grs/pec-task-list?self-employed-status=in-progress",
+            value: "in-progress~/grs/pec-task-list?prev-cs-status=in-progress",
             text: "In progress"
           }
         ]
     }) }}
   {% else %}
       {{ govukRadios({
-        name: "se-status",
+        name: "cs-status",
         fieldset: {
           legend: {
             text: "Change status to:",
@@ -107,11 +107,11 @@
         },
         items: [
           {
-            value: "completed~/grs/pec-task-list?self-employed-status=completed",
+            value: "completed~/grs/pec-task-list?prev-cs-status=completed",
             text: "Completed"
           },
           {
-            value: "not-started~/grs/pec-task-list?self-employed-status=not-started",
+            value: "not-started~/grs/pec-task-list?prev-cs-status=not-started",
             text: "Not started"
           }
         ]

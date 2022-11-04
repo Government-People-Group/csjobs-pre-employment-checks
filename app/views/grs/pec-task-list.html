@@ -54,6 +54,13 @@
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
+            {% if data['prev-cs-status'] == 'completed' %}
+              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+            {% elif data['prev-cs-status'] == 'not-started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% endif %}
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
@@ -100,29 +107,24 @@
                 </div>
 
                 <div class="moj-timeline__item" style="padding-bottom:0px">
-
                   <div class="moj-timeline__header">
                     <h2 class="moj-timeline__title">Check started</h2>
-
                     <p class="moj-timeline__byline">by Caseworker 1</p>
-
                   </div>
-
                   <p class="moj-timeline__date">
                     <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
                   </p>
-
                   <div class="moj-timeline__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
                 </div>
-
-
-
 
               </div>
 
+              {{ govukButton({
+                text: "Change status",
+                href: "change-status-prev-civil-service"
+              }) }}
             </details>
-            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
