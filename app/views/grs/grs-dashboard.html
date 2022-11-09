@@ -10,19 +10,8 @@
   },
   html: 'Your <a href"">feedback</a> will help us to improve.'
 })}}
-<ul class="js-signout" id="navigation">
-  <li class="content">
-    <li class="content">user@cabinetoffice.gov.uk</li>
-    <li class="content">
-    <a href="/search">Home</a>
-    </li>
-    <li class="content">
-      <a href="">Sign out</a>
-      </li>
-      <li class="content">
-        <a href="">Cymraeg</a>
-        </li>
-        </ul>
+{% include 'includes/user-header.html' %}
+
         {{ govukBackLink({
           text: "Back",
           href: "javascript:history.go(-1)"
@@ -47,7 +36,7 @@
   <h3 class="govuk-heading-m">Notifications</h3>
   <p><a href="self-employment"><a href="pec-task-list">Steve Evans</a> (Application ID: 2987) - Internal Audit P) (Vacancy ID: 873):<br><a href="self-employment">Self employment check started</a></p>
   <p class="govuk-body-s">23 August 2022</p>
-  
+
 </div>
 </div>
 
