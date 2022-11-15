@@ -4,12 +4,7 @@
   Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'Your <a href"">feedback</a> will help us to improve.'
-})}}
+
 {% include 'includes/user-header.html' %}
 
 
@@ -29,10 +24,14 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l" style="margin-bottom:25px">
-      Self-employment<span>{% if data['self-employed-status'] == 'completed' %}
-        <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Completed</strong>
+      Self-employment<span>{% if data['self-employed-status'] == 'passed' %}
+        <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Passed</strong>
       {% elif data['self-employed-status'] == 'not-started' %}
         <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Not started</strong>
+      {% elif data['self-employed-status'] == 'risk-assessment' %}
+        <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Risk assessment needed</strong>
+      {% elif data['self-employed-status'] == 'failed' %}
+        <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">Failed</strong>
       {% else %}
         <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="margin-top:15px; margin-left:20px; float:none">In progress</strong>
       {% endif %}</span>

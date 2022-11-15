@@ -4,12 +4,7 @@
   Profile – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'Your <a href"">feedback</a> will help us to improve.'
-})}}
+
 
 {% include 'includes/user-header.html' %}
 
@@ -22,27 +17,20 @@
 {% block content %}
 
 
-
-
 <div class="govuk-form-group" style="background:#f3f2f1; padding-top:15px;padding-left:10px">
   <div class="govuk-input__wrapper">
-    <div class="govuk-input__prefix" aria-hidden="true" style="border:none">Search</div>
-    <input class="govuk-input govuk-!-width-one-third" id="search" name="search" type="text" spellcheck="false">
-    <details class="govuk-details" data-module="govuk-details" style="padding-left:20px; padding-top:5px">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Advanced search
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      Lorem ipsum
-    </div>
 
-  </details>
+    <input class="govuk-input govuk-!-width-one-third" id="search" name="search" type="text" spellcheck="false">
+    <button class="govuk-button" data-module="govuk-button">
+      Search
+    </button>
+    <p style="padding-left:20px; padding-top:5px">
+      <a href="">
+        Advanced search
+      </a>
+    </p>
   </div>
 </div>
-
-
 
 <div class="govuk-grid-row">
 
@@ -92,19 +80,19 @@
     rows: [
       [
         {
-          html: '<a href="/recruiter/pec-task-list" class="govuk-link">Steve</a>',
+          html: '<a href="/recruiter-manager/pec-task-list" class="govuk-link">Steve</a>',
           attributes: {
           "data-sort-value": "Steve"
           }
         },
         {
-          html: '<a href="/recruiter/pec-task-list" class="govuk-link">Evans</a>',
+          html: '<a href="/recruiter-manager/pec-task-list" class="govuk-link">Evans</a>',
           attributes: {
           "data-sort-value": "Evans"
           }
         },
         {
-          html: '<a href="/recruiter/pec-task-list" class="govuk-link">2987</a>',
+          html: '<a href="/recruiter-manager/pec-task-list" class="govuk-link">2987</a>',
           attributes: {
             "data-sort-value": "2987"
           }

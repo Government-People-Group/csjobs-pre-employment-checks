@@ -15322,6 +15322,24 @@ span.moj-header__link:hover {
     line-height: 1.31579;
   }
 }
+.govuk-tag--bright-red {
+  background-color: #d4351c;
+}
+
+.govuk-tag--black {
+  background-color: #000000;
+}
+
+.govuk-tag--bright-green {
+  background-color: #2c971e;
+}
+
+.side-tag {
+  margin-top: 15px;
+  margin-left: 20px;
+  float: none;
+}
+
 .govuk-details__summary:before {
   border-style: none;
   padding-left: 0px;

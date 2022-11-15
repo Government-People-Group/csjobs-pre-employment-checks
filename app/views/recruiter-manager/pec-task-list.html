@@ -4,14 +4,8 @@
   Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
-{{ govukPhaseBanner({
-  tag: {
-    text: "alpha"
-  },
-  html: 'Your <a href"">feedback</a> will help us to improve.'
-})}}
-{% include 'includes/user-header.html' %}
 
+{% include 'includes/user-header.html' %}
 
 
         {{ govukBackLink({
@@ -23,6 +17,8 @@
 
         {% endblock %}
 {% block content %}
+
+
 
 <div class="govuk-grid-row">
 
@@ -38,24 +34,16 @@
     <ol class="app-task-list">
       <li>
         <h2 class="app-task-list__section">
-          <span class="app-task-list__section-number">1. </span> Checks needed
+          Checks needed
         </h2>
         <ul class="app-task-list__items">
           <li class="app-task-list__item">
-            {% if data['prev-cs-status'] == 'completed' %}
-              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-            {% elif data['prev-cs-status'] == 'not-started' %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-            {% else %}
-              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
-            {% endif %}
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Previous Civil Service Employment
+                  Right to Work
                 </span>
               </summary>
-
               <div class="moj-timeline">
                 <div class="moj-timeline__item">
 
@@ -109,36 +97,59 @@
 
               {{ govukButton({
                 text: "Change status",
-                href: "change-status-prev-civil-service"
+                href: "change-status-right-to-work"
               }) }}
             </details>
+            {% if data['rtw-status'] == 'Passed' %}
+              <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+            {% elif data['rtw-status'] == 'Not started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['rtw-status'] == 'Risk assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Risk assessment needed</strong>
+            {% elif data['rtw-status'] == 'Failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status">Failed</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  EEHC
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Reference Checks Status
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+              </div>
+            </details>
+            <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Risk assessment needed</strong>
+          </li>
+          <li class="app-task-list__item">
 
-          </li>
-          <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Overseas History
+                  Previous Civil Service Employment
                 </span>
               </summary>
-              <div class="govuk-details__text">
-                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-              </div>
+
+
             </details>
-            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-          </li>
-          <li class="app-task-list__item">
-            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Employment History
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-              </div>
-            </details>
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+<strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
@@ -151,7 +162,7 @@
                 We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
               </div>
             </details>
-            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
+            <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Blocked</strong>
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
@@ -164,10 +175,14 @@
                 We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
               </div>
             </details>
-            {% if data['self-employed-status'] == 'completed' %}
-              <strong class="govuk-tag govuk-tag app-task-list__tag" id="financial-evidence-status">Completed</strong>
-            {% elif data['self-employed-status'] == 'not-started' %}
+            {% if data['self-employed-status'] == 'Passed' %}
+              <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+            {% elif data['self-employed-status'] == 'Not started' %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['self-employed-status'] == 'risk-assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Risk assessment needed</strong>
+            {% elif data['self-employed-status'] == 'failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status">Failed</strong>
             {% else %}
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
             {% endif %}
@@ -176,39 +191,36 @@
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  DBS
+                  DBS / Disclosure Scotland / AccessNI
                 </span>
               </summary>
               <div class="govuk-details__text">
                 We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
               </div>
             </details>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status">Failed</strong>
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  CSEF
+                  Criminal Record Check
                 </span>
               </summary>
               <div class="govuk-details__text">
-                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+                {{ govukWarningText({
+                  text: "You cannot start this check because blah blah blah.",
+                  iconFallbackText: "Warning"
+                }) }}
               </div>
             </details>
-            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
-          </li>
-          <li class="app-task-list__item">
-            <span class="app-task-list__task-name">
-                CRC
-            </span>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  NEN
+                  National Insurance Number Check
                 </span>
               </summary>
               <div class="govuk-details__text">
@@ -217,26 +229,25 @@
             </details>
             <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
           </li>
-          <li class="app-task-list__item">
-            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Posting Request
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-              </div>
-            </details>
-            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
-          </li>
           </ul>
           </li>
           <li>
             <h2 class="app-task-list__section">
-              <span class="app-task-list__section-number">2. </span> Checks not needed
+              Checks not needed
             </h2>
             <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  Internal Fraud
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  Overseas check
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+              </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name">
                       Bankruptcy
@@ -266,6 +277,8 @@
                 </li>
 
 </ol>
+
+
   </div>
 </div>
 
