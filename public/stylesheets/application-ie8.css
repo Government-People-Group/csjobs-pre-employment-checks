@@ -10733,19 +10733,6 @@ span.moj-header__link:hover {
   float: none;
 }
 
-.govuk-details__summary:before {
-  border-style: none;
-  padding-left: 0px;
-}
-
-.govuk-details[open] > .govuk-details__summary:before {
-  border-style: none;
-}
-
-.govuk-details__summary {
-  padding-left: 0px;
-}
-
 .dwp-key-details-bar {
   background-color: #1d70b8;
   color: #fff;

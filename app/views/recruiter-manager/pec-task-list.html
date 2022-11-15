@@ -48,29 +48,27 @@
                 <div class="moj-timeline__item">
 
                   <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Marked as completed</h2>
+                    <h2 class="moj-timeline__title">Marked as 'In progress'</h2>
 
-                    <p class="moj-timeline__byline">by Joe Bloggs</p>
+                    <p class="moj-timeline__byline">by Chris Ure</p>
 
                   </div>
 
                   <p class="moj-timeline__date">
                     <time datetime="2019-06-14T14:01:00.000Z">14 June 2019 at 2:01pm</time>
                   </p>
-
                   <div class="moj-timeline__description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non felis risus. Curabitur nec ante vitae felis ullamcorper tincidunt.</p>
+                    Note added: ID checked
 
                   </div>
-
                 </div>
 
                 <div class="moj-timeline__item">
 
                   <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Check in progress</h2>
+                    <h2 class="moj-timeline__title">Full candidate PEC form submitted</h2>
 
-                    <p class="moj-timeline__byline">by Caseworker 1</p>
+                    <p class="moj-timeline__byline">by Steve Evans</p>
 
                   </div>
 
@@ -78,19 +76,17 @@
                     <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
                   </p>
 
-                  <div class="moj-timeline__description">Curabitur nec ante vitae felis ullamcorper tincidunt.</div>
-
                 </div>
 
                 <div class="moj-timeline__item" style="padding-bottom:0px">
                   <div class="moj-timeline__header">
-                    <h2 class="moj-timeline__title">Check started</h2>
-                    <p class="moj-timeline__byline">by Caseworker 1</p>
+                    <h2 class="moj-timeline__title">PEC set up</h2>
+                    <p class="moj-timeline__byline">by System</p>
                   </div>
                   <p class="moj-timeline__date">
                     <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
                   </p>
-                  <div class="moj-timeline__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
                 </div>
 
               </div>
@@ -99,9 +95,10 @@
                 text: "Change status",
                 href: "change-status-right-to-work"
               }) }}
+
             </details>
             {% if data['rtw-status'] == 'Passed' %}
-              <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
             {% elif data['rtw-status'] == 'Not started' %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
             {% elif data['rtw-status'] == 'Risk assessment' %}
@@ -123,7 +120,7 @@
                 We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
               </div>
             </details>
-            <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
@@ -149,7 +146,7 @@
 
 
             </details>
-<strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+<strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
           </li>
           <li class="app-task-list__item">
             <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
@@ -176,7 +173,7 @@
               </div>
             </details>
             {% if data['self-employed-status'] == 'Passed' %}
-              <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag" id="financial-evidence-status">Passed</strong>
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
             {% elif data['self-employed-status'] == 'Not started' %}
               <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
             {% elif data['self-employed-status'] == 'risk-assessment' %}
