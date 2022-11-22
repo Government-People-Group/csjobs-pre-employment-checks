@@ -10749,7 +10749,7 @@ span.moj-header__link:hover {
 .dwp-key-details-bar .dwp-key-details-bar__key-details {
   margin: 0 auto;
   max-width: 960px;
-  padding: 20px 30px;
+  padding: 10px 30px;
   position: relative;
 }
 
@@ -10807,7 +10807,7 @@ span.moj-header__link:hover {
 
 @media (max-width: 40.0525em) {
   .dwp-key-details-bar .dwp-key-details-bar__key-details {
-    padding: 20px 15px;
+    padding: 10px 15px;
   }
 
   .dwp-key-details-bar .dwp-key-details-bar__key-details .dwp-key-details-bar__bottom-block {

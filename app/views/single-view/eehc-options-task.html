@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l" style="margin-bottom:25px">
+      EEHC<span>{% if data['eehc-status'] == 'Passed' %}
+        <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+      {% elif data['eehc-status'] == 'not-started' %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+      {% elif data['eehc-status'] == 'failed' %}
+          <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+      {% elif data['eehc-status'] == 'risk-assessment' %}
+          <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+      {% endif %}</span>
+    </h1><br>
+
+
+<form action="" method="post">
+
+
+      {{ govukRadios({
+        name: "eehc-options",
+        fieldset: {
+          legend: {
+            text: "Task options:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "work-task~/single-view/dummy-page-task",
+          text: "Work on task"
+        },
+        {
+          value: "complete~/single-view/eehc-task-outcome-task",
+          text: "Mark as Complete"
+        },
+        {
+          value: "unallocate~/single-view/dummy-page-task",
+          text: "Remove task from my list"
+        },
+        {
+          value: "add-bf~/single-view/dummy-page-task",
+          text: "Add BF Date to task"
+        },
+        {
+          value: "allocate~/single-view/dummy-page-task",
+          text: "Allocate to another user"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "checklist~/single-view/pec-task-list-ao-task-full",
+          text: "Check status of all PECs for this candidate"
+        }
+        ]
+      }) }}
+
+
+
+<br>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+
+  <a class="govuk-link" href="pec-task-list-ao-task">Back</a>
+</div>
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-ao-task.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Check needed
+        </h2>
+        <ul class="app-task-list__items">
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="eehc-options-task" aria-describedby="eligibility-status">
+                EEHC
+              </a>
+            </span>
+            {% if data['eehc-status'] == 'Passed' %}
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+            {% elif data['eehc-status'] == 'Not started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['eehc-status'] == 'risk-assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Risk assessment needed</strong>
+            {% elif data['eehc-status'] == 'failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status">Failed</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% endif %}
+          </li>
+
+
+</ol>
+
+  <a class="govuk-link" href="pec-task-list-ao-task-full">Check status of all PECs for this candidate</a>
+
+  </div>
+
+</div>
+
+{% endblock %}
