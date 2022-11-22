@@ -10,7 +10,7 @@
   },
   html: 'Your <a href"">feedback</a> will help us to improve.'
 })}}
-{% include 'includes/user-header.html' %}
+{% include 'ver1/includes/user-header.html' %}
 
 
 
@@ -19,10 +19,25 @@
           href: "javascript:history.go(-1)"
         }) }}
 
-        {% include 'includes/key-details-grs.html' %}
+        {% include 'ver1/includes/key-details-grs.html' %}
 
         {% endblock %}
 {% block content %}
+
+<style>
+  .govuk-details__summary:before {
+  border-style: none;
+  padding-left: 0px;
+  }
+
+  .govuk-details[open] > .govuk-details__summary:before {
+    border-style: none;
+  }
+
+  .govuk-details__summary {
+  padding-left: 0px;
+  }
+</style>
 
 <div class="govuk-grid-row">
 
