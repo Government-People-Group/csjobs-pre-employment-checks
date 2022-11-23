@@ -22,21 +22,76 @@
 
 
 {% set tasksHtml %}
-
+<h2 class="govuk-heading-l">Allocated tasks</h2>
 {{ govukTable({
-  attributes: {
-    'data-module': 'moj-sortable-table'
-  },
-  head: [
 
+  head: [
+    {
+      text: "First name",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Surname",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Applicant ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Vacancy",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Department",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Vacancy ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="/single-view/pec-task-list-ao-candidate" class="govuk-link">Steve</a>',
+        attributes: {
+        "data-sort-value": "208195"
+        }
+      },
+      {
+        html: '<a href="/single-view/pec-task-list-ao-candidate" class="govuk-link">Evans</a>'
+
+      },
+      {
+        html: '<a href="/single-view/pec-task-list-ao-candidate" class="govuk-link">2987</a>'
+      },
+      {
+        html: '<a href="/single-view/pec-task-list-ao-candidate" class="govuk-link">Internal Audit PO</a>'
+      },
+      {
+        html: '<a href="/single-view/pec-task-list-ao-candidate" class="govuk-link">HMCTS</a>'
+      },
+      {
+        html: '<a href="/single-view/pec-task-list-ao-candidate" class="govuk-link">873</a>'
+      }
+    ]
   ]
 }) }}
-{{ govukButton({
-  text: "Get next candidate",
-  href: "/single-view/pec-task-list-ao-candidate"
-}) }}
-
-<p> This will retrieve the candidate with the most urgent pre-employment check. </p>
+<a href="#" class="govuk-link">Refresh</a>
 {% endset -%}
 
 {% set timesHtml %}
