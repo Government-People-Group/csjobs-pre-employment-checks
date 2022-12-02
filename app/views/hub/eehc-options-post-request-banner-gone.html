@@ -1,0 +1,400 @@
+{% extends "layout-accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" style="font-size:medium">
+          <a class="govuk-tabs__tab" href="#pecs">
+            Pre-employment checks
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item" style="font-size:medium">
+          <a class="govuk-tabs__tab" href="#history">
+            PEC history
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item" style="font-size:medium">
+          <a class="govuk-tabs__tab" href="#pec-info">
+            Candidate PEC info
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item" style="font-size:medium">
+          <a class="govuk-tabs__tab" href="#application">
+            Applications (2)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item" style="font-size:medium">
+          <a class="govuk-tabs__tab" href="#communication">
+            Communication
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item" style="font-size:medium">
+          <a class="govuk-tabs__tab" href="#uploads">
+            Uploads
+          </a>
+        </li>
+      </ul>
+
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+
+
+            <h1 class="govuk-heading-l" style="margin-bottom:25px">
+              EEHC<span>{% if data['eehc-status'] == 'Passed' %}
+                <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+              {% elif data['eehc-status'] == 'not-started' %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+              {% elif data['eehc-status'] == 'failed' %}
+                  <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+              {% elif data['eehc-status'] == 'risk-assessment' %}
+                  <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+              {% elif data['eehc-status'] == 'in-progress' %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+              {% else %}
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+              {% endif %}</span>
+            </h1><br>
+
+
+        <form action="" method="post">
+
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+          <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Duplicate check on another application</h2>
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              name: "eehc-options",
+              fieldset: {
+              },
+              items: [
+              {
+                value: "see-duplicate~duplicate-eehc",
+                text: "View duplicate check"
+              },
+              {
+                value: "duplicate-request~resend-request#communication",
+                text: "Resend request to use result from duplicate check"
+              }
+              ]
+            }) }}
+
+          </section>
+
+        </article>
+
+        <br>
+
+
+
+              {{ govukRadios({
+                classes: "govuk-radios--small",
+                name: "eehc-options",
+                fieldset: {
+                  legend: {
+                    text: "Other options:",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+
+                {
+                  value: "work-task~dummy-page",
+                  text: "Start task"
+                },
+                {
+                  value: "candidate-info-eehc~tab-candidate-pec-info#eehc",
+                  text: "View candidate info for EEHC"
+                },
+                {
+                  value: "complete~eehc-task-outcome",
+                  text: "Mark as Complete"
+                },
+                    {
+                      value: "add-bf~dummy-page",
+                      text: "Add BF Date to task"
+                    }
+                ]
+              }) }}
+
+
+
+        <br>
+
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue"
+          }) }}
+
+          <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
+        </div>
+        </form>
+
+          </div>
+          <div class="govuk-grid-column-one-third">
+
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section ">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+            EEHC history
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <div class="moj-timeline">
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Request to use duplicate check sent</h2>
+
+                  <p class="moj-timeline__byline">by Poppy Wells</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
+                </p>
+
+                <br>
+                <a href="duplicate-request-email#communication">See request</a>
+
+              </div>
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Email received</h2>
+
+                  <p class="moj-timeline__byline">from Steve Evans</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+                </p>
+
+                <div class="moj-timeline__description">
+                  <p>"Did you receive my documents? Do they cover what you need? Many thanks, Steve."</p>
+                </div>
+                <a href="#">Reply to email</a>
+
+              </div>
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Documents uploaded</h2>
+
+                  <p class="moj-timeline__byline">by Steve Evans</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">7 Nov 2022 at 12:36pm</time>
+                </p>
+
+                <div class="moj-timeline__description">
+                  <ul class="moj-timeline__documents">
+                    <li class="moj-timeline__document-item">
+                      <a class="govuk-link" href="#">
+                        <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                          <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                        </svg>
+                        employment history (PDF)
+                      </a>
+                    </li>
+                    <li class="moj-timeline__document-item">
+                      <a class="govuk-link" href="#">
+                        <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                          <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                        </svg>
+                        cv (PDF)
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Full candidate PEC form submitted</h2>
+
+                  <p class="moj-timeline__byline">by Steve Evans</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-06-07T12:32:00.000Z">7 Nov 2022 at 12:32pm</time>
+                </p>
+
+              </div>
+
+              <div class="moj-timeline__item" style="padding-bottom:0px">
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">PEC set up</h2>
+                  <p class="moj-timeline__byline">by System</p>
+                </div>
+                <p class="moj-timeline__date">
+                  <time datetime="2019-06-06T09:12:00.000Z">6 Nov 2022 at 9:12am</time>
+                </p>
+
+              </div>
+</div></div>
+            </div>
+          </div>
+        </div>
+              </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
+        <h2 class="govuk-heading-m">History</h2>
+
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">0</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1</td>
+          <td class="govuk-table__cell">0</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell">0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="application">
+    <h2 class="govuk-heading-m">Application</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">98</td>
+          <td class="govuk-table__cell">95</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">122</td>
+          <td class="govuk-table__cell">131</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">126</td>
+          <td class="govuk-table__cell">142</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="communication">
+    <h2 class="govuk-heading-m">Communication</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="uploads">
+    <h2 class="govuk-heading-m">Uploads</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Case manager</th>
+          <th scope="col" class="govuk-table__header">Cases opened</th>
+          <th scope="col" class="govuk-table__header">Cases closed</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">David Francis</td>
+          <td class="govuk-table__cell">1380</td>
+          <td class="govuk-table__cell">1472</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Paul Farmer</td>
+          <td class="govuk-table__cell">1129</td>
+          <td class="govuk-table__cell">1083</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rita Patel</td>
+          <td class="govuk-table__cell">1539</td>
+          <td class="govuk-table__cell">1265</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
