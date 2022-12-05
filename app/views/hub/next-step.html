@@ -49,9 +49,9 @@
             </h1><br>
 
 
-        <form action="" method="post">
 
-{% if data['allocation-type'] == 'task'%}
+
+{% if data['allocation-type'] == 'task' %}
               {{ govukRadios({
                 classes: "govuk-radios--small",
                 name: "eehc-options",
@@ -82,7 +82,7 @@
                 text: "Continue"
               }) }}
 
-{% elif data['allocation-type'] == 'multi'%}
+{% elif data['allocation-type'] == 'multi' %}
               {{ govukRadios({
                 classes: "govuk-radios--small",
                 name: "eehc-options",
@@ -112,7 +112,7 @@
               {{ govukButton({
                 text: "Continue"
               }) }}
-{% elif data['allocation-type'] == 'candidate'%}
+{% elif data['allocation-type'] == 'candidate' %}
             {{ govukButton({
               text: "Back to list of PECs for this candidate",
               href:"tab-pec-list"
@@ -123,7 +123,7 @@
 
 
 
-        </form>
+      
 
           </div>
           <div class="govuk-grid-column-one-third">
