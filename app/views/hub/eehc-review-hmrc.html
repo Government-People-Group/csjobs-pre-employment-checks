@@ -48,73 +48,28 @@
 
       <form action="" method="post">
 
-{% if data['duplicate-eehc'] == 'yes' %}
-        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
 
-        <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Duplicate check on another application</h2>
-          {{ govukRadios({
-            classes: "govuk-radios--small",
-            name: "eehc-options",
-            fieldset: {
-            },
-            items: [
-            {
-              value: "see-duplicate~duplicate-eehc",
-              text: "View duplicate check"
-            },
-            {
-              value: "duplicate-request~duplicate-request",
-              text: "Ask permission to use result from duplicate check"
-            }
-            ]
-          }) }}
 
-        </section>
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review employment history in PAYE</h2>
 
-      </article>
-
-      <br>
-{% endif %}
-
-{% if data['duplicate-eehc'] == 'yes' %}
-  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Other options</h2>
-{% else %}
-  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Task options</h2>
-{% endif %}
             {{ govukRadios({
               classes: "govuk-radios--small",
-              name: "eehc-options",
+              name: "eehc-hmrc-review-options",
               items: [
-
               {
-                value: "work-task~eehc-review-hmrc?eehc-status=in-progress",
-                text: "Start task"
+                value: "Check passed~eehc-review-hmrc-confirm?eehc-result=passed&eehc-status=Passed",
+                text: "Check passed"
               },
               {
-                value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-heading-2",
-                text: "View candidate info for EEHC"
+                value: "References required~eehc-review-hmrc-confirm?refs-required=yes&eehc-result=denied&eehc-status=risk-assessment",
+                text: "References required - access denied to PAYE"
               },
               {
-                value: "complete~eehc-task-outcome",
-                text: "Mark as Complete"
-              },
-              {
-                value: "add-bf~dummy-page",
-                text: "Add BF Date to task"
-              },
-              {
-                value: "allocate-user~#",
-                text: "Allocate task to another user"
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "checklist~tab-pec-list",
-                text: "Check status of all PECs for this candidate"
+                value: "References required~eehc-review-hmrc-confirm?refs-required=yes&eehc-result=gap&eehc-status=risk-assessment",
+                text: "References required - gap in employment history"
               }
-          ]
+
+              ]
             }) }}
 
 
@@ -128,13 +83,14 @@
         }) }}
 
 
-{% if data ['from-pec-list'] == 'yes' %}
-      <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
-{% endif %}
+
+      <a class="govuk-link" href="javascript:history.go(-1)">Back</a>
+
       </div>
       </form>
 
         </div>
+
         <div class="govuk-grid-column-one-third">
 
       <div class="moj-timeline">
@@ -229,12 +185,15 @@
       </div>  <a class="govuk-link" href="tab-history">View full history</a>
     </div>
   </div>
-</div>
-</div>
-
-</div>
 
 
 
 
-{% endblock %}
+            </div></div>
+
+  </div>
+
+
+
+
+  {% endblock %}

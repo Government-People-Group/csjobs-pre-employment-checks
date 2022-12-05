@@ -31,7 +31,7 @@
 
           <div class="govuk-grid-column-two-thirds">
 
-        <form action="eehc-options-post-request" method="post">
+        <form action="eehc-message-sent" method="post">
         <h1 class="govuk-heading-m" style="margin-bottom:25px">Contact</h1>
 
         <div class="govuk-form-group">
@@ -45,11 +45,18 @@
           </select>
         </div>
 
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Subject
+          </label>
+          <input class="govuk-input" id="subject" name="subject" type="text">
+        </div>
+
 
         {{ govukTextarea({
-          name: "more-detail",
+          name: "message-detail",
           rows:"6",
-          id: "more-detail",
+          id: "message-detail",
           value:"
 
 
@@ -76,16 +83,7 @@ Poppy Wells"
           <div class="govuk-grid-column-one-third">
 
 
-                      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-history-comms">
-              <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <span class="govuk-accordion__section-button" id="accordion-history-comms-heading-1">
-                      Contact history
-                    </span>
-                  </h2>
-                </div>
-                <div id="accordion-history-comms-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-history-comms-heading-1">
+
             <div class="moj-timeline">
               <div class="moj-timeline__item">
 
@@ -136,24 +134,33 @@ Poppy Wells"
                 </p>
 
                 <div class="moj-timeline__description">
-                  <p>"Did you receive my documents? Do they cover what you need? Many thanks, Steve."</p>
+                  <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Read email
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                    </div>
+                    <a href="tab-contact">Reply to email</a>
+                  </details>
                 </div>
-                <a href="#">Reply to email</a>
-
               </div>
 
 
-</div></div>
+            </div>  <a class="govuk-link" href="tab-history">View full history</a>
             </div>
-          </div>
-        </div>
-              </div>
-
-</div>
+            </div>
 
 
 
 
+                  </div></div>
+
+            </div>
 
 
-{% endblock %}
+
+
+            {% endblock %}

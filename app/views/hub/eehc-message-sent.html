@@ -34,6 +34,17 @@
 
       <div class="govuk-grid-column-two-thirds">
 
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-body">Message sent to {{data['sort']}}.</p>
+      </div>
+    </div>
+
         <h1 class="govuk-heading-l" style="margin-bottom:25px">
           EEHC<span>{% if data['eehc-status'] == 'Passed' %}
             <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
@@ -52,31 +63,22 @@
 
 
     <form action="eehc-options-post-request-banner-gone" method="post">
-    <h1 class="govuk-heading-m" style="margin-bottom:25px">Request details</h1>
+    <h1 class="govuk-heading-m" style="margin-bottom:25px">Sent message</h1>
 
 
     <table class="govuk-table">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header" style="width:30%">Request sent to</th>
+          <th scope="row" class="govuk-table__header" style="width:30%">Message sent to</th>
           <td class="govuk-table__cell">{{data['sort']}}</td>
         </tr>
         <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">Subject</th>
+          <td class="govuk-table__cell">{{data['subject']}}</td>
+        </tr>
+        <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Message</th>
-          <td class="govuk-table__cell">
-Request to use duplicate EEHC check result<br>
------------------------------------------------------------------<br><br>
-Application 2987<br>
-by candidate Steve Evans<br>
-for vacancy 873 - Internal Audit PO<br>
-in HMCTS<br><br>
-Check needed: EEHC<br><br>
-An EEHC check was completed on another application (2982) by the same candidate.<br><br>
-The result was: check passed<br>
-on 17 November 2022<br>
-by Ismail Laimsi<br><br>
-Please respond (YES or NO) whether the existing check result from application 2982 can also be used for application 2987.<br><br>
-(end of message)</td>
+          <td class="govuk-table__cell">Hi Steve<br><br>Yes, we've received your documents and we're running pre-employment checks now. You can <a href="#">see how your checks are progressing</a> at any time<br><br>Regards<br>Poppy Wells</td>
         </tr>
       </tbody>
     </table>
@@ -86,16 +88,32 @@ Please respond (YES or NO) whether the existing check result from application 29
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Go back"
+        text: "Go back",
+        href:"javascript:history.go(-1)"
       }) }}
 
-      <a class="govuk-link" href="resend-request#contact">Resend request</a>
+
     </div>
     </form>
 
       </div>
       <div class="govuk-grid-column-one-third">
+        <div class="moj-timeline">
+          <div class="moj-timeline__item">
 
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Message sent to Steve Evans</h2>
+
+              <p class="moj-timeline__byline">by Poppy Wells</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:15:00.000Z">25 Nov 2022 at 11:08am</time>
+            </p><br>
+            <a href="#">See message</a>
+
+          </div>
 
         <div class="moj-timeline">
           <div class="moj-timeline__item">
@@ -107,11 +125,10 @@ Please respond (YES or NO) whether the existing check result from application 29
 
             </div>
 
+
             <p class="moj-timeline__date">
               <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
             </p>
-
-
 
           </div>
           <div class="moj-timeline__item">

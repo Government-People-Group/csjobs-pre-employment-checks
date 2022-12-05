@@ -30,96 +30,43 @@
         <div class="govuk-grid-column-two-thirds">
 
           <h1 class="govuk-heading-l" style="margin-bottom:25px">
-            EEHC<span>{% if data['eehc-status'] == 'Passed' %}
-              <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
-            {% elif data['eehc-status'] == 'not-started' %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
-            {% elif data['eehc-status'] == 'failed' %}
-                <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
-            {% elif data['eehc-status'] == 'risk-assessment' %}
-                <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
-            {% elif data['eehc-status'] == 'in-progress' %}
+            EEHC<span>
             <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
-            {% else %}
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
-            {% endif %}</span>
+            </span>
           </h1><br>
 
 
       <form action="" method="post">
 
-{% if data['duplicate-eehc'] == 'yes' %}
-        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
-
-        <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
-          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Duplicate check on another application</h2>
-          {{ govukRadios({
-            classes: "govuk-radios--small",
-            name: "eehc-options",
-            fieldset: {
-            },
-            items: [
-            {
-              value: "see-duplicate~duplicate-eehc",
-              text: "View duplicate check"
-            },
-            {
-              value: "duplicate-request~duplicate-request",
-              text: "Ask permission to use result from duplicate check"
-            }
-            ]
-          }) }}
-
-        </section>
-
-      </article>
-
-      <br>
-{% endif %}
-
-{% if data['duplicate-eehc'] == 'yes' %}
-  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Other options</h2>
-{% else %}
-  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Task options</h2>
-{% endif %}
-            {{ govukRadios({
-              classes: "govuk-radios--small",
-              name: "eehc-options",
-              items: [
-
-              {
-                value: "work-task~eehc-review-hmrc?eehc-status=in-progress",
-                text: "Start task"
-              },
-              {
-                value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-heading-2",
-                text: "View candidate info for EEHC"
-              },
-              {
-                value: "complete~eehc-task-outcome",
-                text: "Mark as Complete"
-              },
-              {
-                value: "add-bf~dummy-page",
-                text: "Add BF Date to task"
-              },
-              {
-                value: "allocate-user~#",
-                text: "Allocate task to another user"
-              },
-              {
-                divider: "or"
-              },
-              {
-                value: "checklist~tab-pec-list",
-                text: "Check status of all PECs for this candidate"
-              }
-          ]
-            }) }}
 
 
+        <form action="" method="post" novalidate>
 
-      <br>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h2 class="govuk-fieldset__heading">
+                  Are you sure you want to change status to '{{data['eehc-hmrc-review-options']}}'?
+                </h2>
+              </legend>
+              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="change-status-rtw-yes" name="change-status-rtw" type="radio" value="yes~next-step">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="change-status-rtw-no" name="change-status-rtw" type="radio" value="no~eehc-review-hmrc">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
 
 
       <div class="govuk-button-group">
@@ -128,9 +75,9 @@
         }) }}
 
 
-{% if data ['from-pec-list'] == 'yes' %}
-      <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
-{% endif %}
+
+      <a class="govuk-link" href="javascript:history.go(-1)">Back</a>
+
       </div>
       </form>
 
@@ -229,8 +176,11 @@
       </div>  <a class="govuk-link" href="tab-history">View full history</a>
     </div>
   </div>
-</div>
-</div>
+
+
+
+
+            </div></div>
 
 </div>
 

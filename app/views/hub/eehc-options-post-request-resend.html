@@ -100,7 +100,7 @@
                 items: [
 
                 {
-                  value: "work-task~dummy-page",
+                  value: "work-task~eehc-review-hmrc?eehc-status=in-progress",
                   text: "Start task"
                 },
                 {
@@ -111,11 +111,15 @@
                   value: "complete~eehc-task-outcome",
                   text: "Mark as Complete"
                 },
-                    {
-                      value: "add-bf~dummy-page",
-                      text: "Add BF Date to task"
-                    }
-                ]
+                {
+                  value: "add-bf~dummy-page",
+                  text: "Add BF Date to task"
+                },
+                {
+                  value: "allocate-user~#",
+                  text: "Allocate task to another user"
+                }
+            ]
               }) }}
 
 
@@ -135,16 +139,7 @@
           </div>
           <div class="govuk-grid-column-one-third">
 
-                      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-history-post-eehc">
-              <div class="govuk-accordion__section ">
-                <div class="govuk-accordion__section-header">
-                  <h2 class="govuk-accordion__section-heading">
-                    <span class="govuk-accordion__section-button" id="accordion-history-post-eehc-heading-1">
-                      EEHC history
-                    </span>
-                  </h2>
-                </div>
-                <div id="accordion-history-post-eehc-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-history-post-eehc-heading-1">
+
             <div class="moj-timeline">
               <div class="moj-timeline__item">
 
@@ -195,10 +190,18 @@
                 </p>
 
                 <div class="moj-timeline__description">
-                  <p>"Did you receive my documents? Do they cover what you need? Many thanks, Steve."</p>
+                  <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Read email
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                    </div>
+                    <a href="tab-contact">Reply to email</a>
+                  </details>
                 </div>
-                <a href="#">Reply to email</a>
-
               </div>
               <div class="moj-timeline__item">
 
@@ -260,14 +263,15 @@
                 </p>
 
               </div>
-</div></div>
+            </div>  <a class="govuk-link" href="tab-history">View full history</a>
             </div>
-          </div>
-        </div>
+            </div>
+            </div>
+            </div>
+
+            </div>
 
 
-              </div>
 
-</div>
 
-{% endblock %}
+            {% endblock %}

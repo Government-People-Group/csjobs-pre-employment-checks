@@ -62,7 +62,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 
-            Filters
+            Filter history by:
 
           </legend>
 
@@ -71,7 +71,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
               <label class="govuk-label govuk-checkboxes__label" for="type">
-                A filter (18)
+                EEHC (2)
               </label>
 
             </div>
@@ -79,7 +79,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
               <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                Another filter (5)
+                DBS (2)
               </label>
 
             </div>
@@ -87,7 +87,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
               <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                The third filter (2)
+                General PEC entry (4)
               </label>
 
             </div>
@@ -111,9 +111,9 @@
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+              <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete">
               <label class="govuk-label govuk-checkboxes__label" for="status">
-                A different filter (2)
+                ?
               </label>
 
             </div>
@@ -121,7 +121,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
               <label class="govuk-label govuk-checkboxes__label" for="status-2">
-                Fourth filter type (5)
+                ?
               </label>
 
             </div>
@@ -129,7 +129,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
               <label class="govuk-label govuk-checkboxes__label" for="status-3">
-                The fifth filter (3)
+                ?
               </label>
 
             </div>
@@ -144,7 +144,19 @@
 
   </div>
 
-</div>
+</div><br>
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="#">Download history</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Print history</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">Email history to someone else</a>
+  </li>
+</ul>
 </div>
 
 <div class="govuk-grid-column-two-thirds">
@@ -230,10 +242,18 @@
       </p>
 
       <div class="moj-timeline__description">
-        <p>"Did you receive my documents? Do they cover what you need? Many thanks, Steve."</p>
+        <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Read email
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+          </div>
+          <a href="tab-contact">Reply to email</a>
+        </details>
       </div>
-      <a href="#">Reply to email</a>
-
     </div>
     <div class="moj-timeline__item">
 
