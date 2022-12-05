@@ -20,43 +20,9 @@
 {% block content %}
 <div class="govuk-grid-row">
 
-    <div class="govuk-tabs" data-module="govuk-tabs">
-      <h2 class="govuk-tabs__title">
-        Contents
-      </h2>
-      <ul class="govuk-tabs__list">
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" style="font-size:medium">
-          <a class="govuk-tabs__tab" href="#pecs">
-            Pre-employment checks
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item" style="font-size:medium">
-          <a class="govuk-tabs__tab" href="#history">
-            PEC history
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item" style="font-size:medium">
-          <a class="govuk-tabs__tab" href="#pec-info">
-            Candidate PEC info
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item" style="font-size:medium">
-          <a class="govuk-tabs__tab" href="#application">
-            Applications (2)
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item" style="font-size:medium">
-          <a class="govuk-tabs__tab" href="#communication">
-            Communication
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item" style="font-size:medium">
-          <a class="govuk-tabs__tab" href="#uploads">
-            Uploads
-          </a>
-        </li>
-      </ul>
+{% include 'includes/tab-header-pec-list.html' %}
 
+    <div class="govuk-tabs" data-module="govuk-tabs">
 
       <div class="govuk-tabs__panel" id="pecs">
 
@@ -101,7 +67,7 @@
                 text: "View duplicate check"
               },
               {
-                value: "duplicate-request~resend-request#communication",
+                value: "duplicate-request~resend-request#contact",
                 text: "Resend request to use result from duplicate check"
               }
               ]
@@ -163,21 +129,21 @@
           </div>
           <div class="govuk-grid-column-one-third">
 
-            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-history-gone-eehc">
     <div class="govuk-accordion__section ">
       <div class="govuk-accordion__section-header">
         <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+          <span class="govuk-accordion__section-button" id="accordion-history-gone-eehc-heading-1">
             EEHC history
           </span>
         </h2>
       </div>
-      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <div id="accordion-history-gone-eehc-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-history-gone-eehc-heading-1">
             <div class="moj-timeline">
               <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Request to use duplicate check sent</h2>
+                  <h2 class="moj-timeline__title">Request to use duplicate EEHC check sent</h2>
 
                   <p class="moj-timeline__byline">by Poppy Wells</p>
 
@@ -188,7 +154,7 @@
                 </p>
 
                 <br>
-                <a href="duplicate-request-email#communication">See request</a>
+                <a href="duplicate-request-email#contact">See request</a>
 
               </div>
               <div class="moj-timeline__item">
@@ -335,8 +301,8 @@
       </tbody>
     </table>
   </div>
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="communication">
-    <h2 class="govuk-heading-m">Communication</h2>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="contact">
+    <h2 class="govuk-heading-m">Contact</h2>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
