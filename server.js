@@ -59,6 +59,9 @@ useHttps = useHttps.toLowerCase()
 
 var useDocumentation = (config.useDocumentation === 'true')
 
+// logging
+var useLogging = config.useLogging
+
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
 var promoMode = process.env.PROMO_MODE || 'false'
 promoMode = promoMode.toLowerCase()
@@ -244,6 +247,24 @@ if (typeof (routes) !== 'function') {
   routes.bind(app)
 } else {
   app.use('/', routes)
+}
+
+// Logging session data
+ if (useLogging !== 'false') {
+  app.use((req, res, next) => {
+    const all = (useLogging === 'true')
+    const post = (useLogging === 'post' && req.method === 'POST')
+    const get = (useLogging === 'get' && req.method === 'GET')
+    if (all || post || get) {
+      const log = {
+        method: req.method,
+        url: req.originalUrl,
+        data: req.session.data
+      }
+      console.log(JSON.stringify(log, null, 2))
+    }
+    next()
+  })
 }
 
 if (useDocumentation) {
