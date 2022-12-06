@@ -30,6 +30,11 @@
              Changes
            </a>
          </li>
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab" href="#iterations">
+             Iteration notes
+           </a>
+         </li>
          </ul>
          <div class="govuk-tabs__panel" id="shortcuts">
       <div class="govuk-grid-row">
@@ -47,6 +52,26 @@
           <a href="/sign-in/sign-in?duplicate-eehc=yes">Sign in</a> (start of duplicate check journey)
         </li>
       </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/hub/tab-pec-list?duplicate-eehc=no">PEC hub page</a> (skip sign in, work allocation etc)
+        </li>
+      </ul>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="/hub/tab-pec-list?duplicate-eehc=yes">PEC hub page with duplicate check</a> (skip sign in, work allocation etc)
+          </li>
+      </ul><br><br>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/hub/tab-pec-list-message">PEC hub page with unread message notification</a>
+        </li>
+    </ul>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="/hub/eehc-review-hmrc?eehc-status=in-progress">EEHC task journey</a>
+      </li>
+  </ul>
       <br>
 
       <h3 class="govuk-heading-m">Recruiter (manager)</h3>
@@ -161,6 +186,47 @@
                  </tbody>
                </table>
 </div>
+
+<div class="govuk-tabs__panel" id="iterations">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+  <ul class="govuk-list">
+    <li>
+      <a class="govuk-link" href="#v3">Go to V3 notes</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#v2">Go to V2 notes</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#v1">Go to V1 notes</a>
+    </li>
+  </ul>
+
+  <br>
+
+<h3 class="govuk-heading-m" id="v3">V3</h3>
+
+<h3 class="govuk-heading-m" id="v2">V2</h3>
+
+<h3 class="govuk-heading-m" id="v1">V1</h3>
+<p>Initial design was agreed with Service Designer (Oceanne) and limited to:</p>
+<ol class="govuk-list govuk-list--number">
+  <li>sign in page</li>
+  <li>2FA page</li>
+  <li>user dashboard</li>
+  <li>list of PECs</li>
+</ol>
+<p>Was agreed to reuse existing design of pages 1-3 from existing campaign / sift prototype, as these had been extensively tested already. The designs were not refined for PEC, as they were simply to drive conversation about what a user would want to see on each page.</p>
+<p> Page 4 (list of PECs) utilised the <a href="https://design-system.service.gov.uk/patterns/task-list-pages/" target="_blank">existing task list pattern</a>, as (a) it was a standard pattern and (b) it had already been used and tested in campaign / sift prototype.</p>
+<p>The <a href="https://design-system.dwp.gov.uk/components/key-details-bar"  target="_blank">DWP Key Details Bar</a> - already tested on agent-facing services - was added to give prominent info on the candidate's details at all times.</p>
+<p>The user was given two designs for viewing historical info on each check. Both designs used the same <a href="https://design-patterns.service.justice.gov.uk/components/timeline/" target="_blank">timeline component</a> to display the info, as this was a tested pattern and the interaction designer (Jonathan) had also worked on DWP services where this had been extensively tested (e.g. Winter Fuel Payments, Get your State Pension). The timeline was populated with dummy content to drive requirements from the user during testing.</p>
+<p>The first design used the <a href="https://design-system.service.gov.uk/components/details/" target="_blank">Reveal pattern</a> to show the timeline when the task name was clicked (the reveal was amended to hide the arrow icon to retain the task list look and feel).</p>
+<p>The second design took the user to a new page which displayed the same timeline info.</p>
+<p>At all relevant points, the <a href="https://design-system.service.gov.uk/components/tag/" target="_blank">tag component</a> was used to indicate status of the check at that point.</p>
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>
