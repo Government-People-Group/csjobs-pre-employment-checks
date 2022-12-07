@@ -205,10 +205,118 @@
   <br>
 
 <h3 class="govuk-heading-m" id="v3">V3</h3>
+<a href="?" target="_blank">V3 UR (Mural board)</a><br><br>
+<h3 class="govuk-heading-m">Design questions</h3>
+<h3 class="govuk-heading-s" style="text-decoration:underline">Would iterating the 'single view' design into a tabbed layout allow the user easier access to more info / functionality?</h3>
+<p>There is a lot of information in PEC and a lot of user needs requiring quick and easy access to info and functionality. It was felt that by 'compartmentalising' the info in a way that users could move quickly between info / function types that it would make PEC progress both quicker and easier.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We used the <a href="https://design-system.service.gov.uk/components/tabs/" target="_blank">tabs component</a> to sectionalise the PEC info into easily accessible chunks. Not only could users navigate around each tab as needed, but some tab content could linked to other tabs directly (e.g. the 'Pre-employment checks' tab linked to the 'candidate PEC info' tab when a user asked to view the info entered for a particular check), saving users from bouncing between tabs when looking for info.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li></li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Could we design a way to reuse the result of a previous check, saving time for all users?</h3>
+<p>If a candidate has more than one application in, or has recently applied for another govt job, then a particular check may have already been done under that other application. If the result of that existing check (known as a 'duplicate check') could be reused, it would save the candidate re-entering the same information, and the checker having to do the same check again.</p>
+
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We created a version of the prototype where a duplicate check warning would appear to the checker. This would then give them additional task options - view the duplicate check (to see the result, how long ago it was, which application it was done under), and to ask the vacancy holder of the current application if the check result could be reused rather than done from scratch.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li></li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Would highlighting new contact from another user be useful?</h3>
+<p>Timely and easy communication is seen as a major step towards avoiding the progress 'black hole' where it is difficult for any user to know what is happening with a particular check. We believed that we could help this by not only giving a 'Contact' tab where users could send or receive messages, but also by emphasising when a new message was available. This would allow the reader to see and action the message as soon as possible.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We used the HMRC and MOJ <a href="https://design-patterns.service.justice.gov.uk/components/notification-badge/" target="_blank">Notification Badge component</a> to show that a new message was available on the 'Contact' tab, leading the user to the tab where the same component flagged up a new message that could be read.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li></li>
+</ul>
+
+<h3 class="govuk-heading-m">Other work - iterations from V2</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>complete task journey replicated (EEHC)</li>
+  <li>comms section expanded to add reply functionality, history entries, view previous messages</li>
+  <li>timeline filter</li>
+  <li>option to allocate task to another user</li>
+  <li>download / print / share timeline</li>
+  <li>central upload area</li>
+  <li>candidate email clickable, phone number added to key details bar</li>
+</ul>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <h3 class="govuk-heading-m" id="v2">V2</h3>
+<a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1669195081857/9ff2895767bd3e1b9fb3476030b7ef59964b9c9d?sender=u21f36a9fedce292b06138582" target="_blank">V2 UR (Mural board)</a><br><br>
+
+<h3 class="govuk-heading-m" id="v2">Design questions</h3>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Would a simple dashboard (showing a list of PECs, their progress, and the option to give each one a status when complete) be good enough for users?</h3>
+<p>Firstly, we considered a risky assumption - that a fully fledged system for PECs was not actually needed at all, and instead a simple 'checklist' page which a user could tick when checks were completed would be an improvement on the 'as is' situation.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We asked users whether a simple checklist would be be beneficial rather than building something more complex.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>this would not offer much improvement (if any) for the main user types - they already had a clunky means of seeing check status in vX</li>
+  <li>it did not solve the problem of users needing multiple systems to action tasks, check progress etc</li>
+  <li>it may have had limited benefit for vacancy holders and candidates if they could access it to see progress of checks</li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Can a task list view of PECs work for all users: checkers, managers, vacancy holders, candidates?</h3>
+<p>The IxD viewpoint was that a single design (task list and pages hanging off this) could be used for all user types  - e.g. checkers, managers, vacancy holders, candidates - rather than design a different set of screens for each user type. The 'single view' design would allow page elements to be shown, hidden or restricted depending on the user that was logged in (with the assumption that login credentials would drive what could and could not be seen / done).</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We iteration the V1 task list to create a checker-friendly task list and tested it with checkers and non-checkers, to see if all users could use it successfully (plans were made to test it with candidates in V4).</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the 'single view' was easily used and widely liked by all users regardless of their role</li>
+  <li>the simple and clean design was a significant improvement over current systems like vX</li>
+  <li>showing or hiding elements could easily be done to cater for relevant user group</li>
+  <li>showing checks that were not needed was worthwhile for reassurance</li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Would all workflow allocation types - single task allocated, multiple tasks allocated, entire candidate allocated - be feasible?</h3>
+<p>As checkers are one of the biggest PEC user groups, we wanted to challenge how they were currently allocated work (one isolated task at a time) with two other workflow options: giving them a choice from multiple tasks, and allocating an entire candidate - and all of the checks that candidate needed - to the checker.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We designed three workflow dashboards - a single task, multiple tasks and an entire candidate - and tested all three with users. The designs all used the <a href="https://design-system.service.gov.uk/components/tabs/" target="_blank">tabs component</a> to show both available tasks and user work times (to replicate what many are currently used to on the Pre-employment Allocation tool).</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>users understood all allocation designs</li>
+  <li>there was no significant preference for any of the workflow suggestions - opinions were quite individual and sometimes depended on experience (e.g. had worked a candidate view before) or motivational (e.g. wanted to see a list of tasks going down as it was worked)</li>
+  <li>we should consider whether giving users a choice when signing in would cover all needs</li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Would access to comms - and the ability to reply to them - be useful?</h3>
+<p>A significant issue for users like checkers is that they have to use multiple systems to send and receive comms with candidates, vacancy holders etc. We wanted to see if building in some basic comms info would be beneficial.</p>
+
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We added fictional emails into the timeline, with the option to reply to that email from the timeline.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>users often spotted the email in the timeline</li>
+  <li>they liked the opportunity to reply there and then</li>
+  <li>showing a full email in the timeline could be overkill, especially if there was a long email conversation leading to multiple entries in the timeline</li>
+</ul>
+
+<h3 class="govuk-heading-m">Other work - iterations from V1</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>expanding timeline on task list page was dropped, as the need for subsequent task options meant jumping to another page would usually be necessary, defeating the purpose of quickly showing the timeline</li>
+  <li>timeline content was updated to try and reflect more real-world scenarios for PECs</li>
+  <li>key details bar was improved - reduced in size, improved content e.g. candidate's email address</li>
+  <li>status tag content was improved to show outcome of check e.g. PASSED, RISK ASSESSMENT NEEDED</li>
+  <li>ability to change task status was added</li>
+</ul>
+<p></p>
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
 
 <h3 class="govuk-heading-m" id="v1">V1</h3>
+<a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1667981611407/ae4e09b8751dfb026acb31ec3b4797067d4641a1?sender=u21f36a9fedce292b06138582" target="_blank">V1 UR (Mural board)</a><br><br>
+
 <p>Initial design was agreed with Service Designer (Oceanne) and limited to:</p>
 <ol class="govuk-list govuk-list--number">
   <li>sign in page</li>
@@ -219,7 +327,7 @@
 <p>Was agreed to reuse existing design of pages 1-3 from existing campaign / sift prototype, as these had been extensively tested already. The designs were not refined for PEC, as they were simply to drive conversation about what a user would want to see on each page.</p>
 <p> Page 4 (list of PECs) utilised the <a href="https://design-system.service.gov.uk/patterns/task-list-pages/" target="_blank">existing task list pattern</a>, as (a) it was a standard pattern and (b) it had already been used and tested in campaign / sift prototype.</p>
 <p>The <a href="https://design-system.dwp.gov.uk/components/key-details-bar"  target="_blank">DWP Key Details Bar</a> - already tested on agent-facing services - was added to give prominent info on the candidate's details at all times.</p>
-<p>The user was given two designs for viewing historical info on each check. Both designs used the same <a href="https://design-patterns.service.justice.gov.uk/components/timeline/" target="_blank">timeline component</a> to display the info, as this was a tested pattern and the interaction designer (Jonathan) had also worked on DWP services where this had been extensively tested (e.g. Winter Fuel Payments, Get your State Pension). The timeline was populated with dummy content to drive requirements from the user during testing.</p>
+<p>The user was given two designs for viewing historical info on each check. Both designs used the same <a href="https://design-patterns.service.justice.gov.uk/components/timeline/" target="_blank">timeline component</a> to display the info, as this was a tested pattern and the IxD (Jonathan) had also worked on DWP services where this had been extensively tested (e.g. Winter Fuel Payments, Get your State Pension). The timeline was populated with dummy content to drive requirements from the user during testing.</p>
 <p>The first design used the <a href="https://design-system.service.gov.uk/components/details/" target="_blank">Reveal pattern</a> to show the timeline when the task name was clicked (the reveal was amended to hide the arrow icon to retain the task list look and feel).</p>
 <p>The second design took the user to a new page which displayed the same timeline info.</p>
 <p>At all relevant points, the <a href="https://design-system.service.gov.uk/components/tag/" target="_blank">tag component</a> was used to indicate status of the check at that point.</p>
