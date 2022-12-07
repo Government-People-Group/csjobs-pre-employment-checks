@@ -1,0 +1,123 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        CS Jobs - PEC prototype Ver1
+      </h1>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+       <h2 class="govuk-tabs__title">
+         Contents
+       </h2>
+       <ul class="govuk-tabs__list">
+         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+           <a class="govuk-tabs__tab" href="#shortcuts">
+             Shortcuts
+           </a>
+         </li>
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab" href="#versions">
+             Changes
+           </a>
+         </li>
+         </ul>
+         <div class="govuk-tabs__panel" id="shortcuts">
+      <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <br>
+
+      <h3 class="govuk-heading-m">Recruiter</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/ver1/grs/sign-in">Sign in</a> (start of journey)
+        </li>
+        <li>
+          <a href="/ver1/grs/grs-dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a href="/ver1/grs/recruiter-dashboard">Dashboard (multiple candidates & search)</a>
+        </li>
+        <li>
+          <a href="/ver1/grs/pec-task-list">PEC task list</a>
+        </li>
+        <li>
+          <a href="/ver1/grs/change-status-prev-civil-service">Change task status</a>
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Vacancy Holder</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/ver1/vacancy-holder/sign-in">Sign in</a> (start of journey)
+        </li>
+        <li>
+          <a href="/ver1/vacancy-holder/vacancy-holder-dashboard">Dashboard</a>
+        </li>
+        <li>
+          <a href="/ver1/vacancy-holder/pec-task-list">PEC task list</a>
+        </li>
+      </ul>
+
+
+          <h3 class="govuk-heading-m">Documents</h3>
+<p><a href="https://cshrdigitalandanalysis.atlassian.net/l/cp/q31fo8gM" target="_blank">Confluence page</a></p>
+
+</div>
+</div>
+</div>
+ <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="versions">
+   <table class="govuk-table">
+               <caption class="govuk-table__caption govuk-heading-m">Previously tested versions</caption>
+               <thead class="govuk-table__head">
+                 <tr class="govuk-table__row">
+                   <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Version</th>
+                   <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Tested on</th>
+                   <th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Changes</th>
+                   <th scope="col" class="govuk-table__header govuk-!-width-one-eighth">Status</th>
+                 </tr>
+               </thead>
+               <tbody class="govuk-table__body">
+
+                 <tr class="govuk-table__row">
+                   <th scope="row" class="govuk-table__header">
+                     <a href="#">Version 1</th>
+                     <td class="govuk-table__cell">8 Nov 2022</td>
+                     <td class="govuk-table__cell">
+                       <details class="govuk-details" data-module="govuk-details">
+                         <summary class="govuk-details__summary">
+                           <span class="govuk-details__summary-text">
+                             Version 1
+                           </span>
+                         </summary>
+                         <div class="govuk-details__text">
+                           <ul class="govuk-list--bulletlist">
+                             <li>
+                               First release
+                             </li>
+                           </ul>
+                         </div>
+                       </details>
+                     </td>
+                     <td class="govuk-table__cell">
+                       <strong class="govuk-tag govuk-tag--yellow">
+                         UR
+                       </strong>
+                     </tr>
+                 </tbody>
+               </table>
+</div>
+</div>
+    </div>
+  </div>
+
+{% endblock %}

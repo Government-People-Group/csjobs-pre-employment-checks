@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-ao-candidate.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Pre-employment checks
+    </h1>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Overall status</h2>
+    <p class="govuk-body govuk-!-margin-bottom-7">5 of 9 checks have been completed.</p>
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Checks needed
+        </h2>
+        <ul class="app-task-list__items">
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                Right to Work
+              </a>
+            </span>
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="eehc-options" aria-describedby="eligibility-status">
+                EEHC
+              </a>
+            </span>
+            {% if data['eehc-status'] == 'Passed' %}
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+            {% elif data['eehc-status'] == 'Not started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['eehc-status'] == 'risk-assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">References needed</strong>
+            {% elif data['eehc-status'] == 'failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status">Failed</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% endif %}
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                Reference Checks Status
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                Previous Civil Service Employment
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                Pensions
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                Self Employment
+              </a>
+            </span>
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                DBS / Disclosure Scotland / AccessNI
+              </a>
+            </span>
+            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                Criminal Record Check
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+          </li>
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a href="#" aria-describedby="eligibility-status">
+                National Insurance Number Check
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+          </li>
+          </ul>
+          </li>
+          <li>
+            <h2 class="app-task-list__section">
+              Checks not needed
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  Internal Fraud
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+              </li>
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  Overseas check
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+              </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      Bankruptcy
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      Health Reference
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      NSV
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not needed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      Additional Check
+                    </span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="medical-information-status">Not needed</strong>
+                  </li>
+
+                </ul>
+                </li>
+
+</ol>
+
+
+  </div>
+</div>
+
+{% endblock %}

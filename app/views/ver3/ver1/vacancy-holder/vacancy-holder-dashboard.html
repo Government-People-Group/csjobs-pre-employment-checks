@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'Your <a href"">feedback</a> will help us to improve.'
+})}}
+<ul class="js-signout" id="navigation">
+  <li class="content">
+    <li class="content">user@cabinetoffice.gov.uk</li>
+    <li class="content">
+    <a href="/search">Home</a>
+    </li>
+    <li class="content">
+      <a href="">Sign out</a>
+      </li>
+      <li class="content">
+        <a href="">Cymraeg</a>
+        </li>
+        </ul>
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">Welcome back, Karim Iqbal</h1>
+</div>
+</div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+<h2 class="govuk-heading-m"><a href="campaign-set-up/job-title-known">Pre-employment checks</a></h2>
+<h2 class="govuk-heading-m"><a href="profile-update">Update profile</a></h2>
+<h2 class="govuk-heading-m"><a href="campaign-set-up/step-by-step">Read guidance</a></h2>
+</div>
+<div class="govuk-grid-column-two-thirds">
+  <h3 class="govuk-heading-m">Notifications</h3>
+  <p>Overseas history check complete for <a href="pec-task-list">Jane Johnson (Application ID: 1048) - Admin Officer (Vacancy ID: 342)</a>
+  <p class="govuk-body-s">3 September 2022</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p>Pensions check complete for <a href="pec-task-list">Jane Johnson (Application ID: 1048) - Admin Officer (Vacancy ID: 342)</a></p>
+  <p class="govuk-body-s">23 August 2022</p>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <p>Employment history check started for <a href="pec-task-list">Jane Johnson (Application ID: 1048) - Admin Officer (Vacancy ID: 342)</a></p>
+  <p class="govuk-body-s">22 August 2022</p>
+</div>
+</div>
+
+
+{% endblock %}
