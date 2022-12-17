@@ -40,6 +40,40 @@
       <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <br>
+      <h3 class="govuk-heading-m">Candidate - enter PEC info</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="?">Provisional offer page</a> (start of journey)
+        </li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="?">Start page</a>
+        </li>
+      </ul>
+
+
+
+      <br>
+      <h3 class="govuk-heading-m">Hub view - Candidate</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/sign-in/sign-in-candidate">Sign in</a> (start of journey)
+        </li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/sign-in/search-msg">Search page</a> with new message badge
+        </li>
+      </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/hub/candidate/tab-pec-list-msg">hub page with 'candidate action needed' status</a> with new message badge
+        </li>
+      </ul>
+
+
+      <br>
 
       <h3 class="govuk-heading-m">Hub view - Recruiter (checker)</h3>
       <ul class="govuk-list govuk-list--bullet">
@@ -223,6 +257,9 @@
 <div class="govuk-grid-column-full">
   <ul class="govuk-list">
     <li>
+      <a class="govuk-link" href="#v4">Go to V4 notes</a>
+    </li>
+    <li>
       <a class="govuk-link" href="#v3">Go to V3 notes</a>
     </li>
     <li>
@@ -235,8 +272,31 @@
 
   <br>
 
+  <h3 class="govuk-heading-m" id="v4">V4</h3>
+  <a href="?" target="_blank">V4 UR (Mural board)</a><br><br>
+  <h3 class="govuk-heading-m">Design questions</h3>
+  <h3 class="govuk-heading-s" style="text-decoration:underline">Could the 'single view' design enhanced in V3 be as useful for a candidate as for other users?</h3>
+  <p>.</p>
+  <h3 class="govuk-heading-s">What we tried</h3>
+  <p>.</p>
+  <h3 class="govuk-heading-s">What we found</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>.</li>
+
+  </ul>
+  <h3 class="govuk-heading-s" style="text-decoration:underline">Would direct updates from govt (e.g. by email or SMS) be useful for a candidate?</h3>
+  <p>.</p>
+  <h3 class="govuk-heading-s">What we tried</h3>
+  <p>.</p>
+  <h3 class="govuk-heading-s">What we found</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>.</li>
+
+  </ul>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
 <h3 class="govuk-heading-m" id="v3">V3</h3>
-<a href="?" target="_blank">V3 UR (Mural board)</a><br><br>
+<a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1670333363187/c59c010660094cf21f31d478172e120c5d22300d?sender=u21f36a9fedce292b06138582" target="_blank">V3 UR (Mural board)</a><br><br>
 <h3 class="govuk-heading-m">Design questions</h3>
 <h3 class="govuk-heading-s" style="text-decoration:underline">Would iterating the 'single view' design into a tabbed layout allow the user easier access to more info / functionality?</h3>
 <p>There is a lot of information in PEC and a lot of user needs requiring quick and easy access to info and functionality. It was felt that by 'compartmentalising' the info in a way that users could move quickly between info / function types that it would make PEC progress both quicker and easier.</p>
@@ -244,7 +304,9 @@
 <p>We used the <a href="https://design-system.service.gov.uk/components/tabs/" target="_blank">tabs component</a> to sectionalise the PEC info into easily accessible chunks. Not only could users navigate around each tab as needed, but some tab content could link to other tabs directly (e.g. the 'Pre-employment checks' tab linked to the 'candidate PEC info' tab when a user asked to view the info entered for a particular check), saving users from bouncing between tabs when looking for info.</p>
 <h3 class="govuk-heading-s">What we found</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li>tbc after testing</li>
+  <li>the concept of tabs was familiar to all users</li>
+  <li>tabs were universally welcomed and easily navigated, allowing users access to lots of info quickly</li>
+  <li>there were no recommendations for adding or removing any tabs</li>
 </ul>
 
 <h3 class="govuk-heading-s" style="text-decoration:underline">Could we design a way to reuse the result of a previous check, saving time for all users?</h3>
@@ -256,7 +318,11 @@
 <p>Permission could be asked by sending a message, and receiving confirmation back. This would then allow the user to mark the decision on the check and prevent duplicate effort.</p>
 <h3 class="govuk-heading-s">What we found</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li>tbc after testing</li>
+  <li>one user did not understand what the status tag meant that informed them there was a duplicate check available</li>
+  <li>the display of duplicate check options was easily recognised and visually successful</li>
+  <li>all users saw value in being able to use an existing check, allowing them to save time and effort</li>
+  <li>being able to request permission via the in-service messaging option was universally liked</li>
+  <li>users liked and utilised the history showing messages going back and forth between the checker and the vacancy holder</li>
 </ul>
 
 <h3 class="govuk-heading-s" style="text-decoration:underline">Would highlighting new contact from another user be useful?</h3>
@@ -265,7 +331,10 @@
 <p>We used the HMRC and MOJ <a href="https://design-patterns.service.justice.gov.uk/components/notification-badge/" target="_blank">Notification Badge component</a> to show that a new message was available on the 'Contact' tab, leading the user to the tab where the same component flagged up a new message that could be read.</p>
 <h3 class="govuk-heading-s">What we found</h3>
 <ul class="govuk-list govuk-list--bullet">
-  <li>tbc after testing</li>
+  <li>one user did not spot the notification badge</li>
+  <li>other users were quickly able to see that there was a new message to read</li>
+  <li>users were able to navigate to the new message and easily read it</li>
+  <li>the ability to reply to the message there and then was welcomed</li>
 </ul>
 
 <h3 class="govuk-heading-m">Other work - iterations from V2</h3>

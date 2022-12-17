@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <header class="page-header">
+                <h1 class="govuk-heading-l">Information we need for your pre-employment checks</h1>
+            </header><br>
+
+
+            <div class="govuk-width-container">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h2 class="govuk-heading-m">1. Personal details</h2>
+          <ol class="app-task-list">
+            <li>
+
+              <ul class="app-task-list__items">
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                  {% if data['personal-details-complete']=='true'%}
+                    <a href="personal-details-questions/personal-details-cya" aria-describedby="eligibility-status">
+                      Enter your personal details
+                    </a>
+                  {% else %}
+                    <a href="personal-details-questions/date-of-birth" aria-describedby="eligibility-status">
+                      Enter your personal details
+                    </a>
+                    {% endif %}
+                  </span>
+                {% if data['personal-details-complete']=='true'%}
+                  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">complete</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">not started</strong>
+                {% endif %}
+                </li>
+
+                </ul>
+                </li>
+            </ol>
+          </div>
+        </div>
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m">2. More details</h2>
+            <ol class="app-task-list">
+              <li>
+
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name">
+                      <a href="filter-questions/lived-outside-uk" aria-describedby="eligibility-status">
+                        Enter more details
+                      </a>
+                    </span>
+                  {% if data['more-details-complete']=='true'%}
+                    <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">complete</strong>
+                  {% else %}
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">not started</strong>
+                  {% endif %}
+                  </li>
+
+                  </ul>
+                  </li>
+              </ol>
+            </div>
+          </div>
+
+</main>
+{% endblock %}
