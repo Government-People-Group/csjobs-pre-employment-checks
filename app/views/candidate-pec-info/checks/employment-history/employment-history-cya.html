@@ -33,66 +33,45 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
 
-          <h2 class="govuk-heading-m">Personal details</h2>
+          <h2 class="govuk-heading-m">Employment history</h2>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
             <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Your most recent job
               </dt>
               <dd class="govuk-summary-list__value">
-                Steve Evans
-              </dd>
-
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="govuk-summary-list__value">
-                5 January 1978
+                BAE Systems<br>
+                From 15 November 2021<br>
+                To today
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
-                  Change<span class="govuk-visually-hidden"> date of birth</span>
-                </a>
-              </dd>
-            </div>
-
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Address
-              </dt>
-              <dd class="govuk-summary-list__value">
-                24 Upper Street<br>Islington<br>London<br>N1 1XR
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
+                <a class="govuk-link" href="current-passport">
                   Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                National Insurance number
+                Other jobs in the past 3 years
               </dt>
-
               <dd class="govuk-summary-list__value">
-                {{data['nino']}}
+                Centurion Security Services Ltd<br>
+                From 9 June 2021<br>
+                To 14 November 2021
               </dd>
-
-
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="nino">
-                  Change<span class="govuk-visually-hidden"> licence period</span>
+                <a class="govuk-link" href="lived-outside-uk">
+                  Change<span class="govuk-visually-hidden"> address</span>
                 </a>
               </dd>
             </div>
+
           </dl>
 
 
-        <form action="../task-list" method="post" novalidate>
-          <input type="hidden" name="personal-details-complete" value="true">
+        <form action="references-needed" method="post" novalidate>
+          <input type="hidden" name="employment-history-status" value="complete">
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>

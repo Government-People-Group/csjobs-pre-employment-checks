@@ -38,6 +38,19 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:50%">
+                Do you have a current UK or Irish passport, or Irish passport card?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['passport']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="current-passport">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:50%">
                 Have you lived outside of the UK during the past 3 years?
               </dt>
               <dd class="govuk-summary-list__value">
@@ -136,7 +149,7 @@
 
 
         <form action="../task-list" method="post" novalidate>
-          <input type="hidden" name="personal-details-complete" value="true">
+          <input type="hidden" name="more-details-complete" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>

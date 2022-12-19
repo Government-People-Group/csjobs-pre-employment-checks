@@ -26,26 +26,39 @@
         <main class="govuk-main-wrapper " id="main-content" role="main">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-              <form action="" method="post" novalidate>
+              <form action="lived-outside-uk" method="post" novalidate>
                 <div class="govuk-form-group">
                   <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                       <h1 class="govuk-fieldset__heading">
-                        Have you been employed in the last 3 years?
+                        Do you have any of the following?
                       </h1>
                     </legend>
-                    <div class="govuk-inset-text">
-                      This includes being self employed.
-                    </div>
+
+                    <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                      <li>a current UK passport</li>
+                      <li>a current Irish passport or passport card</li>
+                    </ul>
+                    <details class="govuk-details" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          Help with this question
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        UK and Irish passports come in the form of a booklet. An Irish passport card is similar to a driving license card and fits in a purse or wallet like a bank card.
+                        <br><br>To be current, the passport or passport card must not have expired.
+                      </div>
+                    </details>
                     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="where-do-you-live" name="employed" type="radio" value="yes~self-employed">
+                        <input class="govuk-radios__input" id="where-do-you-live" name="passport" type="radio" value="yes">
                         <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                           Yes
                         </label>
                       </div>
                       <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="where-do-you-live-2" name="employed" type="radio" value="no~bankrupt">
+                        <input class="govuk-radios__input" id="where-do-you-live-2" name="passport" type="radio" value="no">
                         <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                           No
                         </label>
