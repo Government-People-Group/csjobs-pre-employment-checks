@@ -66,7 +66,7 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-m">2. More details</h2>
+            <h2 class="govuk-heading-m">2. Additional information</h2>
             <ol class="app-task-list">
               <li>
 
@@ -75,11 +75,11 @@
                     <span class="app-task-list__task-name">
                       {% if data['more-details-complete']=='true'%}
                       <a href="filter-questions/filter-questions-cya" aria-describedby="eligibility-status">
-                        Change more details
+                        Change additional information
                       </a>
                       {% else %}
                       <a href="filter-questions/current-passport" aria-describedby="eligibility-status">
-                        Add more details
+                        Add additional information
                       </a>
                       {% endif %}
                     </span>
@@ -129,6 +129,23 @@
 
         </li>
 
+        {% if data['nino']=='yes'%}
+                <li class="app-task-list__item">
+                  <span class="app-task-list__task-name">
+                    <a href="pecs/employment-history" aria-describedby="eligibility-status">
+                      Add your National Insurance number
+                    </a>
+                  </span>
+                {% if data['nino-status']=='complete'%}
+                  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">complete</strong>
+                {% elif data ['nino-status']=='incomplete' %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">incomplete</strong>
+                {% else %}
+                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">not started</strong>
+                {% endif %}
+                </li>
+        {% endif %}
+
 {% if data['lived-outside-uk']=='yes'%}
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
@@ -159,7 +176,7 @@
         <li class="app-task-list__item">
           <span class="app-task-list__task-name">
             <a href="checks/employment-history/start" aria-describedby="eligibility-status">
-              Add information about your employment history
+              Check information about your employment history
             </a>
           </span>
 
