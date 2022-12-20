@@ -136,13 +136,9 @@
                       Add your National Insurance number
                     </a>
                   </span>
-                {% if data['nino-status']=='complete'%}
+
                   <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">complete</strong>
-                {% elif data ['nino-status']=='incomplete' %}
-                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">incomplete</strong>
-                {% else %}
-                  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">not started</strong>
-                {% endif %}
+                
                 </li>
         {% endif %}
 
