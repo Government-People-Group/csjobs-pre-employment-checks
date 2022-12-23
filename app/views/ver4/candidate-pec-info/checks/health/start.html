@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="health-1" method="post" novalidate>
+
+                  <h1 class="govuk-heading-xl">Your health declaration</h1>
+
+                  <h2 class="govuk-heading-m">Why we ask about your health</h2>
+                  <p>We ask about your health because:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                    <li>if you have a disability or health condition we need to understand how it could affect your ability to carry out the tasks of the job you're applying for</li>
+                    <li>it enables us to consider adjustments we could make to help you take up employment with us and carry out the duties of the job effectively</li>
+                    <li>we must be confident that your attendance record will be good</li>
+                  </ul>
+
+                  <h2 class="govuk-heading-m">Information we will need</h2>
+
+
+                  <p>We need to know about:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                    <li>any adjustments you think you might need</li>
+                    <li>any health conditions that could affect your work</li>
+                    <li>any absences in the last 2 years that lasted more than 16 days</li>
+                    <li>any health issues you might want to discuss with an occupational health provider</li>
+                  </ul>
+
+
+
+                  <div class="govuk-inset-text">
+                    You can save your progress at any time and come back later to give us the rest of the information.
+                  </div><br>
+
+              <div class="form-group">
+                <input type="hidden" name="health-declaration-status" value="incomplete">
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}
