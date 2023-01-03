@@ -36,7 +36,11 @@
             </h2>
           </div>
           <div class="govuk-notification-banner__content">
-            <p class="govuk-body">EEHC check complete and marked as '{{data['eehc-hmrc-review-options']}}'.</p>
+            {% if data['eehc-result']=='mismatch'%}
+              <p class="govuk-body">EEHC check remains in progress - discussion needed with candidate.</p>
+            {% else %}
+              <p class="govuk-body">EEHC check complete and marked as '{{data['eehc-hmrc-review-options']}}'.</p>
+            {% endif %}
           </div>
         </div>
 
@@ -45,6 +49,8 @@
                 <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
               {% elif data['refs-required'] == 'yes' %}
                   <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">References required</strong>
+              {% else %}
+                  <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
               {% endif %}</span>
             </h1><br>
 
@@ -141,6 +147,8 @@
                     <h2 class="moj-timeline__title">Email sent to candidate - EEHC check complete - references required due to gap in employment history</h2>
                   {% elif data['eehc-result']=='denied'%}
                     <h2 class="moj-timeline__title">Email sent to candidate - EEHC check complete - references required as access denied to PAYE</h2>
+                  {% elif data['eehc-result']=='mismatch'%}
+                    <h2 class="moj-timeline__title">Email sent to candidate - EEHC check - mismatch in employment history - discuss with candidate</h2>
                   {% endif %}
                   <p class="moj-timeline__byline">by System</p>
 
