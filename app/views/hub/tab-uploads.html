@@ -19,6 +19,26 @@
 
 <div class="govuk-grid-row">
 {% include 'includes/tab-header-uploads.html' %}
+<br><br>
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+    <h2 class="govuk-heading-l">Upload a file</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      File type must be PDF, JPEG or PNG.
+    </label><br>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Choose file"
+      }) }}
+    </div>
+  </div>
+  </section>
+
+</article>
+
+<br><br><br>
   <div class="govuk-tabs">
     <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-accordion-history-uploads1-eehc" style="margin-bottom:0px">
   <div class="govuk-accordion__section ">
