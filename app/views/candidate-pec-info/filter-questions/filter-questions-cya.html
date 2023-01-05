@@ -51,7 +51,7 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key" style="width:50%">
-                Have you lived outside of the UK during the past 3 years?
+                Have you lived outside of the UK since 4 January 2020?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{data['lived-outside-uk']}}
@@ -106,7 +106,7 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Have you been employed in the last 3 years?
+                Have you been employed since 4 January 2020?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{data['employed']}}
@@ -120,7 +120,7 @@
             {% if data ['employed'] == 'yes'%}
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Were you self employed at any point in the last 3 years?
+                Were you self employed at any point since 4 January 2020?
               </dt>
               <dd class="govuk-summary-list__value">
                 {{data['self-employed']}}
@@ -151,7 +151,7 @@
         <form action="../task-list" method="post" novalidate>
           <input type="hidden" name="more-details-complete" value="true">
           <button class="govuk-button" data-module="govuk-button">
-            Confirm and submit additional details
+            Submit additional details
           </button>
         </form>
 
