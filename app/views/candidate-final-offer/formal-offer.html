@@ -30,6 +30,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form action="formal-offer-confirmation" method="post">
       <h1 class="govuk-heading-l">
         Policy Advisor
       </h1>
@@ -48,14 +49,7 @@
         <li>joining the highly competitive Civil Service Pension Scheme</li>
         <li>flexible working arrangements, such as job sharing, term-time working, flexi-time and compressed hours</li>
       </ul>
-      <h2 class="govuk-heading-s">
-        What happens next
-      </h2>
-      <p class="govuk-body">Your line manager will be in touch to confirm your:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>official start date - if you need to, you should give your notice in to your current job now</li>
-        <li>working arrangements</li>
-      </ul><br><br>
+      <br>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -68,19 +62,19 @@
           </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="accept">
+              <input class="govuk-radios__input" id="changed-name" name="formal-offer" type="radio" value="accept">
               <label class="govuk-label govuk-radios__label" for="changed-name">
                 Accept the formal offer
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="decline">
+              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer" type="radio" value="decline">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 Decline the formal offer
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="speak">
+              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer" type="radio" value="speak">
               <label class="govuk-label govuk-radios__label" for="changed-name-2">
                 Speak to the hiring manager
               </label>
@@ -88,12 +82,10 @@
           </div>
         </fieldset>
       </div>
-      <div class="form-group">
-        <input type="hidden" name="pec-status" value="submitted">
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
-      </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
       </div>
   <div class="govuk-grid-column-one-third">
     </div>
