@@ -32,7 +32,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-{% if data['formal-offer'] == 'accept' %}
+{% if data['formal-offer'] == 'accept the formal offer' %}
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">
         You have accepted our formal offer
@@ -46,7 +46,7 @@
       <li>official start date - if you need to, you should give your notice in to your current job now</li>
       <li>working arrangements</li>
     </ul><br><br>
-{% elif data['formal-offer'] == 'decline' %}
+{% elif data['formal-offer'] == 'decline the formal offer' %}
   <div class="govuk-panel govuk-panel--confirmation">
     <h1 class="govuk-panel__title">
       You have declined our formal offer
@@ -82,7 +82,7 @@
 
 
       </div>
-  
+
   </div>
 
 {% endblock %}
