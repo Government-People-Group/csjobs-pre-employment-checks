@@ -21,7 +21,9 @@
 
 <div class="govuk-grid-row">
 {% include 'includes/tab-header-history.html' %}<br>
+
   <div class="govuk-grid-column-one-third">
+
 <div class="moj-filter">
 
   <div class="moj-filter__header">
@@ -68,6 +70,14 @@
 
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
+      {% if data['nen'] == 'yes'%}
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+              <label class="govuk-label govuk-checkboxes__label" for="type">
+                NEN (6)
+              </label>
+            </div>
+      {% endif %}
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
               <label class="govuk-label govuk-checkboxes__label" for="type">

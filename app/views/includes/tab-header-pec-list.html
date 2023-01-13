@@ -3,11 +3,24 @@
     Contents
   </h2>
   <ul class="govuk-tabs__list">
+    {% if data ['nen'] == 'yes'%}
+    <li class="govuk-tabs__list-item" style="font-size:medium">
+      <a class="govuk-tabs__tab" href="tab-nen">
+        NEN
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item  govuk-tabs__list-item--selected" style="font-size:medium">
+      <a class="govuk-tabs__tab" href="tab-pec-list">
+        Pre-employment checks
+      </a>
+    </li>
+    {% else %}
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" style="font-size:medium">
       <a class="govuk-tabs__tab" href="tab-pec-list">
         Pre-employment checks
       </a>
     </li>
+    {% endif %}
     <li class="govuk-tabs__list-item" style="font-size:medium">
       <a class="govuk-tabs__tab" href="tab-history">
          History

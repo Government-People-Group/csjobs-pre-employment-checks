@@ -21,7 +21,7 @@
 
 
 <div class="govuk-grid-row">
-    {% include 'includes/tab-header-contact-message.html' %}
+    {% include 'includes/tab-header-contact.html' %}
     <div class="govuk-tabs" style="margin-top:0px">
 
       <div class="govuk-tabs__panel" id="pecs">
@@ -52,20 +52,21 @@
           <td class="govuk-table__cell">deborah.jones@hmcts.gov.uk</td>
         </tr>
         <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Subject</th>
+          <td class="govuk-table__cell">Fixed NEN errors</td>
+        </tr>
+        <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Position</th>
           <td class="govuk-table__cell">Vacancy holder</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Date and time</th>
-          <td class="govuk-table__cell">21:14pm 23 November 2022</td>
+          <td class="govuk-table__cell">11:08am 25 November 2022</td>
         </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Subject</th>
-          <td class="govuk-table__cell">EEHC check</td>
-        </tr>
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Message</th>
-          <td class="govuk-table__cell">Hi Poppy<br><br>Yes please use previous result for current EEHC check.<br><br>Many thanks, Debs.</td>
+          <td class="govuk-table__cell">"Done - sorry about the mistakes!""</td>
         </tr>
       </tbody>
     </table>
@@ -80,28 +81,41 @@
     </div>
         </div>
         </form>
-  <a class="govuk-link" href="eehc-options-message">Back to options</a>
+
           </div>
           <div class="govuk-grid-column-one-third">
 
-            <h2 class="govuk-heading-m" style="margin-bottom:5px">Contact history</h2>
+            <h2 class="govuk-heading-m" style="margin-bottom:5px">NEN history</h2>
             <br>
 
-            <div class="moj-timeline">
 
+            <div class="moj-timeline">
               <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Email received</h2>
+                  <h2 class="moj-timeline__title">Email sent to Poppy Wells</h2>
 
-                  <p class="moj-timeline__byline">from Deborah Jones (vacancy holder)</p>
+                  <p class="moj-timeline__byline">by Deborah Jones</p>
 
                 </div>
 
                 <p class="moj-timeline__date">
-                  <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 21:14pm</time>
-                </p>
+                  <time datetime="2019-05-28T10:15:00.000Z">25 Nov 2022 at 11:08am</time>
+                </p><br><p>Subject: "Fixed NEN errors"</p>
 
+
+              </div>
+              <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Email sent to Deborah Jones</h2>
+
+                  <p class="moj-timeline__byline">by Poppy Wells</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">25 Nov 2022 at 11:08am</time>
+                </p><br><p>Subject: "Request NEN details"</p>
                 <div class="moj-timeline__description">
                   <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
                     <summary class="govuk-details__summary">
@@ -110,8 +124,7 @@
                       </span>
                     </summary>
                     <div class="govuk-details__text">
-                      <p>Subject: "EEHC check"</p>
-                      <p>"Hi Poppy - yes please use previous result for current EEHC check. Many thanks, Debs."</p>
+                      "Done - sorry about the mistakes!"
                     </div>
                     <a href="tab-contact">Reply to email</a>
                   </details>
@@ -120,9 +133,9 @@
               <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Resent request to use duplicate EEHC check</h2>
+                  <h2 class="moj-timeline__title">Initial NEN data entry marked as complete</h2>
 
-                  <p class="moj-timeline__byline">by Poppy Wells</p>
+                  <p class="moj-timeline__byline">by system</p>
 
                 </div>
 
@@ -130,17 +143,14 @@
                   <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 09:56pm</time>
                 </p>
 
-                <br>
-                <a href="#">See request</a>
-
               </div>
 
               <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
-                  <h2 class="moj-timeline__title">Request to use duplicate EEHC check sent</h2>
+                  <h2 class="moj-timeline__title">Initial NEN data entry marked as started</h2>
 
-                  <p class="moj-timeline__byline">by Poppy Wells</p>
+                  <p class="moj-timeline__byline">by system</p>
 
                 </div>
 
@@ -148,8 +158,6 @@
                   <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
                 </p>
 
-                <br>
-                <a href="duplicate-request-email">See request</a>
 
               </div>
               <div class="moj-timeline__item">
@@ -157,14 +165,14 @@
                 <div class="moj-timeline__header">
                   <h2 class="moj-timeline__title">Email received</h2>
 
-                  <p class="moj-timeline__byline">from Steve Evans</p>
+                  <p class="moj-timeline__byline">from Deborah Jones (Vacancy Holder)</p>
 
                 </div>
 
                 <p class="moj-timeline__date">
                   <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
                 </p>
-
+          <p>Subject: "Request NEN details"</p>
                 <div class="moj-timeline__description">
                   <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
                     <summary class="govuk-details__summary">
@@ -173,15 +181,19 @@
                       </span>
                     </summary>
                     <div class="govuk-details__text">
-                      "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                      "No problem Poppy - will do it asap"
                     </div>
                     <a href="tab-contact">Reply to email</a>
                   </details>
                 </div>
               </div>
+            
 
 
-            </div>  <a class="govuk-link" href="tab-history">View full history</a>
+            </div>
+
+            <a class="govuk-link" href="tab-history">View full history</a><br><br>
+            </div>
             </div>
             </div>
 
