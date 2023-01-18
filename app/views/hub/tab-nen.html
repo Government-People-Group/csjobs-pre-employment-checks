@@ -24,11 +24,11 @@
 
 {% include 'includes/tab-header-nen.html' %}
 
-
+<form action="tab-nen-check" method="post">
 <div class="govuk-tabs" style="margin-top:0px">
   <div class="govuk-tabs__panel" id="nen">
 <div class="govuk-grid-column-two-thirds">
-  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-candidate-pec-info">
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-candidate-nen1">
 <div class="govuk-accordion__section ">
   <div class="govuk-accordion__section-header">
     <h2 class="govuk-accordion__section-heading">
@@ -37,31 +37,41 @@
       </span>
     </h2>
   </div>
+
+
   <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1">
-    <table class="govuk-table" style="margin-left:30px;width:95%">
+
+    <table class="govuk-table" style="margin-left:30px;width:95%; a">
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header" style="width:30%">Vacancy Reference</th>
-    <td class="govuk-table__cell">873</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px; width:30%">Vacancy Reference</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="873"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Vacancy Title</th>
-    <td class="govuk-table__cell">Internal Audit PO</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Vacancy Title</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="Internal Audit PO"></td>
+
+  </tr>
+
+  <tr class="govuk-table__row"  id="dept-cost-centre">
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Department</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="HMCTS"></td>
+
+  </tr>
+  <tr class="govuk-table__row" >
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Cost Centre</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="cost-centre" name="cost-centre" type="text"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Department</th>
-    <td class="govuk-table__cell">HMCTS</td>
-  </tr>
-  <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Cost Centre</th>
-    <td class="govuk-table__cell">34234234</td>
-  </tr>
-  <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Business Unit</th>
-    <td class="govuk-table__cell">Audit and Compliance</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Business Unit</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="HMCTS"></td>
+
   </tr>
 </tbody>
 </table>
+
   </div>
 </div>
 <div class="govuk-accordion__section ">
@@ -85,46 +95,77 @@
     </h2>
   </div>
   <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-2">
+
     <table class="govuk-table" style="margin-left:30px;width:95%">
 <tbody class="govuk-table__body">
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header" style="width:50%">New Entrant Type</th>
-    <td class="govuk-table__cell">OGD</td>
+    <th scope="row" class="govuk-table__header" style="width:50%;padding-left:10px;">New Entrant Type</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="OGD"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Is this a promotion?</th>
-    <td class="govuk-table__cell">No</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Is this a promotion?</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="No"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Was the Employee Recruited via Fair and Open Competition?</th>
-    <td class="govuk-table__cell">Yes</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Was the Employee Recruited via Fair and Open Competition?</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="Yes"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Start Date</th>
-    <td class="govuk-table__cell">21 May 2022</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Start Date</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="21 May 2022"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Start time (on first day)</th>
-    <td class="govuk-table__cell">09:00</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Start time (on first day)</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="09:00"></td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Grade</th>
-    <td class="govuk-table__cell">Higher Executive Officer, Senior Executive Officer</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Grade</th>
+    <td class="govuk-table__cell">
+      {{ govukTextarea({
+  name: "more-detail",
+  rows:"3",
+  id: "more-detail",
+  value: 'Higher Executive Officer, Senior Executive Officer'
+}) }}</td>
+
+  </tr>
+  <tr class="govuk-table__row" id="perm-address">
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Permanent Office Address</th>
+    <td class="govuk-table__cell">
+      {{ govukTextarea({
+        name: "more-detail",
+        rows:"3",
+        id: "more-detail",
+        value: 'HMCTS, Rigby House, Milton Keynes, MK5 8NP'
+        }) }}</td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Permanent Office Address</th>
-    <td class="govuk-table__cell">HMCTS<br>Rigby House<br>Milton Keynes<br>MK5 8NP</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Pay Zone</th>
+    <td class="govuk-table__cell">
+      <div class="govuk-form-group">
+        <select class="govuk-select" id="pay-zone" name="pay-zone" style="width:100%">
+          <option value="National">National</option>
+          <option value="London" selected>London</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </td>
+
   </tr>
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Pay Zone</th>
-    <td class="govuk-table__cell">London</td>
-  </tr>
-  <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Annual Salary</th>
-    <td class="govuk-table__cell">£42,650</td>
+    <th scope="row" class="govuk-table__header" style="padding-left:10px;">Annual Salary</th>
+    <td class="govuk-table__cell"><input class="govuk-input" id="event-name" name="event-name" type="text" value="£42,650"></td>
+
   </tr>
 </tbody>
 </table>
+
   </div>
 </div>
 <div class="govuk-accordion__section ">
@@ -164,20 +205,7 @@
 
 
   <div class="moj-timeline">
-    <div class="moj-timeline__item">
 
-      <div class="moj-timeline__header">
-        <h2 class="moj-timeline__title">Initial NEN data entry marked as complete</h2>
-
-        <p class="moj-timeline__byline">by system</p>
-
-      </div>
-
-      <p class="moj-timeline__date">
-        <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 09:56pm</time>
-      </p>
-
-    </div>
 
     <div class="moj-timeline__item">
 
@@ -255,11 +283,11 @@
   <a class="govuk-link" href="tab-history">View full history</a><br><br>
   </div>
 
-  <div class="govuk-inset-text">
-    Some of the data above can be checked automatically for discrepancies, and any potential issues identified.
+  <div class="govuk-inset-text" style="border-left:none">
+
   </div>
 
-<form action="tab-nen-check" method="post">
+
   <div class="govuk-button-group">
     {{ govukButton({
       text: "Check for discrepancies"
