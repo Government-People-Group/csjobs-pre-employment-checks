@@ -5,6 +5,8 @@
 {% endblock %}
 {% block beforeContent %}
 
+{% include 'includes/user-header-single-view.html' %}
+
         {{ govukBackLink({
           text: "Back",
           href: "javascript:history.go(-1)"
@@ -88,15 +90,15 @@
                 text: "Start task"
               },
               {
-                value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-heading-2",
+                value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-eehc",
                 text: "View candidate info for EEHC"
               },
               {
-                value: "complete~eehc-task-outcome",
+                value: "complete~#",
                 text: "Mark as Complete"
               },
               {
-                value: "add-bf~dummy-page",
+                value: "add-bf~#",
                 text: "Add BF Date to task"
               },
               {
