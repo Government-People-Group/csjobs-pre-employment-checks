@@ -1,0 +1,320 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+{% include 'includes/tab-header-pec-list.html' %}
+
+<div class="govuk-tabs">
+    <div class="govuk-tabs__panel" id="pecs">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l" style="margin-bottom:25px">
+            Right to Work<span>{% if data['rtw-status'] == 'Passed' %}
+              <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+            {% elif data['rtw-status'] == 'not-started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['rtw-status'] == 'failed' %}
+                <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+            {% elif data['rtw-status'] == 'risk-assessment' %}
+                <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+            {% elif data['rtw-status'] == 'in-progress' %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+            {% endif %}</span>
+          </h1><br>
+
+          <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Message sent
+          </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+          <p class="govuk-body">Request sent for missing ID documents.</p><a class="govuk-notification-banner__link" href="#">See request</a>
+          </div>
+          </div>
+
+      <form action="rtw-options-docs-received?rtw-docs=yes" method="post">
+
+{% if data['rtw-docs'] == 'no' %}
+        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+        <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Missing ID documents</h2>
+          <div class="govuk-inset-text">
+            Only 2 of the 3 mandatory documents are uploaded.<br>
+            (1) <a class="govuk-link" href="tab-uploads-rtw#driving-license">
+            2987-driving-license.jpg</a>
+            <br>
+            (2) <a class="govuk-link" href="tab-uploads-rtw#birth-certificate">
+            2987-birth-certificate.jpg
+            </a>
+          </div>
+          {{ govukRadios({
+            classes: "govuk-radios--small",
+            name: "rtw-options",
+            fieldset: {
+            },
+            items: [
+            {
+              value: "view-rtw-docs~tab-uploads-rtw",
+              text: "View existing ID documents"
+            },
+            {
+              value: "missing-id-request~rtw-docs-request-email",
+              text: "Ask vacancy holder for missing ID documents"
+            }
+            ]
+          }) }}
+
+        </section>
+
+      </article>
+
+      <br>
+{% endif %}
+
+{% if data['rtw-docs'] == 'no' %}
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Other options</h2>
+{% else %}
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Task options</h2>
+{% endif %}
+
+{% if data['rtw-status'] == 'in-progress' %}
+
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              name: "rtw-options",
+              items: [
+
+              {
+                value: "work-task~rtw-form?rtw-status=in-progress",
+                text: "Continue task"
+              },
+              {
+                value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-rtw",
+                text: "View candidate info for Right To Work"
+              },
+              {
+                value: "complete~#",
+                text: "Mark as Complete"
+              },
+              {
+                value: "add-bf~#",
+                text: "Add BF Date to task"
+              },
+              {
+                value: "allocate-user~#",
+                text: "Allocate task to another user"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "checklist~tab-pec-list",
+                text: "Check status of all PECs for this candidate"
+              }
+          ]
+            }) }}
+
+  {% else %}
+
+  {{ govukRadios({
+    classes: "govuk-radios--small",
+    name: "rtw-options",
+    items: [
+
+    {
+      value: "work-task~rtw-form?rtw-status=in-progress",
+      text: "Start task"
+    },
+    {
+      value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-rtw",
+      text: "View candidate info for Right To Work"
+    },
+    {
+      value: "complete~#",
+      text: "Mark as Complete"
+    },
+    {
+      value: "add-bf~#",
+      text: "Add BF Date to task"
+    },
+    {
+      value: "allocate-user~#",
+      text: "Allocate task to another user"
+    },
+    {
+      divider: "or"
+    },
+    {
+      value: "checklist~tab-pec-list",
+      text: "Check status of all PECs for this candidate"
+    }
+]
+  }) }}
+
+  {% endif %}
+
+
+
+      <br>
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+{% if data ['from-pec-list'] == 'yes' %}
+      <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
+{% endif %}
+      </div>
+      </form>
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+
+          <h2 class="govuk-heading-m" style="margin-bottom:5px; font-size:23px">Right to Work check history</h2>
+          <br>
+
+          <div class="moj-timeline">
+
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Missing ID documents requested</h2>
+
+                <p class="moj-timeline__byline">by Poppy Wells (Recruiter)</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">10 Nov 2022 at 12:32pm</time>
+              </p>
+
+            </div>
+
+            {% if data['rtw-status'] == 'in-progress' %}
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Right to Work check started</h2>
+
+                <p class="moj-timeline__byline">by Poppy Wells (Recruiter)</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">9 Nov 2022 at 14:01pm</time>
+              </p>
+
+            </div>
+            {% endif %}
+
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Documents uploaded</h2>
+
+                  <p class="moj-timeline__byline">by Deborah Jones (Vacancy Holder)</p>
+
+                </div>
+
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">7 Nov 2022 at 12:36pm</time>
+                </p>
+                <div class="moj-timeline__description">
+                  <ul class="moj-timeline__documents">
+                    <li class="moj-timeline__document-item">
+                      <a class="govuk-link" href="tab-uploads-rtw#birth-certificate">
+                        <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                          <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                        </svg>
+                        2987-birth-certificate.jpg
+                      </a>
+                    </li>
+                    <li class="moj-timeline__document-item">
+                      <a class="govuk-link" href="tab-uploads-rtw#driving-license">
+                        <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                          <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                        </svg>
+                        2987-driving-license.jpg
+                      </a>
+                    </li>
+                    {% if data['rtw-docs'] != 'no'%}
+                    <li class="moj-timeline__document-item">
+                      <a class="govuk-link" href="tab-uploads-rtw#utility-bill">
+                        <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                          <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                        </svg>
+                        2987-utility-bill.jpg
+                      </a>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+
+            </div>
+
+
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Candidate PEC form submitted</h2>
+
+                <p class="moj-timeline__byline">by Steve Evans (Candidate)</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">7 Nov 2022 at 12:32pm</time>
+              </p>
+
+            </div>
+
+            <div class="moj-timeline__item" style="padding-bottom:0px">
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">PEC set up</h2>
+                <p class="moj-timeline__byline">by System</p>
+              </div>
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-06T09:12:00.000Z">6 Nov 2022 at 9:12am</time>
+              </p>
+
+            </div>
+
+          </div>  <a class="govuk-link" href="tab-history">View full history</a>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
