@@ -272,6 +272,9 @@
       <a class="govuk-link" href="#cv1">Go to Candidate v1 notes</a>
     </li><br>
     <li>
+      <a class="govuk-link" href="#rv5">Go to Recruiter v5 notes</a>
+    </li>
+    <li>
       <a class="govuk-link" href="#rv4">Go to Recruiter v4 notes</a>
     </li>
     <li>
@@ -401,6 +404,59 @@
     <li>Email would be free via Notify, but texts are restricted to 40,000pa. If texts were to be used, then a cost would be incurred or another provider would be needed</li>
 
   </ul>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h3 class="govuk-heading-m" id="rv5">Recruiter v5</h3>
+<a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1675807343915/09ca1d6ab5819de1804a8e967fcd79201244f9fd?sender=u21f36a9fedce292b06138582" target="_blank">Recruiter v5 UR (Mural board)</a><br>
+{{ govukBackLink({
+  text: "Back to top",
+  href: "#iterations"
+}) }}<br>
+
+<h3 class="govuk-heading-m">Design questions</h3>
+<h3 class="govuk-heading-s" style="text-decoration:underline">Could we design a useable view where a RtW recruiter could see both an uploaded ID doc and the info needed to compare it with?</h3>
+<p>At the moment, a recruiter has to download each ID doc that the VH has previously uploaded. They then need to switch between tabs / screens to compare this image with the ID info stored in vX. This is a time-consuming process and makes checking details slower and more open to error.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We designed a page with a two-column layout, with ID info on the left (pulled in from sources such as the candidate's PEC form and the VH's verification doc) and a relatively small image on the right corresponding to the left-hand data. If the user hovered over the image, it would use CSS to zoom into the image for better clarity. The image could also be clicked to open it in a new tab or window.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>users loved having all the necessary info and images on one page</li>
+  <li>users loved not having to download images before looking at them</li>
+  <li>the zoom function was universally liked and easily used</li>
+  <li>the info shown on the left hand side needed to be everything the user would need to allow them to check the corresponding doc</li>
+  <li>users believed this design would work just as well for more complex EU / RoW cases</li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">Would a uniform naming convention for uploaded ID docs make the RtW checking process easier for recruiters?</h3>
+<p>ID docs uploaded by VHs can have any file name the VH chooses. This means they often don't even explain what type of doc it is, and recruiters have to download, open and investigate before even starting the checking process.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We showed imaginary uploaded docs with a standard file format - application number plus file type e.g. '2987-passport.jpg' - and suggested to users that VH's would be 'forced' to upload docs in a particular filename format, amking it easy to identify what type of document it was.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>users were very supportive of having standardised filenames</li>
+  <li>users stated that even if they knew what they were, they would still open the files to check the contents</li>
+  <li>the filename should not be based on training the VH what to call it, but instead should dictate it's own name e.g. application number is known by the system already, VH has to check a box to say it's a driving license = system puts the two together to make a unique filename for this application / candidate</li>
+  <li>one user suggested using the candidate number, but then felt that would not be necessary by this point as they were already on the candidate's page</li>
+</ul>
+
+<h3 class="govuk-heading-s" style="text-decoration:underline">If we recorded pertinent dates in the timeline, would it save time for recruiters as they'd no longer need to enter dates at regular points in the RtW check?</h3>
+<p>In vX, recuiters have to enter dates at various points e.g. date check started, check ended.</p>
+<h3 class="govuk-heading-s">What we tried</h3>
+<p>We believed that the system could and should record any relevant dates without forcing a recruiter to manually enter them. We designed a prototype which showed the timeline updating with dates as the user performed certain actions e.g. starting the check, marking the check as Passed or Failed.</p>
+<h3 class="govuk-heading-s">What we found</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>the timeline continued to be popular with recruiters</li>
+  <li>users could easily identify that dates were being added to the timeline</li>
+  <li>users felt it would be a timesaver to have this feature rather than entering the dates themselves</li>
+</ul>
+
+<h3 class="govuk-heading-m">Other findings</h3>
+<ul class="govuk-list govuk-list--bullet">
+  <li>a checkbox to add guidance document(s) to an email requesting additional ID docs was considered very useful</li>
+  <li>a warning panel similar to that used in the duplicate check prototype was universally well received when we used it to flag that there was not enough ID to allow the recuiter to complete the RtW check</li>
+  <li>an easily accessible and prepopulated email requested more docs was successful</li>
+</ul>
+
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <h3 class="govuk-heading-m" id="rv4">Recruiter v4</h3>
