@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="employment-1" method="post" novalidate>
+
+                  <h1 class="govuk-heading-xl">Your employment history</h1>
+
+                  <h2 class="govuk-heading-m">Information we will need</h2>
+
+                  <p>You need to tell us about any jobs you've had since 4 January 2020.</p>
+                  <p>We need:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                    <li>the name of the business you worked for</li>
+                    <li>the date you started</li>
+                    <li>the date you left that job (unless you still work there)</li>
+                  </ul>
+
+                  <div class="govuk-inset-text">
+                    Because you have sent us an online CV, you only need to confirm that the information you gave us in the CV is correct.
+                  </div>
+
+                  <div class="govuk-inset-text">
+                    You can save your progress at any time and come back later to give us the rest of the information.
+                  </div><br>
+
+              <div class="form-group">
+                <input type="hidden" name="employment-history-status" value="incomplete">
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

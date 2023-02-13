@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-recruiter-manager.html' %}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+          <form action="" method="post" novalidate>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Go to:
+                  </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="allocation-type" name="allocation-type" type="radio" value="task~/single-view/dashboard-ao-task?single-or-multiple=single">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                      My next task
+                    </label>
+                    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                      This will give you the highest priority task available.
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="allocation-type" name="allocation-type" type="radio" value="multi~/single-view/dashboard-ao-task?single-or-multiple=multiple">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      A list of my tasks
+                    </label>
+                    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                      This will give you a list of tasks so you can choose the order you do the checks in.
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="allocation-type" name="allocation-type" type="radio" value="candidate~/single-view/dashboard-ao-candidate">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      Candidates allocated to me
+                    </label>
+                    <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                      This will show you any candidates you are completing all checks for.
+                    </div>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Continue"
+                }) }}
+
+                <a class="govuk-link" href="pec-task-list">Back</a>
+              </div>
+
+
+</div>
+</div>
+
+{% endblock %}

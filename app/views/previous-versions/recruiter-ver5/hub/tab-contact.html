@@ -1,0 +1,198 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    {% include 'includes/tab-header-contact.html' %}
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+        <form action="eehc-message-sent" method="post">
+        <h1 class="govuk-heading-m" style="margin-bottom:25px">Contact</h1>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changed-name">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                  Text
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Contact
+          </label>
+          <select class="govuk-select" id="contact-options" name="sort">
+            <option value="steve.evans44@hotmail.co.uk (candidate)">Steve Evans (Candidate)</option>
+            <option value="deborah.jones@hmcts.gov.uk (Vacancy Holder)">Deborah Jones (vacancy holder)</option>
+            <option value="james.cranson@hmcts.gov.uk (Vacancy Holder)">James Cranson (vacancy holder)</option>
+            <option value="someone else">...or someone else</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Cc:
+          </label>
+
+          <input class="govuk-input govuk-input--width-20" id="subject" name="subject" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Bcc:
+          </label>
+
+          <input class="govuk-input govuk-input--width-20" id="subject" name="subject" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Subject
+          </label>
+
+          <input class="govuk-input" id="subject" name="subject" type="text">
+        </div>
+
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Message
+          </label>
+  <textarea class="govuk-textarea" id="message" name="message" rows="8" aria-describedby="more-detail-hint"></textarea>
+</div>
+
+
+        <br>
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Send message"
+          }) }}
+
+          <a class="govuk-link" href="eehc-options">Back to options</a>
+        </div>
+        </form>
+
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-m" style="margin-bottom:5px">Contact history</h2>
+            <br>
+
+
+            <div class="moj-timeline">
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Resent request to use duplicate EEHC check</h2>
+
+                  <p class="moj-timeline__byline">by Poppy Wells</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 09:56pm</time>
+                </p>
+
+                <br>
+                <a href="#">See request</a>
+
+              </div>
+
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Request to use duplicate EEHC check sent</h2>
+
+                  <p class="moj-timeline__byline">by Poppy Wells</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
+                </p>
+
+                <br>
+                <a href="duplicate-request-email">See request</a>
+
+              </div>
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Email received</h2>
+
+                  <p class="moj-timeline__byline">from Steve Evans</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+                </p>
+
+                <div class="moj-timeline__description">
+                  <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Read email
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                    </div>
+                    <a href="tab-contact">Reply to email</a>
+                  </details>
+                </div>
+              </div>
+
+
+            </div>  <a class="govuk-link" href="tab-history">View full history</a>
+            </div>
+            </div>
+
+
+
+
+                  </div></div>
+
+            </div>
+
+
+
+
+            {% endblock %}

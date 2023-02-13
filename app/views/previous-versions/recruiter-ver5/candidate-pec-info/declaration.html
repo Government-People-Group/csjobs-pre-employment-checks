@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="submit-confirmation" method="post" novalidate>
+
+                  <h1 class="govuk-heading-xl">Declaration</h1>
+
+                  <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                    <li>All the information I've given in my application form is true to the best of my knowledge and belief</li>
+                    <li>This is my only application for this role and accurately reflects my suitability</li>
+                    <li>I understand a check against the National Collection of Criminal Records and against other records or databases may be undertaken if I'm offered a post</li>
+                    <li>I understand the recruiting organisation may contact HM Revenue & Customs (HMRC) to validate the employment history information I've given in my application form using their PAYE database</li>
+                    <li>I understand that I'll be asked for evidence of identification if I'm offered a post</li>
+                    <li>I understand references might be called at the appropriate part of the recruitment process</li>
+                    <li>I understand that my application may be rejected if I've given false information or withheld relevant details</li>
+                  </ul>
+
+                  <p>If you have any concerns about what we'll do with your information, please see our <a href="#">privacy notice (opens in a new window)</a></p><br>
+
+              <div class="form-group">
+                <input type="hidden" name="pec-status" value="submitted">
+                <button class="govuk-button" data-module="govuk-button">
+                  Agree and submit your pre-employment check information
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

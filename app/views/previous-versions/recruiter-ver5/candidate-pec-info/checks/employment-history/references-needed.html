@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+
+              <form action="../../task-list" method="post" novalidate>
+
+                <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                <div class="govuk-notification-banner__header">
+                  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                  </h2>
+                </div>
+                <div class="govuk-notification-banner__content">
+                  <p class="govuk-notification-banner__heading">We need references from you to explain a gap in your employment history</p>
+                </div>
+              </div>
+
+              <p>There is a gap of 6 months or more in the last 3 years of your employment history:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>October 2019 to December 2019</li>
+                <li>March 2022 to September 2022</li>
+              </ul>
+              <p>You will need to give us 3 references. We have created a new check for this, and it has been added to your list of checks.</p><br>
+
+              <div class="form-group">
+                <input type="hidden" name="employment-history-status" value="complete">
+                <input type="hidden" name="references-needed" value="yes">
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+              </div>
+
+
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

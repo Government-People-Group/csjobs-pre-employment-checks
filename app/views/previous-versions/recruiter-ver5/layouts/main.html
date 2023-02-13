@@ -1,0 +1,29 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% from "key-details-bar/macro.njk" import dwpKeyDetailsBar %}
+{% from "moj/components/ticket-panel/macro.njk" import mojTicketPanel %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+        tag: {
+            text: "beta"
+        },
+        html: 'Your <a href="#">feedback</a> will help us to improve.'
+    })}}
+    <ul class="js-signout" id="navigation">
+        <li class="content">
+            <a href="/search">Home</a>
+        </li>
+        <li class="content">
+            <a href="">Sign in/ create an account</a>
+        </li>
+        <li class="content">
+            <a href="">Cymraeg</a>
+        </li>
+    </ul>
+{% endblock %}

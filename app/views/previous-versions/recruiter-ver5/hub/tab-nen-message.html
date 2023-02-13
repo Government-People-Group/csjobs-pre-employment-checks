@@ -1,0 +1,330 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'includes/key-details-recruiter.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+{% include 'includes/tab-header-nen-message.html' %}
+
+
+<div class="govuk-tabs" style="margin-top:0px">
+  <div class="govuk-tabs__panel" id="nen">
+<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-candidate-pec-info">
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1">
+        Vacancy information<span><strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">discrepancy found</strong></span>
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1">
+    <span><strong class="govuk-tag govuk-tag--red app-task-list__tag" id="financial-evidence-status" style="float:left">Department does not match Cost Centre</strong></span><br>
+    <span><strong class="govuk-tag govuk-tag--red app-task-list__tag" id="financial-evidence-status" style="float:left; margin:15px 0px 15px 0px">Cost Centre does not match Business Unit</strong></span>
+    <table class="govuk-table" style="margin-left:30px;width:95%">
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header" style="width:30%">Vacancy Reference</th>
+    <td class="govuk-table__cell">873</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Vacancy Title</th>
+    <td class="govuk-table__cell">Internal Audit PO</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Department</th>
+    <td class="govuk-table__cell">HMCTS</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Cost Centre</th>
+    <td class="govuk-table__cell">34234234</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Business Unit</th>
+    <td class="govuk-table__cell">Audit and Compliance</td>
+  </tr>
+</tbody>
+</table>
+
+  </div>
+</div>
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1">
+        New Entrant Notification
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1" style="font-size:18px">
+    <p class='govuk-body'> </p>
+  </div>
+</div>
+<div class="govuk-accordion__section">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-2">
+        Posting Information<span><strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">discrepancy found</strong></span>
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-2">
+    <span><strong class="govuk-tag govuk-tag--red app-task-list__tag" id="financial-evidence-status" style="float:left">Permanent Office Address does not match pay zone</strong></span>
+    <table class="govuk-table" style="margin-left:30px;width:95%">
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header" style="width:50%">New Entrant Type</th>
+    <td class="govuk-table__cell">OGD</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Is this a promotion?</th>
+    <td class="govuk-table__cell">No</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Was the Employee Recruited via Fair and Open Competition?</th>
+    <td class="govuk-table__cell">Yes</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Start Date</th>
+    <td class="govuk-table__cell">21 May 2022</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Start time (on first day)</th>
+    <td class="govuk-table__cell">09:00</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Grade</th>
+    <td class="govuk-table__cell">Higher Executive Officer, Senior Executive Officer</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Permanent Office Address</th>
+    <td class="govuk-table__cell">HMCTS<br>Rigby House<br>Milton Keynes<br>MK5 8NP</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Pay Zone</th>
+    <td class="govuk-table__cell">London</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Annual Salary</th>
+    <td class="govuk-table__cell">£42,650</td>
+  </tr>
+</tbody>
+</table>
+
+  </div>
+</div>
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-3">
+        Other Government Department Information
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-3">
+    <p class='govuk-body'></p>
+  </div>
+</div>
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-4">
+        Line Manager Details
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-4">
+    <p class='govuk-body'></p>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="govuk-grid-column-one-third">
+
+  <h2 class="govuk-heading-m" style="margin-bottom:5px">NEN history</h2>
+  <br>
+
+
+  <div class="moj-timeline">
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Email sent to Poppy Wells</h2>
+
+        <p class="moj-timeline__byline">by Deborah Jones</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">25 Nov 2022 at 11:08am</time>
+      </p><br><p>Subject: "Fixed NEN errors"</p>
+      <div class="moj-timeline__description">
+        <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Read email
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            "Done - sorry about the mistakes!"
+          </div>
+          <a href="tab-contact">Reply to email</a>
+        </details>
+      </div>
+
+    </div>
+    <div class="moj-timeline__item">
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Email sent to Deborah Jones</h2>
+
+        <p class="moj-timeline__byline">by Poppy Wells</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">25 Nov 2022 at 11:08am</time>
+      </p><br><p>Subject: "Request NEN details"</p>
+      <div class="moj-timeline__description">
+        <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Read email
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            "Done - sorry about the mistakes!"
+          </div>
+          <a href="tab-contact">Reply to email</a>
+        </details>
+      </div>
+    </div>
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Initial NEN data entry marked as complete</h2>
+
+        <p class="moj-timeline__byline">by system</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 09:56pm</time>
+      </p>
+
+    </div>
+
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Initial NEN data entry marked as started</h2>
+
+        <p class="moj-timeline__byline">by system</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
+      </p>
+
+
+    </div>
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Email received</h2>
+
+        <p class="moj-timeline__byline">from Deborah Jones (Vacancy Holder)</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+      </p>
+<p>Subject: "Request NEN details"</p>
+      <div class="moj-timeline__description">
+        <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Read email
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            "No problem Poppy - will do it asap"
+          </div>
+          <a href="tab-contact">Reply to email</a>
+        </details>
+      </div>
+    </div>
+    <div class="moj-timeline__item">
+
+      <div class="moj-timeline__header">
+        <h2 class="moj-timeline__title">Email sent</h2>
+
+        <p class="moj-timeline__byline">from Poppy Wells (GRS)</p>
+
+      </div>
+
+      <p class="moj-timeline__date">
+        <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+      </p>
+      <p>Subject: "Request NEN details"</p>
+      <div class="moj-timeline__description">
+        <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Read email
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            "Hi Debs - can you please complete the NEN details for this candidate?"
+          </div>
+
+        </details>
+      </div>
+    </div>
+
+
+  </div>
+
+  <a class="govuk-link" href="tab-history">View full history</a><br><br>
+  </div>
+
+  <div class="govuk-inset-text">
+    Discrepancies have been found in the NEN data within the marked sections above.
+  </div>
+
+<form action="tab-contact-nen-vh" method="post">
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Send discrepancies to Vacancy Holder"
+    }) }}
+  </div>
+</form>
+  </div>
+</div>
+
+</div>
+{% endblock %}

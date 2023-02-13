@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Your online CV shows that you have had at least one job since 4 January 2020. Is that correct?
+                      </h1>
+                    </legend>
+                    <div class="govuk-inset-text">
+                      Since 4 January 2020 you must have had at least one job you have been paid for. This can include self-employed work. We have taken this information from the CV you used to apply for this job.
+<br><br>
+                      You can check the employment history we have from your online CV later in this process.
+                    </div>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live" name="employed" type="radio" value="yes~self-employed">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-2" name="employed" type="radio" value="no~bankrupt">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                          No
+                        </label>
+                      </div>
+
+                    </div>
+                  </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

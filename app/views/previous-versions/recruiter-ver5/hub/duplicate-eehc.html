@@ -1,0 +1,153 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+  {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      The following information is from a check done previously in another application.
+    </strong>
+  </div><br>
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+    <h1 class="govuk-heading-l" style="margin-bottom:25px">
+      EEHC<span>
+        <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+      </span>
+    </h1><br>
+
+
+<form action="eehc-options" method="post">
+
+  <table class="govuk-table">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Date check completed</th>
+        <td class="govuk-table__cell">17 November 2023</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Result</th>
+        <td class="govuk-table__cell">Check passed</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Application ID</th>
+        <td class="govuk-table__cell">2982</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Vacancy</th>
+        <td class="govuk-table__cell">797 - Delivery Manager</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Vacancy department</th>
+        <td class="govuk-table__cell">HMRC</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Go back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+
+</div>
+</form>
+
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m" style="margin-bottom:5px">EEHC check history from other application</h2>
+    <br>
+
+    <div class="moj-timeline">
+      <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Check passed</h2>
+
+          <p class="moj-timeline__byline">by Ismail Laimsi</p>
+
+        </div>
+
+        <p class="moj-timeline__date">
+          <time datetime="2019-05-28T10:15:00.000Z">17 Nov 2022 at 11:14am</time>
+        </p>
+
+
+
+      </div>
+      <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">No gap in employment history</h2>
+
+          <p class="moj-timeline__byline">by Ismail Laimsi</p>
+
+        </div>
+
+        <p class="moj-timeline__date">
+          <time datetime="2019-05-28T10:15:00.000Z">16 Nov 2022 at 12:36pm</time>
+        </p>
+
+
+      </div>
+      <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">PAYE details retrieved</h2>
+
+          <p class="moj-timeline__byline">by Ismail Laimsi</p>
+
+        </div>
+
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-07T12:32:00.000Z">16 Nov 2022 at 11:32am</time>
+        </p>
+
+      </div>
+
+      <div class="moj-timeline__item" style="padding-bottom:0px">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">EEHC PEC set up</h2>
+          <p class="moj-timeline__byline">by System</p>
+        </div>
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-06T09:12:00.000Z">11 Nov 2022 at 9:12am</time>
+        </p>
+
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+    {% endblock %}

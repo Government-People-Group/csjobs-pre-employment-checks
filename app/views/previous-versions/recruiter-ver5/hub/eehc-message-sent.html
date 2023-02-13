@@ -1,0 +1,234 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  {% include 'includes/tab-header-contact.html' %}
+    <div class="govuk-tabs">
+
+
+
+  <div class="govuk-tabs__panel" id="contact">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-body">Message sent to {{data['sort']}}.</p>
+      </div>
+    </div>
+
+        <h1 class="govuk-heading-l" style="margin-bottom:25px">
+          EEHC<span>{% if data['eehc-status'] == 'Passed' %}
+            <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+          {% elif data['eehc-status'] == 'not-started' %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+          {% elif data['eehc-status'] == 'failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+          {% elif data['eehc-status'] == 'risk-assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+          {% elif data['eehc-status'] == 'in-progress' %}
+          <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+          {% endif %}</span>
+        </h1><br>
+
+
+    <form action="eehc-options-post-request-banner-gone" method="post">
+    <h1 class="govuk-heading-m" style="margin-bottom:25px">Sent message</h1>
+
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">Message sent to</th>
+          <td class="govuk-table__cell">{{data['sort']}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">Subject</th>
+          <td class="govuk-table__cell">{{data['subject']}}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Message</th>
+          <td class="govuk-table__cell">{{data['message']}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Go back",
+        href:"javascript:history.go(-1)"
+      }) }}
+
+
+    </div>
+    </form>
+
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m" style="margin-bottom:5px">EEHC check history</h2>
+      <br>
+        <div class="moj-timeline">
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Message sent to Steve Evans</h2>
+
+              <p class="moj-timeline__byline">by Poppy Wells</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:15:00.000Z">25 Nov 2022 at 11:08am</time>
+            </p><br>
+            <a href="#">See message</a>
+
+          </div>
+
+        <div class="moj-timeline">
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Request to use duplicate EEHC check sent</h2>
+
+              <p class="moj-timeline__byline">by Poppy Wells</p>
+
+            </div>
+
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
+            </p>
+
+          </div>
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Email received</h2>
+
+              <p class="moj-timeline__byline">from Steve Evans</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+            </p>
+
+            <div class="moj-timeline__description">
+              <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Read email
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                </div>
+                <a href="tab-contact">Reply to email</a>
+              </details>
+            </div>
+          </div>
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Documents uploaded</h2>
+
+              <p class="moj-timeline__byline">by Steve Evans</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-05-28T10:15:00.000Z">7 Nov 2022 at 12:36pm</time>
+            </p>
+
+            <div class="moj-timeline__description">
+              <ul class="moj-timeline__documents">
+                <li class="moj-timeline__document-item">
+                  <a class="govuk-link" href="#">
+                    <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                      <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                    </svg>
+                    employment history (PDF)
+                  </a>
+                </li>
+                <li class="moj-timeline__document-item">
+                  <a class="govuk-link" href="#">
+                    <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                      <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                    </svg>
+                    cv (PDF)
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="moj-timeline__item">
+
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">Full candidate PEC form submitted</h2>
+
+              <p class="moj-timeline__byline">by Steve Evans</p>
+
+            </div>
+
+            <p class="moj-timeline__date">
+              <time datetime="2019-06-07T12:32:00.000Z">7 Nov 2022 at 12:32pm</time>
+            </p>
+
+          </div>
+
+          <div class="moj-timeline__item" style="padding-bottom:0px">
+            <div class="moj-timeline__header">
+              <h2 class="moj-timeline__title">PEC set up</h2>
+              <p class="moj-timeline__byline">by System</p>
+            </div>
+            <p class="moj-timeline__date">
+              <time datetime="2019-06-06T09:12:00.000Z">6 Nov 2022 at 9:12am</time>
+            </p>
+
+          </div>
+        </div>  <a class="govuk-link" href="tab-history">View full history</a>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        </div>
+
+
+
+
+        {% endblock %}

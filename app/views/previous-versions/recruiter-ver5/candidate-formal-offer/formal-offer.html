@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner" style="border-bottom:none">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span><br>
+
+    <ul class="js-signout" id="navigation" style="font-size:19px; margin-top:10px;text-align:left;padding-inline-start:0px">
+
+      <li class="content"><a href="/hub/candidate/applications">Manage job applications</a></li>
+      <li class="content"><a href="">Manage job alerts</a></li>
+      <li class="content"><a href="">My profile</a></li>
+      <li class="content"><a href="">Get help</a></li>
+      <li class="content" style="margin-left:200px"><a href="">Sign out</a></li>
+    </ul>
+  </p>
+</div>
+
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="formal-offer-confirm" method="post">
+      <h1 class="govuk-heading-l">
+        Policy Advisor
+      </h1>
+      <h2 class="govuk-heading-m">
+        Formal offer
+      </h2>
+      <p class="govuk-body">Your pre-employment checks have been completed. We are delighted to formally offer you the job of <a href="#">Policy Advisor</a>.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Salary: £32,000</li>
+        <li>Location: Newcastle</li>
+        <li>Grade: SEO</li>
+      </ul>
+      <p class="govuk-body">Your benefits include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>25 days leave, increasing by 1 day every year to a maximum of 30 days after five years' service</li>
+        <li>joining the highly competitive Civil Service Pension Scheme</li>
+        <li>flexible working arrangements, such as job sharing, term-time working, flexi-time and compressed hours</li>
+      </ul>
+      <br>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              What would you like to do about your formal offer for Policy Advisor?
+            </h1>
+          </legend>
+          <div id="changed-name-hint" class="govuk-hint">
+            You can <a href="#">review Policy Advisor job details</a> before making your decision.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="formal-offer" type="radio" value="accept the formal offer">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Accept the formal offer
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer" type="radio" value="decline the formal offer">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Decline the formal offer
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer" type="radio" value="speak to the hiring manager">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                Speak to the hiring manager
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+      </div>
+  <div class="govuk-grid-column-one-third">
+    <img src="/public/images/mod.png" style="width:170px" alt="User icon">
+    </div>
+  </div>
+
+{% endblock %}

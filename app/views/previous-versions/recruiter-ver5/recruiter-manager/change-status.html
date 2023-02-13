@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-recruiter-manager.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l" style="margin-bottom:25px">
+      Self-employment<span>{% if data['self-employed-status'] == 'passed' %}
+        <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+      {% elif data['self-employed-status'] == 'not-started' %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+      {% elif data['self-employed-status'] == 'failed' %}
+          <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+      {% elif data['self-employed-status'] == 'risk-assessment' %}
+          <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+      {% endif %}</span>
+    </h1><br>
+
+
+<form action="" method="post">
+
+  {% if data['self-employed-status'] == 'passed' %}
+      {{ govukRadios({
+        name: "se-status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "in-progress~/recruiter-manager/pec-task-list?self-employed-status=in-progress",
+          text: "In progress"
+        },
+          {
+            value: "not-started~/recruiter-manager/pec-task-list?self-employed-status=not-started",
+            text: "Not started"
+          },
+            {
+              value: "risk-assessment~/recruiter-manager/pec-task-list?self-employed-status=risk-assessment",
+              text: "Risk assessment"
+            },
+            {
+              value: "failed~/recruiter-manager/pec-task-list?self-employed-status=failed",
+              text: "Failed"
+            }
+        ]
+      }) }}
+  {% elif data['self-employed-status'] == 'not-started' %}
+      {{ govukRadios({
+        name: "se-status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "passed~/recruiter-manager/pec-task-list?self-employed-status=passed",
+            text: "Passed"
+          },
+          {
+            value: "in-progress~/recruiter-manager/pec-task-list?self-employed-status=in-progress",
+            text: "In progress"
+          },
+            {
+              value: "risk-assessment~/recruiter-manager/pec-task-list?self-employed-status=risk-assessment",
+              text: "Risk assessment"
+            },
+            {
+              value: "failed~/recruiter-manager/pec-task-list?self-employed-status=failed",
+              text: "Failed"
+            }
+        ]
+    }) }}
+    {% elif data['self-employed-status'] == 'failed' %}
+        {{ govukRadios({
+          name: "se-status",
+          fieldset: {
+            legend: {
+              text: "Change status to:",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "passed~/recruiter-manager/pec-task-list?self-employed-status=passed",
+              text: "Passed"
+            },
+            {
+              value: "in-progress~/recruiter-manager/pec-task-list?self-employed-status=in-progress",
+              text: "In progress"
+            },
+              {
+                value: "not-started~/recruiter-manager/pec-task-list?self-employed-status=not-started",
+                text: "Not started"
+              },
+              {
+                value: "risk-assessment~/recruiter-manager/pec-task-list?self-employed-status=risk-assessment",
+                text: "Risk assessment"
+              }
+          ]
+      }) }}
+      {% elif data['self-employed-status'] == 'risk-assessment' %}
+          {{ govukRadios({
+            name: "se-status",
+            fieldset: {
+              legend: {
+                text: "Change status to:",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "passed~/recruiter-manager/pec-task-list?self-employed-status=passed",
+                text: "Passed"
+              },
+              {
+                value: "in-progress~/recruiter-manager/pec-task-list?self-employed-status=in-progress",
+                text: "In progress"
+              },
+                {
+                  value: "not-started~/recruiter-manager/pec-task-list?self-employed-status=not-started",
+                  text: "Not started"
+                },
+                {
+                  value: "failed~/recruiter-manager/pec-task-list?self-employed-status=failed",
+                  text: "Failed"
+                }
+            ]
+        }) }}
+  {% else %}
+      {{ govukRadios({
+        name: "se-status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "passed~/recruiter-manager/pec-task-list?self-employed-status=passed",
+            text: "Passed"
+          },
+          {
+            value: "not-started~/recruiter-manager/pec-task-list?self-employed-status=not-started",
+            text: "Not started"
+          },
+          {
+            value: "risk-assessment~/recruiter-manager/pec-task-list?self-employed-status=risk-assessment",
+            text: "Risk assessment"
+          },
+          {
+            value: "failed~/recruiter-manager/pec-task-list?self-employed-status=failed",
+            text: "Failed"
+          }
+        ]
+      }) }}
+  {% endif %}
+
+
+<br>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Change"
+  }) }}
+
+  <a class="govuk-link" href="self-employment">Back</a>
+</div>
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

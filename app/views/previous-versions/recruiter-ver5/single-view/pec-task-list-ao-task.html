@@ -1,0 +1,207 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-ao-task.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+
+
+    <ol class="app-task-list">
+      <li>
+        <h2 class="app-task-list__section">
+          Check needed
+        </h2>
+        <ul class="app-task-list__items">
+
+          <li class="app-task-list__item">
+            <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px; display:inline">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  EEHC
+                </span>
+              </summary>
+              <div class="moj-timeline">
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Email received</h2>
+
+                    <p class="moj-timeline__byline">from Steve Evans</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-05-28T10:15:00.000Z">18 June 2019 at 21:14pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <p>"Did you receive my documents? Do they cover what you need? Many thanks, Steve."</p>
+                  </div>
+                  <a href="#">Reply to email</a>
+
+                </div>
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Documents uploaded</h2>
+
+                    <p class="moj-timeline__byline">by Steve Evans</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-05-28T10:15:00.000Z">7 June 2019 at 12:36pm</time>
+                  </p>
+
+                  <div class="moj-timeline__description">
+                    <ul class="moj-timeline__documents">
+                      <li class="moj-timeline__document-item">
+                        <a class="govuk-link" href="#">
+                          <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                            <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                          </svg>
+                          employment history (PDF)
+                        </a>
+                      </li>
+                      <li class="moj-timeline__document-item">
+                        <a class="govuk-link" href="#">
+                          <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                            <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                          </svg>
+                          cv (PDF)
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="moj-timeline__item">
+
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Full candidate PEC form submitted</h2>
+
+                    <p class="moj-timeline__byline">by Steve Evans</p>
+
+                  </div>
+
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">7 June 2019 at 12:32pm</time>
+                  </p>
+
+                </div>
+
+                <div class="moj-timeline__item" style="padding-bottom:0px">
+                  <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">PEC set up</h2>
+                    <p class="moj-timeline__byline">by System</p>
+                  </div>
+                  <p class="moj-timeline__date">
+                    <time datetime="2019-06-06T09:12:00.000Z">6 June 2019 at 9:12am</time>
+                  </p>
+
+                </div>
+
+              </div>
+
+
+            </details>
+            {% if data['eehc-status'] == 'Passed' %}
+              <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status">Passed</strong>
+            {% elif data['eehc-status'] == 'Not started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['eehc-status'] == 'risk-assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Risk assessment needed</strong>
+            {% elif data['eehc-status'] == 'failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status">Failed</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">In progress</strong>
+            {% endif %}
+          </li>
+
+
+</ol>
+
+<a class="govuk-link" href="dashboard-ao-task?single-or-multiple=single">Go back to allocated task list</a>
+  </div>
+
+<div class="govuk-grid-column-one-third" style="margin-top:30px">
+  <form action="" method="post">
+
+
+    {{ govukRadios({
+      classes: "govuk-radios--small",
+      name: "eehc-options",
+      fieldset: {
+        legend: {
+          text: "Task options:",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+      {
+        value: "work-task~dummy-page-task",
+        text: "Work on task"
+      },
+      {
+        value: "complete~eehc-task-outcome-task",
+        text: "Mark as Complete"
+      },
+      {
+        value: "unallocate~dummy-page-task",
+        text: "Remove task from my list"
+      },
+      {
+        value: "add-bf~dummy-page-task",
+        text: "Add BF Date to task"
+      },
+      {
+        value: "allocate~dummy-page-task",
+        text: "Allocate to another user"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "checklist~pec-task-list-ao-task-full",
+        text: "Check status of all PECs for this candidate"
+      }
+      ]
+    }) }}
+
+
+
+  <div class="govuk-button-group">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    <a class="govuk-link" href="pec-task-list-ao-candidate">Back</a>
+  </div>
+  </form>
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Pre-employment check information submitted
+          </h1>
+
+        </div>
+        <p class="govuk-body">
+          We’ve received your pre-employment check information.
+        </p>
+        <p class="govuk-body">We have sent you a confirmation email.</p>
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p class="govuk-body">
+          We will use the information to perform all the pre-employment checks your role requires.
+        </p>
+        <div class="govuk-inset-text">
+          Pre-employment checks can take a long time. You can check progress by logging into your Civil Service Jobs account, choosing this application and selecting the 'Pre-employment checks' tab. 
+        </div>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+      </div>
+    </div>
+  </main>
+</div>
+
+</main>
+{% endblock %}

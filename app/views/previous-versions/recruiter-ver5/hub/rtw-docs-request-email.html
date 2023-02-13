@@ -1,0 +1,236 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  {% include 'includes/tab-header-contact.html' %}
+    <div class="govuk-tabs">
+
+
+
+  <div class="govuk-tabs__panel" id="contact">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l" style="margin-bottom:25px">
+          Right to Work form<span>{% if data['rtw-status'] == 'Passed' %}
+            <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+          {% elif data['rtw-status'] == 'not-started' %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+          {% elif data['rtw-status'] == 'failed' %}
+              <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+          {% elif data['rtw-status'] == 'risk-assessment' %}
+              <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+          {% elif data['rtw-status'] == 'in-progress' %}
+          <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+          {% else %}
+            <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+          {% endif %}</span>
+        </h1><br>
+
+
+    <form action="rtw-options-post-request" method="post">
+    <h1 class="govuk-heading-m" style="margin-bottom:25px">Request for missing ID documents</h1>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Request documents from
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="deborah.jones@hmcts.gov.uk (vacancy holder)">deborah.jones@hmcts.gov.uk (Vacancy Holder)</option>
+        <option value="james.cranson@hmcts.gov.uk (vacancy holder)">james.cranson@hmcts.gov.uk (Vacancy Holder)</option>
+      </select>
+    </div>
+
+
+    {{ govukTextarea({
+      name: "more-detail",
+      rows:"23",
+      id: "more-detail",
+      value:"Request for missing ID documents
+    -------------------------------------
+
+Dear deborah
+
+Re: Steve Evans
+Application ID: 2987
+Vacancy: 873 - Internal Audit PO (HMCTS)
+
+Government Recruitment Service have not received sufficient ID documents to verify the identity, nationality and residency for the candidate listed above.
+
+We received the documentation below:
+- 2987-driving-license.jpg
+- 2987-birth-certificate.jpg
+
+We have not received the following:
+- a third acceptable document showing proof of ID
+
+It is your responsibility to arrange for collection and verification of the missing documentation.Once you have received the documentation, you will need to upload it using the 'Upload a file' option on the 'Uploads' tab to allow checks to commence.
+
+Government Recruitment Service will not commence pre-employment checks until all outstanding documentation is received. If we have not received the documentation within 14 working days from this email then the candidate’s checks will be failed.
+
+If you have any queries please email poppy.wells@cabinetoffice.gov.uk.
+
+Regards,Government Recruitment Service",
+      hint: {
+        text: "You can edit the message below before you send it."
+      }
+    }) }}
+
+
+    <br>
+
+    <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+          Attach Document Requirements
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Ask for missing ID documents"
+      }) }}
+
+      <a class="govuk-link" href="rtw-options">Back to options</a>
+    </div></div>
+      <div class="govuk-grid-column-one-third">
+
+        <h2 class="govuk-heading-m" style="margin-bottom:5px; font-size:23px">Right to Work check history</h2>
+        <br>
+
+    <div class="moj-timeline">
+
+      {% if data['rtw-status'] == 'in-progress' %}
+      <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Right to Work check started</h2>
+
+          <p class="moj-timeline__byline">by Poppy Wells (recruiter)</p>
+
+        </div>
+
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-07T12:32:00.000Z">9 Nov 2022 at 14:01pm</time>
+        </p>
+
+      </div>
+      {% endif %}
+
+        <div class="moj-timeline__item">
+
+          <div class="moj-timeline__header">
+            <h2 class="moj-timeline__title">Documents uploaded</h2>
+
+            <p class="moj-timeline__byline">by Deborah Jones (Vacancy Holder)</p>
+
+          </div>
+
+
+          <p class="moj-timeline__date">
+            <time datetime="2019-05-28T10:15:00.000Z">7 Nov 2022 at 12:36pm</time>
+          </p>
+          <div class="moj-timeline__description">
+            <ul class="moj-timeline__documents">
+              <li class="moj-timeline__document-item">
+                <a class="govuk-link" href="tab-uploads-rtw#birth-certificate">
+                  <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                  </svg>
+                  2987-birth-certificate.jpg
+                </a>
+              </li>
+              <li class="moj-timeline__document-item">
+                <a class="govuk-link" href="tab-uploads-rtw#driving-license">
+                  <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                  </svg>
+                  2987-driving-license.jpg
+                </a>
+              </li>
+              {% if data['rtw-docs'] != 'no'%}
+              <li class="moj-timeline__document-item">
+                <a class="govuk-link" href="tab-uploads-rtw#utility-bill">
+                  <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                  </svg>
+                  2987-utility-bill.jpg
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+
+      </div>
+
+
+      <div class="moj-timeline__item">
+
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Candidate PEC form submitted</h2>
+
+          <p class="moj-timeline__byline">by Steve Evans (Candidate)</p>
+
+        </div>
+
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-07T12:32:00.000Z">7 Nov 2022 at 12:32pm</time>
+        </p>
+
+      </div>
+
+      <div class="moj-timeline__item" style="padding-bottom:0px">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">PEC set up</h2>
+          <p class="moj-timeline__byline">by System</p>
+        </div>
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-06T09:12:00.000Z">6 Nov 2022 at 9:12am</time>
+        </p>
+
+      </div>
+
+    </div>  <a class="govuk-link" href="tab-history">View full history</a>
+  </div>
+        </div>
+        </div>
+        </div>
+
+        </div>
+
+
+
+
+        {% endblock %}

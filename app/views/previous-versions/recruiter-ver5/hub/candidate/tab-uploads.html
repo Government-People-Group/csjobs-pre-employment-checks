@@ -1,0 +1,87 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+          {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+{% include 'hub/candidate/includes/tab-header-uploads.html' %}
+<br><br>
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+    <h2 class="govuk-heading-l">Upload a file</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      File type must be PDF, JPEG or PNG.
+    </label><br>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Choose file"
+      }) }}
+    </div>
+  </div>
+  </section>
+
+</article>
+
+<br><br><br>
+  <h2 class="govuk-heading-l">Previous uploads</h2>
+  <div class="govuk-tabs">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-accordion-history-uploads1-eehc" style="margin-bottom:0px">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-accordion-history-uploads1-eehc-heading-1" style="border-top:none">
+          Employment history <span style="font-size:16px; color:#505a5f">(PDF)
+        </span><br>
+        <div id="changed-name-hint" class="govuk-hint">
+      Uploaded 7 Nov 2022 by Steve Evans (Candidate)
+    </div>
+      </h2>
+    </div>
+    <div id="accordion-history-uploads-eehc-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-accordion-history-uploads1-eehc-heading-1" style="font-size:18px">
+      <p class='govuk-body'> </p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="govuk-tabs">
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-accordion-history-uploads2-eehc" style="margin-bottom:0px">
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-accordion-history-uploads2-eehc-heading-1" style="border-top:none">
+        CV  <span style="font-size:16px; color:#505a5f">(PDF)
+      </span><br>
+      <div id="changed-name-hint" class="govuk-hint">
+    Uploaded 7 Nov 2022 by Steve Evans (Candidate)
+  </div>
+    </h2>
+  </div>
+  <div id="accordion-history-uploads2-eehc-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-history-uploads2-eehc-heading-1" style="font-size:18px">
+    <p class='govuk-body'> </p>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

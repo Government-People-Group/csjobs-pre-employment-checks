@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="health-6" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Have you ever had any health issues which may have been caused or made worse by work?
+                      </h1>
+                    </legend>
+                    <div class="govuk-inset-text">
+                      You only need tell us about any issues if you think they may affect your ability to undertake the new role or place you at any risk in the workplace.
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact" name="past-work" type="radio" value="yes" data-aria-controls="conditional-past-work">
+                        <label class="govuk-label govuk-radios__label" for="contact">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-past-work">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Give us more information
+                          </label>
+                          <textarea class="govuk-textarea" id="more-detail" name="past-work-more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                        </div>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="contact-2" name="past-work" type="radio" value="no" >
+                        <label class="govuk-label govuk-radios__label" for="contact-2">
+                          No
+                        </label>
+                      </div>
+
+
+                    </div>
+                  </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                  Save and continue
+                </button>
+              </form>
+            </div>
+          </div> <a class="govuk-link" href="../../task-list">Go back to your list of checks</a>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

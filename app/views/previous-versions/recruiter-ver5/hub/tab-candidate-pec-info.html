@@ -1,0 +1,303 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+{% include 'includes/tab-header-candidate-pec-info.html' %}
+<div class="govuk-tabs" style="margin-top:0px">
+
+  <div class="govuk-tabs__panel" id="pecs">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-candidate-pec-info">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1">
+          Your details
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-2">
+      <table class="govuk-table" style="margin:0px 0px 20px 30px; width:95%">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">Title</th>
+          <td class="govuk-table__cell">Mr</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Name</th>
+          <td class="govuk-table__cell">Steve Evans</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Have you had any other names?</th>
+          <td class="govuk-table__cell">No</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Date of birth</th>
+          <td class="govuk-table__cell">15 June 1980</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Marital status</th>
+          <td class="govuk-table__cell">Married</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Gender</th>
+          <td class="govuk-table__cell">Male</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Address</th>
+          <td class="govuk-table__cell">1 Random Street<br>Perkinsville<br>Co Durham<br>DH43BB</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Date moved in</th>
+          <td class="govuk-table__cell">10 January 2015</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Contact number</th>
+          <td class="govuk-table__cell">01913885767</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Do you have a National Insurance number?</th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">National Insurance number</th>
+          <td class="govuk-table__cell">BF018876C</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-7">
+          DBS
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-2">
+      <table class="govuk-table" style="margin:0px 0px 20px 30px; width:95%">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">Passport number</th>
+          <td class="govuk-table__cell">098765432</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Driving license number</th>
+          <td class="govuk-table__cell">EDBCA115068FU12345</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">DBS Profile ID</th>
+          <td class="govuk-table__cell">None</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Do you want a paper copy of your certificate?</th>
+          <td class="govuk-table__cell">No</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-rtw">
+          Right to Work
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-rtw">
+      <table class="govuk-table" style="margin:0px 0px 20px 30px; width:95%">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">Nationality at birth</th>
+          <td class="govuk-table__cell">British</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Present nationality</th>
+          <td class="govuk-table__cell">British</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Have you held or currently hold any other nationality or citizenship?</th>
+          <td class="govuk-table__cell">No</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Are you a UK or Irish citizen?</th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Do you hold a valid British or Irish passport or Irish passport card?</th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-eehc">
+          Employment history
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-eehc">
+      <table class="govuk-table" style="margin:0px 0px 20px 30px; width:95%">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" style="width:30%">Have you been employed since 4 January 2020?</th>
+      <td class="govuk-table__cell">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Employer name</th>
+      <td class="govuk-table__cell">Aldi</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date from</th>
+      <td class="govuk-table__cell">15 June 2019</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date to</th>
+      <td class="govuk-table__cell">21 May 2022</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Gap in 3 year employment history</th>
+      <td class="govuk-table__cell">24 days<strong class="govuk-tag govuk-tag--green app-task-list__tag" id="financial-evidence-status" style="margin-right:30px"><span>Gap in employment - less than 3 months</span></strong></td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-3">
+          References
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-3">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-4">
+          Previous Civil Service Employment
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-4">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-5">
+          Pensions
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-5">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-6">
+          Self Employment
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-6">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-8">
+          Criminal Record Check
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-8">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-9">
+          National Insurance Number Check
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-9" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-9">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-8">
+          Health declaration
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-8">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-8">
+          Declaration
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-8">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+
+</div>
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Go back",
+    href:"javascript:history.go(-1)"
+  }) }}
+
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

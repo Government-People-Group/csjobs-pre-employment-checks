@@ -1,0 +1,63 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+{% include 'hub/candidate/includes/tab-header-application.html' %}
+  <div class="govuk-tabs">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-this-application" style="margin-bottom:0px">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1" style="border-top:none">
+          This application<br><div id="changed-name-hint" class="govuk-hint">Vacancy holder is Deborah Jones (<a class="govuk-link" href="tab-contact">deborah.jones@hmcts.gov.uk</a>)
+          </div>
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-this-application-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1" style="font-size:18px">
+      <p class='govuk-body'> </p>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="govuk-tabs">
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-other-applications" style="margin-bottom:0px">
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-other-applications-heading-1" style="border-top:none">
+
+        2982 - Delivery Manager (HMRC) - vacancy 797<br>
+      <div id="changed-name-hint" class="govuk-hint">Vacancy holder is Catherine Dodds
+      </div>
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-other-applications-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-other-applications-heading-1" style="font-size:18px">
+    <p class='govuk-body'> </p>
+  </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

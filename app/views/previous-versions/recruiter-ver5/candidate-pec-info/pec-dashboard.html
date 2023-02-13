@@ -1,0 +1,303 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <header class="page-header">
+                <h1 class="govuk-heading-l">Information we need for your pre-employment checks</h1>
+            </header><br>
+
+
+            <div class="govuk-width-container">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h2 class="govuk-heading-m">1. Personal details</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Steve Evans
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 January 1978
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                24 Upper Street<br>Islington<br>London<br>N1 1XR
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              {% if data ['nino']=='yes' %}
+              <dd class="govuk-summary-list__value">
+                {{data['nino-entered']}}
+              </dd>
+              {% else %}
+              <dd class="govuk-summary-list__value">
+                None
+              </dd>
+              {% endif %}
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino">
+                  Change<span class="govuk-visually-hidden"> licence period</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h2 class="govuk-heading-m">2. More details</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Steve Evans
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                5 January 1978
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> date of birth</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                24 Upper Street<br>Islington<br>London<br>N1 1XR
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                National Insurance number
+              </dt>
+              {% if data ['nino']=='yes' %}
+              <dd class="govuk-summary-list__value">
+                {{data['nino-entered']}}
+              </dd>
+              {% else %}
+              <dd class="govuk-summary-list__value">
+                None
+              </dd>
+              {% endif %}
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino">
+                  Change<span class="govuk-visually-hidden"> licence period</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+        </div>
+      </div>
+
+  </div>
+
+  <h2 class="govuk-heading-m">3. Pre-employment check information</h2>
+  <div class="govuk-inset-text">
+  Your answers have generated the pre-employment checks you need to complete. If you change your answers in section 2 - additional information, the number and type of pre-employment checks might change.
+</div>
+
+            {% if data['pensionadvisor'] == 'No'%}
+            <p>You have completed 1 of 7 sections</p>
+            {% elif data ['establisher-company-numbers-completed'] == 'true'%}
+            <p>You have completed 1 of 6 sections</p>
+            {% else %}
+              <p>You have completed 0 of 6 sections</p>
+              {% endif %}
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+
+                  <ol class="app-task-list">
+                    <li>
+
+                      <ul class="app-task-list__items">
+                        <li class="app-task-list__item">
+                          <span class="app-task-list__task-name" style="width:70%">
+                            <a href="#" aria-describedby="eligibility-status">
+                              Add information we need about your Right to Work
+                            </a>
+                          </span>
+                        <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                        </li>
+                        <li class="app-task-list__item">
+                          <span class="app-task-list__task-name" style="width:70%">
+                            <a href="eehc-options?from-pec-list=yes" aria-describedby="eligibility-status">
+                              Add information we need about your employment history
+                            </a>
+                          </span>
+                          {% if data['eehc-status'] == 'Passed' %}
+                            <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                          {% elif data['eehc-status'] == 'risk-assessment' %}
+                            <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status" style="float:none">References needed</strong>
+                          {% elif data['eehc-status'] == 'failed' %}
+                            <strong class="govuk-tag govuk-tag--black app-task-list__tag" id="financial-evidence-status" style="float:none">Failed</strong>
+                          {% elif data['eehc-status'] == 'in-progress' %}
+                            <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress</strong>
+                          {% elif data['duplicate-eehc'] == 'yes' %}
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started - duplicate check available</strong>
+                          {% else %}
+                            <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                          {% endif %}
+                        </li>
+                        <li class="app-task-list__item">
+                          <span class="app-task-list__task-name" style="width:70%">
+                            <a href="#" aria-describedby="eligibility-status">
+                              Add your references
+                            </a>
+                          </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                        </li>
+                        <li class="app-task-list__item">
+
+                          <span class="app-task-list__task-name" style="width:70%">
+                            <a href="#" aria-describedby="eligibility-status">
+                              Add information we need about any previous Civil Service employment
+                            </a>
+                          </span>
+                      <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                        </li>
+                        <li class="app-task-list__item">
+                          <span class="app-task-list__task-name" style="width:70%">
+                            <a href="#" aria-describedby="eligibility-status">
+                              Add information we need about any Civil Service  pensions
+                            </a>
+                          </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                        </li>
+                        <li class="app-task-list__item">
+                          <span class="app-task-list__task-name" style="width:70%">
+                            <a href="#" aria-describedby="eligibility-status">
+                              Add information we need about self employment
+                            </a>
+                          </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                        </li>
+
+
+
+                        </ul>
+                        </li>
+
+                            </ol>
+
+
+                                    </div>
+
+
+                      </div>
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="govuk-heading-m">4. Declaration</h2>
+
+              {% if (data ['before-you-start'] == 'true') and (data ['members-completed'] == 'true') and (data ['benefits-and-finance-completed'] == 'true') and (data ['establisher-company-numbers-completed'] == 'true') %}
+
+                <ul class="task-list-items">
+                    <li class="task-list-item">
+                        <a class="task-name" href="declaration/declaration">
+                            Read declaration and send details to HMRC
+                        </a>
+                    </li>
+                </ul>
+
+
+        {% else %}
+            <p>You must complete every section before you can declare.</p>
+
+        {% endif %}
+
+
+
+
+
+</main>
+{% endblock %}

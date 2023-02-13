@@ -1,0 +1,169 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <header class="page-header">
+                <h1 class="govuk-heading-l">Check your additional details</h1>
+            </header><br>
+
+
+            <div class="govuk-width-container">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h2 class="govuk-heading-m">Additional information</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:50%">
+                Do you have a current UK or Irish passport, or Irish passport card?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['passport']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="current-passport">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:50%">
+                Have you lived outside of the UK since 4 January 2020?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['lived-outside-uk']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="lived-outside-uk">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['lived-outside-uk'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Did you live outside the UK for 6 months or more?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['how-long-outside-uk']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you worked for the Civil Service before?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['previous-cs']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you ever been a member of a public service pension scheme?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['pension']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino">
+                  Change<span class="govuk-visually-hidden"> licence period</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Have you been employed since 4 January 2020?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['employed']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="nino">
+                  Change<span class="govuk-visually-hidden"> licence period</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['employed'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Were you self employed at any point since 4 January 2020?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['self-employed']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% endif %}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Are you bankrupt, insolvent, have a receiving order on your property or had a late filing tax penalty in past 5 years?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['bankrupt']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="bankrupt">
+                  Change<span class="govuk-visually-hidden"> licence period</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+
+        <form action="../task-list" method="post" novalidate>
+          <input type="hidden" name="more-details-complete" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Submit additional details
+          </button>
+        </form>
+
+        </div>
+      </div>
+
+
+  </div>
+
+
+
+
+
+</main>
+{% endblock %}

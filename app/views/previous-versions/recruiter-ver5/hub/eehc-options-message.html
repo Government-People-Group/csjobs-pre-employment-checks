@@ -1,0 +1,247 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+{% include 'includes/tab-header-pec-list.html' %}
+
+<div class="govuk-tabs">
+    <div class="govuk-tabs__panel" id="pecs">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-l" style="margin-bottom:25px">
+            EEHC<span>{% if data['eehc-status'] == 'Passed' %}
+              <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+            {% elif data['eehc-status'] == 'not-started' %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+            {% elif data['eehc-status'] == 'failed' %}
+                <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+            {% elif data['eehc-status'] == 'risk-assessment' %}
+                <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+            {% elif data['eehc-status'] == 'in-progress' %}
+            <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+            {% else %}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+            {% endif %}</span>
+          </h1><br>
+
+
+      <form action="" method="post">
+
+
+        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+        <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
+          <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Duplicate check on another application</h2>
+          {{ govukRadios({
+            classes: "govuk-radios--small",
+            name: "eehc-options",
+            fieldset: {
+            },
+            items: [
+            {
+              value: "see-duplicate~duplicate-eehc",
+              text: "View duplicate check"
+            },
+            {
+              value: "approval-received~eehc-review-hmrc-confirm-message?eehc-hmrc-review-options=Check passed&eehc-status=not-started",
+              text: "Use result from duplicate check"
+            }
+            ]
+          }) }}
+
+        </section>
+
+      </article>
+
+      <br>
+
+
+{% if data['duplicate-eehc'] == 'yes' %}
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Other options</h2>
+{% else %}
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Task options</h2>
+{% endif %}
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              name: "eehc-options",
+              items: [
+
+              {
+                value: "work-task~eehc-review-hmrc?eehc-status=in-progress",
+                text: "Start task"
+              },
+              {
+                value: "candidate-pec-info~tab-candidate-pec-info#accordion-candidate-pec-info-heading-2",
+                text: "View candidate info for EEHC"
+              },
+              {
+                value: "complete~eehc-task-outcome",
+                text: "Mark as Complete"
+              },
+              {
+                value: "add-bf~dummy-page",
+                text: "Add BF Date to task"
+              },
+              {
+                value: "allocate-user~#",
+                text: "Allocate task to another user"
+              },
+              {
+                divider: "or"
+              },
+              {
+                value: "checklist~tab-pec-list",
+                text: "Check status of all PECs for this candidate"
+              }
+          ]
+            }) }}
+
+
+
+      <br>
+
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+{% if data ['from-pec-list'] == 'yes' %}
+      <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
+{% endif %}
+      </div>
+      </form>
+
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <h2 class="govuk-heading-m" style="margin-bottom:5px">EEHC check history</h2>
+          <br>
+          <div class="moj-timeline">
+
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Email received</h2>
+
+                <p class="moj-timeline__byline">from Deborah Jones (vacancy holder)</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 21:14pm</time>
+              </p>
+              <p style="padding-top:10px">Subject: "EEHC check"</p>
+
+              <div class="moj-timeline__description">
+                <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Read email
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+
+                    <p>"Hi Poppy - yes please use previous result for current EEHC check. Many thanks, Debs."</p>
+                  </div>
+                  <a href="tab-contact">Reply to email</a>
+                </details>
+              </div>
+            </div>
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Resent request to use duplicate EEHC check</h2>
+
+                <p class="moj-timeline__byline">by Poppy Wells</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 09:56pm</time>
+              </p>
+
+              <br>
+              <a href="#">See request</a>
+
+            </div>
+
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Request to use duplicate EEHC check sent</h2>
+
+                <p class="moj-timeline__byline">by Poppy Wells</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
+              </p>
+
+              <br>
+              <a href="duplicate-request-email">See request</a>
+
+            </div>
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Email received</h2>
+
+                <p class="moj-timeline__byline">from Steve Evans</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+              </p>
+
+              <div class="moj-timeline__description">
+                <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Read email
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                  </div>
+                  <a href="tab-contact">Reply to email</a>
+                </details>
+              </div>
+            </div>
+
+
+          </div> <a class="govuk-link" href="tab-history">View full history</a>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Sign in – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner" style="border-bottom:none">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+    <ul class="js-signout" id="navigation" style="font-size:19px; margin-top:0px">
+      <li class="content"><a href="">Home</a></li>
+      <li class="content"><a href="">Applications</a></li>
+      <li class="content"><a href="">Sign out</a></li>
+    </ul>
+  </p>
+</div>
+
+{% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-xl">Applications</h1>
+
+<a href="#" class="govuk-heading-m" style="font-weight:normal">View unsuccessful and withdrawn applications</a>
+
+<div><label class="govuk-label" style="font-weight:bold">Search:<input type="search" class="" placeholder="" aria-controls="DataTables_Table_0"></label></div>
+
+</div>
+</div>
+
+<div class="govuk-grid-row">
+
+
+  {{ govukTable({
+    attributes: {
+      'data-module': 'moj-sortable-table'
+    },
+    head: [
+      {
+        text: "Reference",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Title",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Status",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Department",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Closing Date",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Last update",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Action",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "873",
+          attributes: {
+            "data-sort-value": "873"
+          }
+        },
+        {
+          text: "Internal Audit PO"
+        },
+        {
+          text: "Offer confirmed"
+        },
+        {
+          text: "HMCTS"
+        },
+        {
+          text: "22/09/2022,15:18"
+        },
+        {
+          text: "19/12/2022,08:46"
+        },
+        {
+          html: '<a href="tab-pec-list" class="govuk-link">Review latest update</a>',
+          attributes: {
+          "data-sort-value": "Dee"
+          }
+        }
+      ]
+    ]
+  }) }}
+
+
+</div>
+{% endblock %}

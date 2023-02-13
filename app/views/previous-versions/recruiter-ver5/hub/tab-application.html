@@ -1,0 +1,105 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+{% include 'includes/tab-header-application.html' %}
+<div class="govuk-tabs" style="margin-top:0px">
+
+  <div class="govuk-tabs__panel" id="pecs">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-this-application" style="margin-bottom:0px">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading"><br>
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1" style="border-top:none">
+          Current applications<br><br>
+          <h2 class="govuk-heading-s">This application</h2><strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">PEC in progress</strong>
+          <div id="changed-name-hint" class="govuk-hint">Vacancy holder is Deborah Jones (<a class="govuk-link" href="tab-contact">deborah.jones@hmcts.gov.uk</a>)
+          </div>
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-this-application-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1" style="font-size:18px">
+      <p class='govuk-body'> </p>
+    </div>
+  </div>
+
+</div>
+
+
+
+  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-other-applications" style="margin-bottom:0px">
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-other-applications-heading-1" style="border-top:none">
+<h2 class="govuk-heading-s">2982 - Delivery Manager (HMRC) - vacancy 797</h2><strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status">PEC in progress</strong>
+      <div id="changed-name-hint" class="govuk-hint">Vacancy holder is Catherine Dodds
+      </div>
+      </span>
+    </h2>
+  </div>
+  <div id="accordion-other-applications-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-other-applications-heading-1" style="font-size:18px">
+    <p class='govuk-body'> </p>
+  </div>
+</div>
+
+</div>
+<br><br><br>
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-this-application" style="margin-bottom:0px">
+<div class="govuk-accordion__section ">
+<div class="govuk-accordion__section-header">
+  <h2 class="govuk-accordion__section-heading">
+    <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1" style="border-top:none">
+      Previous applications<br><br>
+      <h2 class="govuk-heading-s">2865 - Case Manager (HMCTS) - vacancy 698</h2><strong class="govuk-tag govuk-tag--bright-red app-task-list__tag" id="financial-evidence-status">Rejected at PEC stage</strong>
+      <div id="changed-name-hint" class="govuk-hint">Vacancy holder was Damesh Karidi (<a class="govuk-link" href="tab-contact">damesk.karidi@hmcts.gov.uk</a>)
+      </div>
+    </span>
+  </h2>
+</div>
+<div id="accordion-this-application-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1" style="font-size:18px">
+  <p class='govuk-body'> </p>
+</div>
+</div>
+
+</div>
+
+
+
+<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-other-applications" style="margin-bottom:0px">
+<div class="govuk-accordion__section ">
+<div class="govuk-accordion__section-header">
+<h2 class="govuk-accordion__section-heading">
+  <span class="govuk-accordion__section-button" id="accordion-other-applications-heading-1" style="border-top:none"><br>
+<h2 class="govuk-heading-s">2344 - Family Liaison Agent (HMCTS) - vacancy 587</h2><strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Withdrew</strong>
+  <div id="changed-name-hint" class="govuk-hint">Vacancy holder was Catherine Flanaghan (<a class="govuk-link" href="tab-contact">catherine.flanaghan@hmcts.gov.uk</a>)
+  </div>
+  </span>
+</h2>
+</div>
+<div id="accordion-other-applications-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-other-applications-heading-1" style="font-size:18px">
+<p class='govuk-body'> </p>
+</div>
+</div>
+
+</div>
+
+
+
+{% endblock %}

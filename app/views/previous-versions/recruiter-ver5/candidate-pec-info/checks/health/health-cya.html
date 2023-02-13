@@ -1,0 +1,267 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <header class="page-header">
+                <h1 class="govuk-heading-l">Check your answers</h1>
+            </header><br>
+
+
+            <div class="govuk-width-container">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h2 class="govuk-heading-m">Health declaration</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Do you need any adjustments to help you at work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['adjustments']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-1">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['adjustments'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['adjustments-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-1">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Do you have any health issues, disabilities or other conditions that have affected your ability to work in the past?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['past']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-2">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['past'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['past-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-2">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Do you have any health issues, disabilities or other conditions that may affect your ability to undertake the duties outlined in the job advert?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['issues']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-1">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['issues'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['issues-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-2">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Are you having, or waiting for, treatment or investigations for any medical condition that may affect your attendance or require adjustments at work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['treatment']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-4">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['treatment'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['treatment-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-4">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Have you ever had any health issues which may have been caused or made worse by work?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['past-work']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-5">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['past-work'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['past-work-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-5">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Have you had any health-related absence from work of more than 16 days in the last 2 years?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['absence']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-6">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['absence'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['absence-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-6">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Do you have any health issues or disabilities you would like to discuss with our occupational health provider?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['occ-health']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-6">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            {% if data ['occ-health'] == 'yes'%}
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                More details
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {{data['occ-health-more-detail']}}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="health-6">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div><br>
+            {% endif %}
+
+          </dl>
+
+
+        <form action="../../task-list" method="post" novalidate>
+          <input type="hidden" name="health-declaration-status" value="complete">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and submit these answers
+          </button>
+        </form>
+
+        </div>
+      </div>
+
+
+  </div>
+
+
+
+
+
+</main>
+{% endblock %}

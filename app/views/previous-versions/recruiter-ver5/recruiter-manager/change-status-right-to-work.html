@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+  {% include 'includes/user-header-recruiter-manager.html' %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+  {% include 'includes/key-details-recruiter.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-m" style="margin-bottom:25px">
+      Right to Work<span>{% if data['rtw-status'] == 'Passed' %}
+        <strong class="govuk-tag govuk-tag--bright-green app-task-list__tag side-tag" id="financial-evidence-status">Passed</strong>
+      {% elif data['rtw-status'] == 'No started' %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+      {% elif data['rtw-status'] == 'Failed' %}
+          <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+      {% elif data['rtw-status'] == 'Risk assessment' %}
+          <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+      {% endif %}</span>
+    </h1><br>
+
+
+<form action="" method="post">
+
+  {% if data['rtw-status'] == 'passed' %}
+      {{ govukRadios({
+        name: "rtw-status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "In progress~/recruiter-manager/change-status-rtw-confirm",
+          text: "In progress"
+        },
+          {
+            value: "Not started~/recruiter-manager/change-status-rtw-confirm",
+            text: "Not started"
+          },
+            {
+              value: "Risk assessment~/recruiter-manager/change-status-rtw-confirm",
+              text: "Risk assessment"
+            },
+            {
+              value: "Failed~/recruiter-manager/change-status-rtw-confirm",
+              text: "Failed"
+            }
+        ]
+      }) }}
+  {% elif data['rtw-status'] == 'not-started' %}
+      {{ govukRadios({
+        name: "rtw-status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Passed~/recruiter-manager/change-status-rtw-confirm",
+            text: "Passed"
+          },
+          {
+            value: "In progress~/recruiter-manager/change-status-rtw-confirm",
+            text: "In progress"
+          },
+            {
+              value: "Risk assessment~/recruiter-manager/change-status-rtw-confirm",
+              text: "Risk assessment"
+            },
+            {
+              value: "Failed~/recruiter-manager/change-status-rtw-confirm",
+              text: "Failed"
+            }
+        ]
+    }) }}
+    {% elif data['rtw-status'] == 'failed' %}
+        {{ govukRadios({
+          name: "rtw-status",
+          fieldset: {
+            legend: {
+              text: "Change status to:",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Passed~/recruiter-manager/change-status-rtw-confirm",
+              text: "Passed"
+            },
+            {
+              value: "In progress~/recruiter-manager/change-status-rtw-confirm",
+              text: "In progress"
+            },
+              {
+                value: "Not started~/recruiter-manager/change-status-rtw-confirm",
+                text: "Not started"
+              },
+              {
+                value: "Risk assessment~/recruiter-manager/change-status-rtw-confirm",
+                text: "Risk assessment"
+              }
+          ]
+      }) }}
+      {% elif data['rtw-status'] == 'risk-assessment' %}
+          {{ govukRadios({
+            name: "rtw-status",
+            fieldset: {
+              legend: {
+                text: "Change status to:",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "Passed~/recruiter-manager/change-status-rtw-confirm",
+                text: "Passed"
+              },
+              {
+                value: "In progress~/recruiter-manager/change-status-rtw-confirm",
+                text: "In progress"
+              },
+                {
+                  value: "Not started~/recruiter-manager/change-status-rtw-confirm",
+                  text: "Not started"
+                },
+                {
+                  value: "Failed~/recruiter-manager/change-status-rtw-confirm",
+                  text: "Failed"
+                }
+            ]
+        }) }}
+  {% else %}
+      {{ govukRadios({
+        name: "rtw-status",
+        fieldset: {
+          legend: {
+            text: "Change status to:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Passed~/recruiter-manager/change-status-rtw-confirm",
+            text: "Passed"
+          },
+          {
+            value: "Not started~/recruiter-manager/change-status-rtw-confirm",
+            text: "Not started"
+          },
+          {
+            value: "Risk assessment~/recruiter-manager/change-status-rtw-confirm",
+            text: "Risk assessment"
+          },
+          {
+            value: "Failed~/recruiter-manager/change-status-rtw-confirm",
+            text: "Failed"
+          }
+        ]
+      }) }}
+  {% endif %}
+
+
+<br>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Change"
+  }) }}
+
+  <a class="govuk-link" href="self-employment">Back</a>
+</div>
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

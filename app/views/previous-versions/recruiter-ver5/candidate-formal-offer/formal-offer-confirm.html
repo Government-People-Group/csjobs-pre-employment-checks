@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner" style="border-bottom:none">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span><br>
+
+    <ul class="js-signout" id="navigation" style="font-size:19px; margin-top:10px;text-align:left;padding-inline-start:0px">
+
+      <li class="content"><a href="/hub/candidate/applications">Manage job applications</a></li>
+      <li class="content"><a href="">Manage job alerts</a></li>
+      <li class="content"><a href="">My profile</a></li>
+      <li class="content"><a href="">Get help</a></li>
+      <li class="content" style="margin-left:200px"><a href="">Sign out</a></li>
+    </ul>
+  </p>
+</div>
+
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="offer-option-confirm" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are you sure you want to {{data['formal-offer']}}?
+            </h1>
+          </legend><br>
+          {% if data ['formal-offer'] == 'decline the formal offer'%}
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              If you select yes, the formal offer will be withdrawn. You will not be able to reverse this decision.
+            </strong>
+          </div>
+          {% endif %}
+      
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name" name="formal-offer-confirm" type="radio" value="yes~formal-offer-confirmation">
+              <label class="govuk-label govuk-radios__label" for="changed-name">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer-confirm" type="radio" value="no~formal-offer">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                No - go back to my options
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+      </div>
+  <div class="govuk-grid-column-one-third">
+    <img src="/public/images/mod.png" style="width:170px" alt="User icon">
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="filter-questions-cya" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Do any of the following apply to you?
+                      </h1>
+                    </legend>
+
+                    <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                      <li>I am insolvent</li>
+                      <li>I am an undischarged bankrupt</li>
+                      <li>I have a receiving order on my property</li>
+                      <li>I've had a penalty for late filing of my tax affairs within the past 5 years</li>
+                    </ul>
+                    <details class="govuk-details" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          I don’t understand this question
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                          <li>you are considered insolvent if you owe more then £5,000 to a creditor and you're unable to pay your debts</li>
+                          <li>you are an undischarged bankrupt if your bankruptcy is ongoing and you remain subject to the payments and restrictions that go along with the bankruptcy process</li>
+                          <li>A receiving order on your property means a court has placed your property under the control of the official receiver or of a trustee in bankruptcy</li>
+                          <li>you can get a late filing penalty if your tax return is more than 3 months late</li>
+                        </ul>
+                      </div>
+                    </details>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live" name="bankrupt" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="where-do-you-live-2" name="bankrupt" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                          No
+                        </label>
+                      </div>
+
+                    </div>
+                  </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

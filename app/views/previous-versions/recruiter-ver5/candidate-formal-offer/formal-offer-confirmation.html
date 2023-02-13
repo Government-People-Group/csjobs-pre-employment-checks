@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+<div class="govuk-phase-banner" style="border-bottom:none">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      Your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span><br>
+
+    <ul class="js-signout" id="navigation" style="font-size:19px; margin-top:10px;text-align:left;padding-inline-start:0px">
+
+      <li class="content"><a href="/hub/candidate/applications">Manage job applications</a></li>
+      <li class="content"><a href="">Manage job alerts</a></li>
+      <li class="content"><a href="">My profile</a></li>
+      <li class="content"><a href="">Get help</a></li>
+      <li class="content" style="margin-left:200px"><a href="">Sign out</a></li>
+    </ul>
+  </p>
+</div>
+
+{% endblock %}
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+{% if data['formal-offer'] == 'accept the formal offer' %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        You have accepted our formal offer
+      </h1>
+    </div>
+    <h2 class="govuk-heading-s">
+      What happens next
+    </h2>
+    <p class="govuk-body">Your line manager will be in touch to confirm your:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>official start date - if you need to, you should give your notice in to your current job now</li>
+      <li>working arrangements</li>
+    </ul><br><br>
+{% elif data['formal-offer'] == 'decline the formal offer' %}
+  <div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">
+      You have declined our formal offer
+    </h1>
+    </div>
+    <p class="govuk-body">We are sorry you have decided to decline our formal job offer.
+</p>
+    <p class="govuk-body">You can explore <a href="#">Civil Service jobs</a> to find a job role.</p><br><br>
+
+{% else %}
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    You've asked to speak to the hiring manager about our formal offer
+  </h1>
+  </div>
+  <h2 class="govuk-heading-s">
+    What happens next
+  </h2>
+  <p class="govuk-body">The hiring manager will be in touch to discuss our formal offer soon.</p>
+
+  <p class="govuk-body">In the meantime, you can:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>explore the team you’ll be working with at the <a href="#">Ministry of Defence</a>
+</li>
+    <li>review the <a href="#">job details</a></li>
+  </ul><br><br>
+
+{% endif %}
+
+
+
+
+
+
+      </div>
+
+  </div>
+
+{% endblock %}

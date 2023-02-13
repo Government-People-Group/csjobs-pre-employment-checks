@@ -1,0 +1,164 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+{% include 'hub/candidate/includes/tab-header-candidate-pec-info.html' %}
+  <div class="govuk-tabs">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-candidate-pec-info">
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-1">
+          Right to Work
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-1" style="font-size:18px">
+      <p class='govuk-body'> </p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-2">
+          EEHC
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-2">
+      <table class="govuk-table" style="margin-left:30px">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" style="width:30%">Have you been employed since 4 January 2020?</th>
+      <td class="govuk-table__cell">Yes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Employer name</th>
+      <td class="govuk-table__cell">Aldi</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date from</th>
+      <td class="govuk-table__cell">15 June 2015</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date to</th>
+      <td class="govuk-table__cell">21 October 2022</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-3">
+          Reference Checks Status
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-3">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-4">
+          Previous Civil Service Employment
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-4">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-5">
+          Pensions
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-5">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-6">
+          Self Employment
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-6">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-7">
+          DBS / Disclosure Scotland / AccessNI
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-7">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-8">
+          Criminal Record Check
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-8">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+  <div class="govuk-accordion__section ">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-candidate-pec-info-heading-9">
+          National Insurance Number Check
+        </span>
+      </h2>
+    </div>
+    <div id="accordion-default-content-9" class="govuk-accordion__section-content" aria-labelledby="accordion-candidate-pec-info-heading-9">
+      <p class='govuk-body'></p>
+    </div>
+  </div>
+
+</div>
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Go back",
+    href:"javascript:history.go(-1)"
+  }) }}
+
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

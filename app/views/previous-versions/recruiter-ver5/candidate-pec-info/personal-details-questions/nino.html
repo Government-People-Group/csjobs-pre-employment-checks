@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="personal-details-cya" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Do you have a National Insurance number?
+                      </h1>
+                    </legend>
+                    <details class="govuk-details" data-module="govuk-details">
+                      <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          I don’t understand this question
+                        </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Your National Insurance number is made up of letters and numbers - for example, ‘QQ 12 34 56 C’ - and never changes.<br><br>
+
+                        You can find it:
+                        <ul class="govuk-list govuk-list--bullet">
+                          <li>on your payslip</li>
+                          <li>on your P60</li>
+                          <li>on letters about your tax, pension or benefits</li>
+                          <li>in the National Insurance section of your personal tax account</li>
+                        </ul>
+
+
+
+
+
+                      </div>
+                    </details>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="nino" name="nino" type="radio" value="yes" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-radios__label" for="contact">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-2" name="nino" type="radio" value="No" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                              No
+                            </label>
+                          </div>
+
+
+                        </div>
+                      </fieldset>
+</div>
+                  </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

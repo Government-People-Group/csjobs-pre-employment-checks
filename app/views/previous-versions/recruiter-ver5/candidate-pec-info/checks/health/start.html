@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="health-1" method="post" novalidate>
+
+                  <h1 class="govuk-heading-xl">Information about your health</h1>
+
+
+                  <p>We need to know about any:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                    <li>adjustments you think you might need</li>
+                    <li>health conditions that could affect your work</li>
+                    <li>absences in the last 2 years that lasted more than 16 days</li>
+                    <li>health issues you might want to discuss with an occupational health provider</li>
+                  </ul>
+
+                  <h2 class="govuk-heading-m">Why we need to know about your health</h2>
+                  <p>If you have a disability or health condition we need to:</p>
+                  <ul class="govuk-list govuk-list--bullet" style="padding-top:10px">
+                    <li>understand how it could affect your ability to carry out the tasks of your job</li>
+                    <li>consider adjustments we could make to help you</li>
+                    <li>be confident that your attendance record will be good</li>
+                  </ul>
+
+                  <div class="govuk-inset-text">
+                    You can save your progress at any time and come back later to give us the rest of the information.
+                  </div><br>
+
+              <div class="form-group">
+                <input type="hidden" name="health-declaration-status" value="incomplete">
+                <button class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

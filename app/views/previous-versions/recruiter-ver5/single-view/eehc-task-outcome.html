@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l" style="margin-bottom:25px">
+      EEHC<span>{% if data['eehc-status'] == 'passed' %}
+        <strong class="govuk-tag app-task-list__tag side-tag" id="financial-evidence-status">passed</strong>
+      {% elif data['eehc-status'] == 'not-started' %}
+        <strong class="govuk-tag govuk-tag--grey app-task-list__tag side-tag" id="financial-evidence-status">Not started</strong>
+      {% elif data['eehc-status'] == 'failed' %}
+          <strong class="govuk-tag govuk-tag--black app-task-list__tag side-tag" id="financial-evidence-status">Failed</strong>
+      {% elif data['eehc-status'] == 'risk-assessment' %}
+          <strong class="govuk-tag govuk-tag--bright-red app-task-list__tag side-tag" id="financial-evidence-status">Risk assessment needed</strong>
+      {% else %}
+        <strong class="govuk-tag govuk-tag--blue app-task-list__tag side-tag" id="financial-evidence-status">In progress</strong>
+      {% endif %}</span>
+    </h1><br>
+
+
+<form action="" method="post">
+
+
+      {{ govukRadios({
+        name: "se-status",
+        fieldset: {
+          legend: {
+            text: "Choose the task outcome:",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "passed~pec-task-list-ao-candidate?eehc-status=Passed",
+          text: "Check passed"
+        },
+
+            {
+              value: "risk-assessment~pec-task-list-ao-candidate?eehc-status=risk-assessment",
+              text: "Requires references"
+            }
+        ]
+      }) }}
+
+
+<br>
+
+
+<div class="govuk-button-group">
+  {{ govukButton({
+    text: "Mark as Complete"
+  }) }}
+
+  <a class="govuk-link" href="self-employment">Back</a>
+</div>
+</form>
+
+  </div>
+</div>
+
+{% endblock %}

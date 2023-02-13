@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="" method="post" novalidate>
+
+                  <h1 class="govuk-heading-xl">Your pre-employment checks</h1>
+
+                  <p>The civil service requires all successful applicants to go through pre-employment checks. When your pre-employment checks are completed you will receive a formal offer for the job role.</p>
+                  <p>The level of your checks will be decided by the job role you’ve been offered. The position you’ve been offered needs:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>A disclosure and barring system (DBS) check</li>
+                  </ul><br>
+                  <div class="govuk-warning-text">
+                    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                    <strong class="govuk-warning-text__text">
+                      <span class="govuk-warning-text__assistive">Warning</span>
+                      Pre-employment checks can take a long time. We will show you how you can check the progress of your checks once you've given us all the information we need.
+                    </strong>
+                  </div>
+
+                  <div class="govuk-inset-text">
+                    You may need information held on some documents, such as a passport. We will tell you what information you will need when you start each check.
+                  </div>
+
+                <a href="task-list" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+                Start now
+                <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+                </svg></a>
+
+            </div>
+          </div>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

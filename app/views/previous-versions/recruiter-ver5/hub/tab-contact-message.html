@@ -1,0 +1,198 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    {% include 'includes/tab-header-contact-message.html' %}
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+
+        <form action="eehc-message-sent" method="post">
+        <h1 class="govuk-heading-m" style="margin-bottom:25px">Contact</h1>
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-eehc-message">
+
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-eehc-message-heading-2" style="font-size:18px">
+              New messages <span id="notifications" class="moj-notification-badge" style="margin-left:10px">1</span>
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-eehc-message-heading-2" style="padding-bottom:0px">
+          <table class="govuk-table" style="margin-left:30px">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header" style="width:30%">From</th>
+          <td class="govuk-table__cell">deborah.jones@hmcts.gov.uk</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Position</th>
+          <td class="govuk-table__cell">Vacancy holder</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Date and time</th>
+          <td class="govuk-table__cell">21:14pm 23 November 2022</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Subject</th>
+          <td class="govuk-table__cell">EEHC check</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Message</th>
+          <td class="govuk-table__cell">Hi Poppy<br><br>Yes please use previous result for current EEHC check.<br><br>Many thanks, Debs.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Reply"
+      }) }}
+
+        </div>
+      </div>
+    </div>
+        </div>
+        </form>
+  <a class="govuk-link" href="eehc-options-message">Back to options</a>
+          </div>
+          <div class="govuk-grid-column-one-third">
+
+            <h2 class="govuk-heading-m" style="margin-bottom:5px">Contact history</h2>
+            <br>
+
+            <div class="moj-timeline">
+
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Email received</h2>
+
+                  <p class="moj-timeline__byline">from Deborah Jones (vacancy holder)</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 21:14pm</time>
+                </p>
+
+                <div class="moj-timeline__description">
+                  <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Read email
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      <p>Subject: "EEHC check"</p>
+                      <p>"Hi Poppy - yes please use previous result for current EEHC check. Many thanks, Debs."</p>
+                    </div>
+                    <a href="tab-contact">Reply to email</a>
+                  </details>
+                </div>
+              </div>
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Resent request to use duplicate EEHC check</h2>
+
+                  <p class="moj-timeline__byline">by Poppy Wells</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">23 Nov 2022 at 09:56pm</time>
+                </p>
+
+                <br>
+                <a href="#">See request</a>
+
+              </div>
+
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Request to use duplicate EEHC check sent</h2>
+
+                  <p class="moj-timeline__byline">by Poppy Wells</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">20 Nov 2022 at 15:02pm</time>
+                </p>
+
+                <br>
+                <a href="duplicate-request-email">See request</a>
+
+              </div>
+              <div class="moj-timeline__item">
+
+                <div class="moj-timeline__header">
+                  <h2 class="moj-timeline__title">Email received</h2>
+
+                  <p class="moj-timeline__byline">from Steve Evans</p>
+
+                </div>
+
+                <p class="moj-timeline__date">
+                  <time datetime="2019-05-28T10:15:00.000Z">18 Nov 2022 at 21:14pm</time>
+                </p>
+
+                <div class="moj-timeline__description">
+                  <details class="govuk-details" data-module="govuk-details" style="margin-bottom:0px">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        Read email
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                      "Did you receive my documents? Do they cover what you need? Many thanks, Steve."
+                    </div>
+                    <a href="tab-contact">Reply to email</a>
+                  </details>
+                </div>
+              </div>
+
+
+            </div>  <a class="govuk-link" href="tab-history">View full history</a>
+            </div>
+            </div>
+
+
+
+
+                  </div></div>
+
+            </div>
+
+
+
+
+            {% endblock %}

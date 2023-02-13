@@ -1,0 +1,184 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+{% include 'hub/candidate/includes/tab-header-pec-list.html' %}
+
+
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+        <h2 class="govuk-heading-m">Status of your pre-employment checks<span style="font-weight:normal; font-size:20px; padding-left:10px">(5 of 9 checks complete)</span></h2>
+
+        <div id="contact-hint" class="govuk-hint">
+          You can click on a check to get more information about it.
+        </div><br>
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <ol class="app-task-list">
+              <li>
+
+                <ul class="app-task-list__items">
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Right to Work
+                      </a>
+                    </span>
+                  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="eehc-options?from-pec-list=yes" aria-describedby="eligibility-status">
+                        Employment History
+                      </a>
+                    </span>
+
+                      <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress - with GRS</strong>
+
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Reference Checks Status
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                  </li>
+                  <li class="app-task-list__item">
+
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Previous Civil Service Employment
+                      </a>
+                    </span>
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Pensions
+                      </a>
+                    </span>
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Health Reference
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress - with external health provider</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Self Employment
+                      </a>
+                    </span>
+  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        DBS / Disclosure Scotland / AccessNI
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress - with Disclosure Scotland</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        Criminal Record Check
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                  </li>
+                  <li class="app-task-list__item">
+                    <span class="app-task-list__task-name" style="width:50%">
+                      <a href="#" aria-describedby="eligibility-status">
+                        National Insurance Number Check
+                      </a>
+                    </span>
+  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
+                  </li>
+                  </ul>
+                  </li>
+                  <li>
+                    <h2 class="app-task-list__section">
+                      These checks are not needed for your application
+                    </h2>
+                    <ul class="app-task-list__items">
+                      <li class="app-task-list__item">
+                        <span class="app-task-list__task-name" style="width:50%">
+                          Internal Fraud
+                        </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
+                      </li>
+                      <li class="app-task-list__item">
+                        <span class="app-task-list__task-name" style="width:50%">
+                          Overseas check
+                        </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
+                      </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name" style="width:50%">
+                              Bankruptcy
+                            </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
+                          </li>
+
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name" style="width:50%">
+                              NSV
+                            </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
+                          </li>
+                          <li class="app-task-list__item">
+                            <span class="app-task-list__task-name" style="width:50%">
+                              Additional Check
+                            </span>
+<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
+                          </li>
+
+                        </ul>
+                        </li>
+                      </ol>
+
+
+                              </div>
+
+
+                </div>
+              </div>
+
+</div>
+</div>
+
+
+{% endblock %}

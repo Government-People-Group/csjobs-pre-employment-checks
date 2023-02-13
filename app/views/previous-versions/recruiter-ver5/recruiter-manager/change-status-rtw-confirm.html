@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-recruiter-manager.html' %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+
+  {% include 'includes/key-details-recruiter.html' %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-m" style="margin-bottom:25px">
+      Right to Work
+    </h1>
+
+
+
+          <form action="" method="post" novalidate>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Are you sure you want to change status to '{{data['rtw-status']}}'?
+                  </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="change-status-rtw-yes" name="change-status-rtw" type="radio" value="yes~/recruiter-manager/pec-task-list">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="change-status-rtw-no" name="change-status-rtw" type="radio" value="no~/recruiter-manager/pec-task-list">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+
+
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Change status"
+                }) }}
+
+                <a class="govuk-link" href="pec-task-list">Back</a>
+              </div>
+
+
+</div>
+</div>
+
+{% endblock %}

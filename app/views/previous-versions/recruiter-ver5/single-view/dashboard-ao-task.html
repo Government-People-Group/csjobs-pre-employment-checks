@@ -1,0 +1,556 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+<h1 class="govuk-heading-l">Pre-employment checks</h1>
+
+{% if data['single-or-multiple']=='single'%}
+{% set tasksHtml %}
+<h2 class="govuk-heading-l">Allocated tasks</h2>
+{{ govukTable({
+
+  head: [
+    {
+      text: "Task ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Type",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Department",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "KPI Breach Date",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Vacancy ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Applicant ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Time",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Priority Date",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="/hub/eehc-options" class="govuk-link">208195</a>',
+        attributes: {
+        "data-sort-value": "208195"
+        }
+      },
+      {
+        text: "EEHC"
+
+      },
+      {
+        text: "HMCTS"
+      },
+      {
+        text: "27 Nov 2022 17:37"
+      },
+      {
+        text: "250353"
+      },
+      {
+        text: "7389885"
+      },
+      {
+        text: "10"
+      },
+      {
+        text: "26 Nov 2022 17:37"
+      }
+    ]
+  ]
+}) }}
+<a href="#" class="govuk-link">Refresh</a>
+{% endset -%}
+
+{% else %}
+
+{% set tasksHtml %}
+<h2 class="govuk-heading-l">Allocated tasks</h2>
+{{ govukTable({
+  attributes: {
+    'data-module': 'moj-sortable-table'
+  },
+  head: [
+    {
+      text: "Task ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Type",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Department",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "KPI Breach Date",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Vacancy ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Applicant ID",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Time",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Priority Date",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="/hub/eehc-options" class="govuk-link">208195</a>',
+        attributes: {
+        "data-sort-value": "208195"
+        }
+      },
+      {
+        text: "EEHC"
+
+      },
+      {
+        text: "HMCTS"
+      },
+      {
+        text: "27 Nov 2022 17:37"
+      },
+      {
+        text: "250353"
+      },
+      {
+        text: "7389885"
+      },
+      {
+        text: "10"
+      },
+      {
+        text: "26 Nov 2022 17:37"
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link">212876</a>',
+        attributes: {
+        "data-sort-value": "212876"
+        }
+      },
+      {
+        text: "CRC"
+
+      },
+      {
+        text: "Cab Office"
+      },
+      {
+        text: "27 Nov 2022 13:56"
+      },
+      {
+        text: "386635"
+      },
+      {
+        text: "7960812"
+      },
+      {
+        text: "30"
+      },
+      {
+        text: "26 Nov 2022 13:56"
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link">293812</a>',
+        attributes: {
+        "data-sort-value": "293812"
+        }
+      },
+      {
+        text: "Self Employment"
+
+      },
+      {
+        text: "Defra"
+      },
+      {
+        text: "28 Nov 2022 10:02"
+      },
+      {
+        text: "740285"
+      },
+      {
+        text: "9837510"
+      },
+      {
+        text: "10"
+      },
+      {
+        text: "27 Nov 2022 10:02"
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link">219082</a>',
+        attributes: {
+        "data-sort-value": "219082"
+        }
+      },
+      {
+        text: "Internal Fraud"
+
+      },
+      {
+        text: "HMRC"
+      },
+      {
+        text: "27 Nov 2022 11:17"
+      },
+      {
+        text: "317629"
+      },
+      {
+        text: "7947628"
+      },
+      {
+        text: "10"
+      },
+      {
+        text: "26 Nov 2022 11:17"
+      }
+    ],
+    [
+      {
+        html: '<a href="#" class="govuk-link">208891</a>',
+        attributes: {
+        "data-sort-value": "208891"
+        }
+      },
+      {
+        text: "CRC"
+
+      },
+      {
+        text: "DfE"
+      },
+      {
+        text: "29 Nov 2022 17:07"
+      },
+      {
+        text: "789453"
+      },
+      {
+        text: "8989531"
+      },
+      {
+        text: "30"
+      },
+      {
+        text: "28 Nov 2022 17:07"
+      }
+    ]
+  ]
+}) }}
+
+<a href="#" class="govuk-link">Refresh</a>
+{% endset -%}
+
+{% endif
+  %}
+
+{% set timesHtml %}
+<h2 class="govuk-heading-l">Working times</h2>
+{{ govukTable({
+  head: [
+    {
+      text: "Date"
+    },
+    {
+      text: "Absent?"
+    },
+    {
+      text: "Start"
+    },
+    {
+      text: "End"
+    },
+    {
+      text: "Breaks / Lunch"
+    },
+    {
+      text: "Total Day"
+    },
+    {
+      text: "Available Time"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="#" class="govuk-link">Mon 28 Nov 2022</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link">N</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link">07:25</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link">16:00</a>'
+      },
+      {
+        html: '<a href="#" class="govuk-link">00:30</a>'
+      },
+      {
+        text: "8h 05m"
+      },
+      {
+        text: "6h 28m"
+      }
+    ],
+    [
+    {
+      html: '<a href="#" class="govuk-link">Tues 29 Nov 2022</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">N</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">07:15</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">15:15</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:30</a>'
+    },
+      {
+        text: "7h 30m"
+      },
+      {
+        text: "6h 0m"
+      }
+    ],
+    [
+    {
+      html: '<a href="#" class="govuk-link">Wed 30 Nov 2022</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">N</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">07:50</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">16:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:30</a>'
+    },
+      {
+        text: "7h 40m"
+      },
+      {
+        text: "6h 08m"
+      }
+    ],
+    [
+    {
+      html: '<a href="#" class="govuk-link">Thu 1 Dec 2022</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">N</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">07:35</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">16:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:30</a>'
+    },
+      {
+        text: "7h 55m"
+      },
+      {
+        text: "6h 20m"
+      }
+    ],
+    [
+    {
+      html: '<a href="#" class="govuk-link">Fri 2 Dec 2022</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">N</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+      {
+        text: "0h 0m"
+      },
+      {
+        text: "0h 0m"
+      }
+    ],
+    [
+    {
+      html: '<a href="#" class="govuk-link">Sat 3 Dec 2022</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">N</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+      {
+        text: "0h 0m"
+      },
+      {
+        text: "0h 0m"
+      }
+    ],
+    [
+    {
+      html: '<a href="#" class="govuk-link">Sun 4 Dec 2022</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">N</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+    {
+      html: '<a href="#" class="govuk-link">00:00</a>'
+    },
+      {
+        text: "0h 0m"
+      },
+      {
+        text: "0h 0m"
+      }
+    ]
+  ]
+}) }}
+{{ govukButton({
+  text: "Submit times",
+  href: "#"
+}) }}
+{% endset -%}
+
+
+
+{{ govukTabs({
+  items: [
+    {
+      label: "Allocated tasks",
+      id: "tasks",
+      panel: {
+        html: tasksHtml
+      }
+    },
+    {
+      label: "Working times",
+      id: "times",
+      panel: {
+        html: timesHtml
+      }
+    }
+  ]
+}) }}
+
+
+
+</div>
+
+</div>
+
+
+{% endblock %}

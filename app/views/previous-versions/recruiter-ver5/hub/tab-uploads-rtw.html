@@ -1,0 +1,221 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<style>
+.zoom {
+
+
+  transition: transform .2s; /* Animation */
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: matrix(1.75, 0, 0, 1.75, 175, 0);; /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+</style>
+
+<div class="govuk-grid-row" id="driving-license">
+
+{% include 'includes/tab-header-uploads.html' %}
+
+<div class="govuk-tabs">
+    <div class="govuk-tabs__panel" id="pecs">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-inset-text" style="margin-top:0px">
+            Hover over an image to zoom in and click an image to open in a new tab or window.
+          </div>
+          </div>
+        <div class="govuk-grid-column-one-third">
+
+
+      <form action="" method="post">
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-2" >Driving license</h2>
+
+  <table class="govuk-table" style="margin:0px 10px 20px 10px;">
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Driving license number</th>
+      <td class="govuk-table__cell">EDBCA115068FU12345</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Expiry date</th>
+      <td class="govuk-table__cell">30 September 2021</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Source</th>
+      <td class="govuk-table__cell">Candidate PEC info<br>(DBS section)</td>
+    </tr>
+    <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">File name</th>
+    <td class="govuk-table__cell">2987-driving-license.jpg</td>
+    </tr>
+  </tbody>
+  </table>
+
+      <br>
+
+
+
+      <a class="govuk-link" href="javascript:history.go(-1)">Back</a>
+
+
+
+
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+          <div class="zoom">
+            <a href="/public/images/example-driving-license.jpg" target="_blank"><img src="/public/images/example-driving-license.jpg" style="width:95%; margin-left:25px" alt="User icon"></a>
+          </div>
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" id="birth-certificate"><br><br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+<form action="" method="post">
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Birth certificate</h2>
+
+<table class="govuk-table" style="margin:0px 10px 20px 10px;">
+<tbody class="govuk-table__body">
+
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header" style="width:25%">Birth certificate number</th>
+<td class="govuk-table__cell">BAG493884</td>
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Registration date</th>
+  <td class="govuk-table__cell">26 July 2012</td>
+</tr>
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">Source</th>
+<td class="govuk-table__cell">Deborah Jones<br>(Vacancy Holder)</td>
+</tr>
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">File name</th>
+<td class="govuk-table__cell">2987-birth-certificate.jpg</td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+
+
+<a class="govuk-link" href="javascript:history.go(-1)">Back</a>
+
+
+
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <div class="zoom">
+        <a href="/public/images/example-birth-cert.jpg" target="_blank">
+      <img src="/public/images/example-birth-cert.jpg" style="width:95%; margin-left:25px" alt="User icon"></a>
+    </div>
+</div>
+</div>
+
+{% if data['rtw-docs'] != 'no'%}
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"  id="utility-bill"><br><br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+<form action="" method="post">
+
+<h2 class="govuk-heading-m govuk-!-margin-bottom-2">Utility bill</h2>
+
+<table class="govuk-table" style="margin:0px 10px 20px 10px;">
+<tbody class="govuk-table__body">
+
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header" style="width:25%">Postcode</th>
+<td class="govuk-table__cell">DH43BB</td>
+</tr>
+<tr class="govuk-table__row">
+  <th scope="row" class="govuk-table__header">Statement date</th>
+  <td class="govuk-table__cell">2 July 2019</td>
+</tr>
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">Source</th>
+<td class="govuk-table__cell">Deborah Jones<br>(Vacancy Holder)</td>
+</tr>
+<tr class="govuk-table__row">
+<th scope="row" class="govuk-table__header">File name</th>
+<td class="govuk-table__cell">2987-utility-bill.jpg</td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+
+
+<a class="govuk-link" href="javascript:history.go(-1)">Back</a>
+
+
+
+
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <div class="zoom">
+        <a href="/public/images/example-utility-bill.jpg" target="_blank">
+      <img src="/public/images/example-utility-bill.jpg" style="width:95%; margin-left:25px" alt="User icon"></a>
+    </div>
+</div>
+</div>
+{% endif %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+    <h2 class="govuk-heading-l">Upload a file</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      File type must be PDF, JPEG or PNG.
+    </label><br>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Choose file"
+      }) }}
+    </div>
+  </div>
+  </section>
+
+</article>
+</div>
+
+</div>
+
+
+
+</div>
+
+{% endblock %}

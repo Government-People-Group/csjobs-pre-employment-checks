@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <header class="page-header">
+                <h1 class="govuk-heading-l">Check your answers</h1>
+            </header><br>
+
+
+            <div class="govuk-width-container">
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+
+          <h2 class="govuk-heading-m">Employment history</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="width:40%">
+                Your most recent job
+              </dt>
+              <dd class="govuk-summary-list__value">
+                BAE Systems<br>
+                From 15 November 2021<br>
+                To today
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="current-passport">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Other jobs since 4 January 2020
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Centurion Security Services Ltd<br>
+                From 9 June 2021<br>
+                To 14 November 2021
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="lived-outside-uk">
+                  Change<span class="govuk-visually-hidden"> address</span>
+                </a>
+              </dd>
+            </div>
+
+          </dl>
+
+
+        <form action="references-needed" method="post" novalidate>
+          <input type="hidden" name="employment-history-status" value="complete">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and submit these answers
+          </button>
+        </form>
+
+        </div>
+      </div>
+
+
+  </div>
+
+
+
+
+
+</main>
+{% endblock %}

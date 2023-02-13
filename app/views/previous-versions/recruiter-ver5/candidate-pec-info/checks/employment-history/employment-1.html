@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="employment-2" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                      <h1 class="govuk-fieldset__heading">
+                        Your most recent job
+                      </h1>
+                    </legend>
+                    <div class="govuk-inset-text">
+                      We have taken information from the CV you submitted for this job application. Please confirm this is your most recent job or edit if you need to.
+                    </div>
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--s" for="event-name">
+                            Employer's name
+                          </label>
+
+                        <input class="govuk-input govuk-input--width-20" id="event-name" name="event-name" type="text" value="BAE Systems">
+                      </div><br>
+
+                      <label class="govuk-label govuk-label--s" for="event-name">
+                          Date you started
+                        </label>
+                        <div id="passport-issued-hint" class="govuk-hint">
+                          For example, 27 3 2007
+                        </div>
+                        <div class="govuk-date-input" id="passport-issued">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" inputmode="numeric" value="15">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" inputmode="numeric" value="11">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" inputmode="numeric" value="2021">
+                            </div>
+                          </div>
+                        </div><br><br>
+                        <label class="govuk-label govuk-label--s" for="event-name">
+                            Date you left
+                          </label>
+                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked=true>
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+            I still work here
+          </label>
+        </div>
+                          </div>
+                      </fieldset>
+                    </div>
+                  </fieldset>
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                  Save and continue
+                </button>
+              </form>
+            </div>
+          </div> <a class="govuk-link" href="../../task-list">Back to pre-employment check information</a>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+
+      <div class="govuk-width-container">
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <form action="address-result" method="post" novalidate>
+                <div class="govuk-form-group">
+                  <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+                      What is your postcode?
+                    </label>
+                  </h1>
+                  <input class="govuk-input  govuk-input--width-10" id="postcode" name="postcode" type="text">
+                </div>
+                <button class="govuk-button" data-module="govuk-button">
+                  Find address
+                </button>
+
+            </div>
+          </div>  <a class="govuk-link" href="#">Enter address manually</a><br><br>
+          <a class="govuk-link" href="#">I live outside the UK</a>
+        </main>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</main>
+{% endblock %}

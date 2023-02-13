@@ -1,0 +1,343 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+{% include 'includes/user-header-recruiter-manager.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-form-group" style="background:#f3f2f1; padding-top:15px;padding-left:10px">
+  <div class="govuk-input__wrapper">
+
+    <input class="govuk-input govuk-!-width-one-third" id="search" name="search" type="text" spellcheck="false">
+    <button class="govuk-button" data-module="govuk-button">
+      Search
+    </button>
+    <p style="padding-left:20px; padding-top:5px">
+      <a href="">
+        Advanced search
+      </a>
+    </p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+
+
+  {{ govukTable({
+    attributes: {
+      'data-module': 'moj-sortable-table'
+    },
+    head: [
+      {
+        text: "First name",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Surname",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Applicant ID",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Vacancy",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Department",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Vacancy ID",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      }
+    ],
+    rows: [
+      [
+        {
+          html: '<a href="/recruiter-manager/pec-task-list" class="govuk-link">Steve</a>',
+          attributes: {
+          "data-sort-value": "Steve"
+          }
+        },
+        {
+          html: '<a href="/recruiter-manager/pec-task-list" class="govuk-link">Evans</a>',
+          attributes: {
+          "data-sort-value": "Evans"
+          }
+        },
+        {
+          html: '<a href="/recruiter-manager/pec-task-list" class="govuk-link">2987</a>',
+          attributes: {
+            "data-sort-value": "2987"
+          }
+        },
+        {
+          text: "Internal Audit PO"
+        },
+        {
+          text: "HMCTS"
+        },
+        {
+          text: "873",
+          attributes: {
+            "data-sort-value": "873"
+          }
+        }
+      ],
+      [
+      {
+        html: '<a href="#" class="govuk-link">Dee</a>',
+        attributes: {
+        "data-sort-value": "Dee"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">Williams</a>',
+        attributes: {
+        "data-sort-value": "Williams"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">2014</a>',
+        attributes: {
+          "data-sort-value": "2014"
+        }
+      },
+      {
+        text: "Payroll Auditor"
+      },
+      {
+        text: "HMRC"
+      }
+      ,
+      {
+        text: "288",
+        attributes: {
+          "data-sort-value": "288"
+        }
+      }
+      ],
+      [
+      {
+        html: '<a href="#" class="govuk-link">Stefan</a>',
+        attributes: {
+        "data-sort-value": "Stefan"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">Laryn</a>',
+        attributes: {
+        "data-sort-value": "Laryn"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">2013</a>',
+        attributes: {
+          "data-sort-value": "2013"
+        }
+      },
+      {
+        text: "Enforcement Agent"
+      },
+      {
+        text: "Home Office"
+      }
+      ,
+      {
+        text: "898",
+        attributes: {
+          "data-sort-value": "898"
+        }
+      }
+      ],
+      [
+      {
+        html: '<a href="#" class="govuk-link">Bragi</a>',
+        attributes: {
+        "data-sort-value": "Bragi"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">Rakel</a>',
+        attributes: {
+        "data-sort-value": "Rakel"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">1998</a>',
+        attributes: {
+          "data-sort-value": "1998"
+        }
+      },
+      {
+        text: "User Researcher"
+      },
+      {
+        text: "DWP"
+      }
+      ,
+      {
+        text: "324",
+        attributes: {
+          "data-sort-value": "324"
+        }
+      }
+      ],
+      [
+      {
+        html: '<a href="#" class="govuk-link">Cerys</a>',
+        attributes: {
+        "data-sort-value": "Cerys"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">Donovan</a>',
+        attributes: {
+        "data-sort-value": "Donovan"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">1996</a>',
+        attributes: {
+          "data-sort-value": "1996"
+        }
+      },
+      {
+        text: "Communications Officer"
+      },
+      {
+        text: "Cabinet Office"
+      }
+      ,
+      {
+        text: "719",
+        attributes: {
+          "data-sort-value": "719"
+        }
+      }
+      ],
+      [
+      {
+        html: '<a href="#" class="govuk-link">Marianna</a>',
+        attributes: {
+        "data-sort-value": "Marianna"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">Pelus</a>',
+        attributes: {
+        "data-sort-value": "Pelus"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">2007</a>',
+        attributes: {
+          "data-sort-value": "2007"
+        }
+      },
+      {
+        text: "Communications Officer"
+      },
+      {
+        text: "Cabinet Office"
+      }
+      ,
+      {
+        text: "719",
+        attributes: {
+          "data-sort-value": "719"
+        }
+      }
+      ],
+      [
+      {
+      html: '<a href="#" class="govuk-link">Brendan</a>',
+      attributes: {
+      "data-sort-value": "Brendan"
+      }
+    },
+      {
+        html: '<a href="#" class="govuk-link">Daniels</a>',
+        attributes: {
+        "data-sort-value": "Daniels"
+        }
+      },
+      {
+        html: '<a href="#" class="govuk-link">2000</a>',
+        attributes: {
+          "data-sort-value": "2000"
+        }
+      },
+      {
+        text: "Payroll Auditor"
+      },
+      {
+        text: "HMRC"
+      }
+      ,
+      {
+        text: "288",
+        attributes: {
+          "data-sort-value": "288"
+        }
+      }
+      ]
+    ]
+  }) }}
+
+
+
+{{ govukPagination({
+  previous: {
+    href: "#"
+  },
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+
+</div>
+
+
+{% endblock %}

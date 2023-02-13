@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-recruiter-checker.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+        {% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">Pre-employment checks</h1>
+
+<div class="govuk-grid-row">
+
+
+  {{ govukTable({
+    attributes: {
+      'data-module': 'moj-sortable-table'
+    },
+    head: [
+      {
+        text: "Check name"
+      },
+      {
+        text: "Applicant ID"
+      },
+      {
+        text: "Candidate name"
+      },
+      {
+        text: "Date to complete"
+      }
+    ],
+    rows: [
+    [
+      {
+        html:'<a href="self-employment?self-employed-status=not-started">Self employment</a>'
+      },
+      {
+        text: "2987",
+        attributes: {
+          "data-sort-value": "6961"
+        }
+      },
+      {
+        text: "Steve Evans"
+      },
+      {
+        text: "10 December 2022",
+        attributes: {
+          "data-sort-value": "1897"
+        }
+      }
+    ]
+  ]
+}) }}
+
+</div>
+
+</div>
+
+
+{% endblock %}
