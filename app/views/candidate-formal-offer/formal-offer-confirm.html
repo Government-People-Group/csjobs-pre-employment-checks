@@ -48,21 +48,46 @@
             </strong>
           </div>
           {% endif %}
-      
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name" name="formal-offer-confirm" type="radio" value="yes~formal-offer-confirmation">
-              <label class="govuk-label govuk-radios__label" for="changed-name">
-                Yes
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="changed-name-2" name="formal-offer-confirm" type="radio" value="no~formal-offer">
-              <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                No - go back to my options
-              </label>
-            </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+
+              <div class="govuk-radios" data-module="govuk-radios">
+
+              {% if data ['formal-offer'] == 'decline the formal offer'%}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="formal-offer-confirm" type="radio" value="yes~formal-offer-confirmation" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Why do you want to decline the offer?
+                    </label>
+                    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                  </div>
+                </div>
+              {% else %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changed-name-2" name="formal-offer-confirm" type="radio" value="yes~formal-offer-confirmation">
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                  Yes
+                </label>
+              </div>
+              {% endif %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="formal-offer-confirm" type="radio" value="no~formal-offer">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No - go back to my options
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
           </div>
+
         </fieldset>
       </div>
       {{ govukButton({
