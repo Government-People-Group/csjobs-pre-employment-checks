@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+{% include 'hub/candidate/includes/tab-header-pec-list.html' %}
+
+
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+        <h1 class="govuk-heading-l" style="margin-bottom:25px">
+          Employment History
+        </h1><br>
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-panel govuk-panel--confirmation" style="background-color:#eeefef; color:#000000">
+              <h1 class="govuk-panel__title">
+                This check has not started yet
+              </h1>
+              <div class="govuk-panel__body">
+                You do not need to do anything<br>
+              </div>
+            </div>
+
+            <dl class="govuk-summary-list" style="font-size:x-large">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  What is this check?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  It looks at the jobs you've had in the past 3 years. We need this information to check that you have experience doing the role you've applied for.
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Why has the check not started?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  It has not been allocated to someone in the checking team. This could happen at any time.
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  How long will it take?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    This check usually takes about one working day
+                </dd>
+              </div>
+
+            </dl><br>
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Go back",
+                href:"javascript:history.go(-1)"
+              }) }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+{% endblock %}

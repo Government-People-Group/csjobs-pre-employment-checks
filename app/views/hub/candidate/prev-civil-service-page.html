@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+{% include 'hub/candidate/includes/tab-header-pec-list.html' %}
+
+
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+        <h1 class="govuk-heading-l" style="margin-bottom:25px">
+          Previous Civil Service Employment
+        </h1><br>
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                You have passed this check
+              </h1>
+              <div class="govuk-panel__body">
+                on 28 November 2022<br>
+              </div>
+            </div><br><br>
+
+            <div class="govuk-button-group">
+              {{ govukButton({
+                text: "Go back",
+                href:"javascript:history.go(-1)"
+              }) }}
+            </div>
+
+                              </div>
+
+
+                </div>
+              </div>
+
+</div>
+</div>
+
+
+{% endblock %}

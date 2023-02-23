@@ -29,13 +29,39 @@
 
       <div class="govuk-tabs__panel" id="pecs">
 
+        <h2 class="govuk-heading-l" style="margin-bottom:10px">About this page</h2>
+        <p class="govuk-body-l" style="margin-bottom:15px">See how each of your pre-employment checks is progressing.</p>
+        <div class="govuk-inset-text">You can click on the name of any check for more information about the check, how it's progressing and how long it might take.</div><hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"><br>
+
+        {% if data ['comms'] =='yes' %}
+                <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+                  <div class="govuk-notification-banner__header">
+                    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                      Regular update requested
+                    </h2>
+                  </div>
+                  <div class="govuk-notification-banner__content" style="max-width: 100%;">
+                    <h3 class="govuk-notification-banner__heading"  style="max-width: 100%;">
+                      We will send you a regular update on how your checks are progressing.<br>
+
+                    </h3>
+
+                  {% if data ['contact'] =='email' %}
+                    <p class="govuk-body"  style="max-width: 100%;">We will send it to {{data['contact-by-email']}} {{data['frequency']}}. You can ask us to <a href="">stop sending updates</a> at any time.</p>
+                  {% elif data ['contact'] =='text' %}
+                    <p class="govuk-body"  style="max-width: 100%;">We will send it to {{data['contact-by-text']}} {{data['frequency']}}. You can ask us to <a href="">stop sending updates</a> at any time.</p>
+                  {% endif %}
+
+                  </div>
+                </div>
+
+        {% endif %}
+
+        <br>
+
         <h2 class="govuk-heading-m">Status of your pre-employment checks<span style="font-weight:normal; font-size:20px; padding-left:10px">(5 of 9 checks complete)</span></h2>
 
-        <div id="contact-hint" class="govuk-hint">
-          You can click on a check to get more information about it.
-        </div><br>
-
-
+      <br>
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
@@ -43,19 +69,19 @@
             <ol class="app-task-list">
               <li>
 
-                <ul class="app-task-list__items">
+                <ul class="app-task-list__items" style="margin-bottom:30px">
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name" style="width:50%">
-                      <a href="#" aria-describedby="eligibility-status">
+                      <a href="rtw-page" aria-describedby="eligibility-status">
                         Right to Work
                       </a>
                     </span>
-                  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+                    <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="financial-evidence-status" style="float:none">candidate action needed</strong>
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name" style="width:50%">
-                      <a href="eehc-options?from-pec-list=yes" aria-describedby="eligibility-status">
-                        EEHC
+                      <a href="eehc-page" aria-describedby="eligibility-status">
+                        Employment History
                       </a>
                     </span>
                     {% if data['eehc-status'] == 'Passed' %}
@@ -75,7 +101,7 @@
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name" style="width:50%">
                       <a href="#" aria-describedby="eligibility-status">
-                        Reference Checks Status
+                        References
                       </a>
                     </span>
   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
@@ -83,7 +109,7 @@
                   <li class="app-task-list__item">
 
                     <span class="app-task-list__task-name" style="width:50%">
-                      <a href="#" aria-describedby="eligibility-status">
+                      <a href="prev-civil-service-page" aria-describedby="eligibility-status">
                         Previous Civil Service Employment
                       </a>
                     </span>
@@ -107,11 +133,11 @@
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name" style="width:50%">
-                      <a href="#" aria-describedby="eligibility-status">
-                        DBS / Disclosure Scotland / AccessNI
+                      <a href="dbs-page" aria-describedby="eligibility-status">
+                        DBS (Disclosure & Barring Service)
                       </a>
                     </span>
-  <strong class="govuk-tag app-task-list__tag" id="financial-evidence-status" style="float:none">Passed</strong>
+  <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="financial-evidence-status" style="float:none">In progress</strong>
                   </li>
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name" style="width:50%">
@@ -130,51 +156,18 @@
   <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not started</strong>
                   </li>
                   </ul>
+
+                  <form action="tab-pec-list-comms-options" method="post" novalidate>
+                  <button class="govuk-button" data-module="govuk-button" style="margin-left:30px; margin-top:20px">
+                    I want regular updates about progress of my checks
+                  </button>
+                  </form>
                   </li>
                   <li>
-                    <h2 class="app-task-list__section">
-                      These checks are not needed for your application
-                    </h2>
-                    <ul class="app-task-list__items">
-                      <li class="app-task-list__item">
-                        <span class="app-task-list__task-name" style="width:50%">
-                          Internal Fraud
-                        </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
-                      </li>
-                      <li class="app-task-list__item">
-                        <span class="app-task-list__task-name" style="width:50%">
-                          Overseas check
-                        </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
-                      </li>
-                          <li class="app-task-list__item">
-                            <span class="app-task-list__task-name" style="width:50%">
-                              Bankruptcy
-                            </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
-                          </li>
-                          <li class="app-task-list__item">
-                            <span class="app-task-list__task-name" style="width:50%">
-                              Health Reference
-                            </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
-                          </li>
-                          <li class="app-task-list__item">
-                            <span class="app-task-list__task-name" style="width:50%">
-                              NSV
-                            </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
-                          </li>
-                          <li class="app-task-list__item">
-                            <span class="app-task-list__task-name" style="width:50%">
-                              Additional Check
-                            </span>
-<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status" style="float:none">Not needed</strong>
-                          </li>
 
-                        </ul>
-                        </li>
+
+
+
                       </ol>
 
 

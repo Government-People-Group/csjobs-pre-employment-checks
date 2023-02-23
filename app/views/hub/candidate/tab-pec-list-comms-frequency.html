@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+          <form action="tab-pec-list?comms=yes" method="post" novalidate>
+            <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        How often do you want an update?
+      </h1>
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="frequency" type="radio" value="every week" data-aria-controls="conditional-contact" >
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Every week
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="frequency" type="radio" value="every two weeks" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          Every two weeks
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="frequency" type="radio" value="when one of your checks has been completed" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          Only when one of my checks has been completed
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+          </form>
+        </div>
+
+</div>
+
+
+{% endblock %}

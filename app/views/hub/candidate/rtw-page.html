@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+
+
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.go(-1)"
+}) }}
+
+  {% include 'hub/candidate/includes/key-details-candidate.html' %}
+
+{% endblock %}
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+{% include 'hub/candidate/includes/tab-header-pec-list.html' %}
+
+
+    <div class="govuk-tabs" style="margin-top:0px">
+
+      <div class="govuk-tabs__panel" id="pecs">
+
+        <h1 class="govuk-heading-l" style="margin-bottom:25px">
+          Right to Work
+        </h1><br>
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+
+            <div class="govuk-panel govuk-panel--confirmation" style="background-color:#f6d7d2; color:#000000">
+              <h1 class="govuk-panel__title">
+                Candidate action needed
+              </h1>
+              <div class="govuk-panel__body">
+                We need more information from you<br>
+              </div>
+            </div><br><br>
+
+            <form action="" method="post">
+
+              <h2 class="govuk-heading-m" style="margin-bottom:25px; font-size:xx-large">
+                You have a message
+              </h2>
+
+              <table class="govuk-table" style="margin-left:30px; width:95%; font-size:x-large">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Message</th>
+                <td class="govuk-table__cell">Hi Steve<br><br>We need a copy of either your driving license or passport. Can you please use the <a href="tab-uploads">upload page</a> to upload a copy?<br><br>Many thanks, Debs.</td>
+                </tr>
+              <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:30%">From</th>
+              <td class="govuk-table__cell">Deborah Jones</td>
+              </tr>
+              <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Position</th>
+              <td class="govuk-table__cell">Vacancy holder</td>
+              </tr>
+              <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header" style="width:30%">Email</th>
+              <td class="govuk-table__cell">deborah.jones@hmcts.gov.uk</td>
+              </tr>
+              <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Date and time</th>
+              <td class="govuk-table__cell">21:14pm 23 November 2022</td>
+              </tr>
+              <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Subject</th>
+              <td class="govuk-table__cell">Right to Work - ID documents needed</td>
+              </tr>
+              </tbody>
+              </table>
+
+              <div class="govuk-button-group">
+                {{ govukButton({
+                  text: "Go to upload page",
+                  href:"tab-uploads"
+                }) }}
+
+                {{ govukButton({
+                  text: "Go back",
+                  classes: "govuk-button--secondary",
+                  href:"javascript:history.go(-1)"
+                }) }}
+              </div>
+                        </form>
+
+                              </div>
+
+
+                </div>
+              </div>
+
+</div>
+</div>
+
+
+{% endblock %}
