@@ -13,7 +13,11 @@
   href: "javascript:history.go(-1)"
 }) }}
 
+{% if data ['nonuk'] =='yes' %}
+  {% include 'includes/key-details-recruiter-nonuk.html' %}
+{% else %}
   {% include 'includes/key-details-recruiter.html' %}
+{% endif %}
 
 {% endblock %}
 {% block content %}
@@ -72,7 +76,11 @@
                 <ul class="app-task-list__items">
                   <li class="app-task-list__item">
                     <span class="app-task-list__task-name" style="width:50%">
-                      <a href="rtw-options" aria-describedby="eligibility-status">
+                      {% if data ['nonuk'] =='yes' %}
+                        <a href="rtw-options-nonuk" aria-describedby="eligibility-status">
+                      {% else %}
+                        <a href="rtw-options" aria-describedby="eligibility-status">
+                      {% endif %}
                         Right to Work
                       </a>
                     </span>

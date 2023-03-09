@@ -1,0 +1,88 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter-nonuk.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<div class="govuk-grid-row">
+{% include 'includes/tab-header-uploads.html' %}
+
+<div class="govuk-tabs" style="margin-top:0px">
+
+  <div class="govuk-tabs__panel" id="pecs">
+
+    <div class="govuk-notification-banner govuk-notification-banner--information" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Retrieve Right to Work status
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-paragraph">You should:</p>
+        <ol class="govuk-list govuk-list--number">
+          <li style="padding-bottom:10px"><a href="#" class="govuk-link">Copy share code W0987654A here</a></li>
+          <li style="padding-bottom:10px"><a href="https://user-auth.apply-to-visit-or-stay-in-the-uk.homeoffice.gov.uk/auth/realms/ExternalChecker/protocol/openid-connect/auth?nonce=cf607483be8d960dd62aec520d3c60ff&client_id=external-checker-rtwr&state=fda365b83ad94c1acb0d8a4d3ac8e175&redirect_uri=https%3A%2F%2Fright-to-work.service.gov.uk%2Frtw-view%2Fchecker-details%2Fredirection&response_type=code&scope=openid%20email%20profile" target="_blank">Paste the share code to retrieve the Right to Work status</a><br> and use the candidate's date of birth (<strong>15 June 1986</strong>).</li>
+          <li style="padding-bottom:10px">Save the retrieved status in a PDF document called <strong>2987-rtw-share-code-status.pdf</strong></li>
+          <li>Upload it below</li>
+        </ol>
+
+      </div>
+
+    </div>
+
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+    <h2 class="govuk-heading-l">Upload a file</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      File type must be PDF, JPEG or PNG.
+    </label><br>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Choose file",
+        href: "tab-uploads-spinner"
+      }) }}
+    </div>
+  </div>
+  </section>
+
+</article>
+
+
+  <div class="govuk-tabs">
+
+  <div class="govuk-accordion__section ">
+
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-accordion-history-uploads1-eehc-heading-1" style="border-top:none">
+          No files uploaded <span style="font-size:16px; color:#505a5f">
+        </span><br>
+
+      </h2>
+  </div>
+</div>
+
+<script>
+  navigator.clipboard.writeText("W0987654A")
+</script>
+
+
+
+
+{% endblock %}

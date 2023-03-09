@@ -1,0 +1,85 @@
+{% extends "layouts/accordion.html" %}
+
+{% block pageTitle %}
+  Pre-employment checks – Civil service jobs – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% include 'includes/user-header-single-view.html' %}
+
+        {{ govukBackLink({
+          text: "Back",
+          href: "javascript:history.go(-1)"
+        }) }}
+
+        {% include 'includes/key-details-recruiter-nonuk.html' %}
+
+        {% endblock %}
+{% block content %}
+
+<meta http-equiv="refresh" content="3;url=/hub/tab-uploads-nonuk-uploaded" />
+
+<style>
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
+<div class="govuk-grid-row">
+{% include 'includes/tab-header-uploads.html' %}
+
+<div class="govuk-tabs">
+
+<div class="loader" style="float:left; margin-right:20px;margin-top:5px"></div>
+      <h2 class="govuk-accordion__section-heading">
+        <span class="govuk-accordion__section-button" id="accordion-accordion-history-uploads1-eehc-heading-1" style="border-top:none; padding-bottom:40px">
+          Uploading 2987-rtw-share-code-status.pdf...<span style="font-size:16px; color:#505a5f">
+        </span><br>
+
+      </h2>
+
+
+
+
+
+
+
+  <div class="govuk-tabs__panel" id="pecs">
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+    <h2 class="govuk-heading-l">Upload a file</h2>
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="file-upload-1">
+      File type must be PDF, JPEG or PNG.
+    </label><br>
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Choose file",
+        href: "tab-uploads-spinner"
+      }) }}
+    </div>
+  </div>
+  </section>
+
+</article>
+
+
+
+
+
+
+
+
+
+{% endblock %}
