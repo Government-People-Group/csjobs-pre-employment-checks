@@ -133,8 +133,11 @@
                   (1) <a class="govuk-link" href="tab-uploads-rtw-nonuk">
                   2987-passport.jpg</a>
                   <br>
-
+                  (2) <a class="govuk-link" href="tab-uploads-rtw-nonuk#share-code">
+                  2987-rtw-share-code-status.pdf</a>
+                  <br>
                 </dd>
+
               </div><br>
 
               {% if data['rtw-docs'] != 'no'%}
@@ -196,7 +199,7 @@
           </div>
           <div class="govuk-summary-card__content">
             <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
+              <div class="govuk-summary-list__row"style="border-bottom:none">
                 <dt class="govuk-summary-list__key">
                   Right to Work outcome
                 </dt>
@@ -223,6 +226,42 @@
                     </div>
                   </fieldset>
                 </div>
+
+
+
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dt class="govuk-summary-list__key">
+                  Visa type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dt class="govuk-summary-list__key">
+                  Restrictions
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dt class="govuk-summary-list__key">
+                  Is visa time limited?
+                </dt>
+                <select class="govuk-select" id="sort" name="sort">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  If yes, for how long?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
                 </dd>
               </div>
             </dl>
@@ -252,7 +291,33 @@
 
           <div class="moj-timeline">
 
-    {% if data['rtw-status'] == 'in-progress' %}
+            <div class="moj-timeline__item">
+
+              <div class="moj-timeline__header">
+                <h2 class="moj-timeline__title">Right to Work share code status document uploaded</h2>
+
+                <p class="moj-timeline__byline">by Poppy Wells (recruiter)</p>
+
+              </div>
+
+              <p class="moj-timeline__date">
+                <time datetime="2019-06-07T12:32:00.000Z">9 Nov 2022 at 14:22pm</time>
+              </p>
+              <div class="moj-timeline__description">
+                <ul class="moj-timeline__documents">
+                  <li class="moj-timeline__document-item">
+                    <a class="govuk-link" href="tab-uploads-rtw-nonuk#share-code">
+                      <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                        <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                      </svg>
+                      2987-rtw-share-code-status.pdf
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+
             <div class="moj-timeline__item">
 
               <div class="moj-timeline__header">
@@ -267,22 +332,7 @@
               </p>
 
             </div>
-    {% endif %}
-            <div class="moj-timeline__item">
 
-              <div class="moj-timeline__header">
-                <h2 class="moj-timeline__title">Share code uploaded</h2>
-
-                <p class="moj-timeline__byline">by Erika Mustermann (candidate)</p>
-                <p style="padding-top:5px;margin-bottom:0px; font-size:16px">W09876543</p>
-
-              </div>
-
-              <p class="moj-timeline__date">
-                <time datetime="2019-06-07T12:32:00.000Z">9 Nov 2022 at 05:31pm</time>
-              </p>
-
-            </div>
               <div class="moj-timeline__item">
 
                 <div class="moj-timeline__header">
@@ -319,7 +369,7 @@
                 <h2 class="moj-timeline__title">Candidate PEC form submitted</h2>
 
                 <p class="moj-timeline__byline">by Erika Mustermann (Candidate)</p>
-
+                <p style="padding-top:5px;margin-bottom:0px; font-size:16px">Share code: W09876543</p>
               </div>
 
               <p class="moj-timeline__date">
