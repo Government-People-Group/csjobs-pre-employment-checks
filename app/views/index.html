@@ -40,6 +40,11 @@
              Iteration notes
            </a>
          </li>
+         <li class="govuk-tabs__list-item">
+           <a class="govuk-tabs__tab" href="#future">
+             The future
+           </a>
+         </li>
          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
            <a class="govuk-tabs__tab" href="#documents">
              Documents
@@ -156,6 +161,27 @@
 </div>
 </div>
 
+<div class="govuk-tabs__panel" id="future">
+
+<br>
+<h3 class="govuk-heading-l">The future</h3>
+
+
+<h3 class="govuk-heading-m">What we need to do</h3>
+
+<ul class="govuk-list govuk-list--bullet">
+<li>look into how vacancy holders would use the hub view</li>
+<li>look into how non-GRS recruiters would use the hub view</li>
+<li>consider if restricted views would be needed, triggered by logins / creds, for different roles / responsibilities</li>
+<li>consider how candidates would access their hub view</li>
+<li>investigate further how IDVT might effect design</li>
+<li>look for timesaving overlaps between checks, where info could be passed between checks</li>
+<li>look for areas where candidate-entered data could be used to prepopulate check info</li> 
+
+</ul>
+
+</div>
+
 <div class="govuk-tabs__panel" id="documents">
 
 <br>
@@ -261,6 +287,9 @@
   <h3 class="govuk-heading-l">Iteration notes</h3>
   <ul class="govuk-list">
     <li>
+      <a class="govuk-link" href="#cv3">Go to Candidate v3 notes</a>
+    </li>
+    <li>
       <a class="govuk-link" href="#cv2">Go to Candidate v2 notes</a>
     </li>
     <li>
@@ -284,6 +313,58 @@
   </ul>
 
   <br>
+
+  <h3 class="govuk-heading-m" id="cv3">Candidate v3</h3>
+
+  <a href="https://app.mural.co/t/civilservicerecruitment8943/m/civilservicerecruitment8943/1677155509923/2f84bd8d51e7940ae3ecce0eafa208799f15e11b?sender=u21f36a9fedce292b06138582" target="_blank">Candidate v3 UR (Mural board)</a>
+  <br>
+  {{ govukBackLink({
+    text: "Back to top",
+    href: "#iterations"
+  }) }}
+  <br>
+  <h3 class="govuk-heading-m">Design questions</h3>
+  <h3 class="govuk-heading-s" style="text-decoration:underline">Would 'About this page' guidance help a candidate understand it's purpose?</h3>
+  <p>While the tabs on the hub view have been well received and understood by recruiters, that user group understand the PEC process and can use the info we've supplied effectively. Candidate may not understand what each of the tabs refers to as they don't necessarily understand the PEC process.</p>
+  <h3 class="govuk-heading-s">What we tried</h3>
+  <p>We added an 'About this page' section to explain what each tab showed, and what they could do on it.</p>
+
+  <h3 class="govuk-heading-s">What we found</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>we didn't test this as effectively as we should have. Instead of looking at the message on each tab, the candidates were only really shown the content on the main hub page</li>
+    <li>because of this, we didn't really get any conclusive evidence either way about whether the design was effective.</li>
+    <li>those that did analyse the feature understood it and felt it was valuable guidance, but equally some said they weren't drawn to it visually so would potentially have missed it.</li>
+  </ul>
+
+  <h3 class="govuk-heading-s" style="text-decoration:underline">Do candidates want a method of being regularly updated about their PEC progress?</h3>
+  <p>The lack of comms / timescales is a huge issue when a candidate goes through the PEC process. Not knowing how long checks will take leads to unnecessary contact, frustration with timescales, and candidates leaving the process to take other jobs.</p>
+  <h3 class="govuk-heading-s">What we tried</h3>
+  <p>On the hub page, we added a CTA so that candidates could request updates about their progress.</p>
+  <h3 class="govuk-heading-s">What we found</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the option was very well received, with candidates liking the fact they could choose how and how often they'd be contacted</li>
+    <li>most users felt only text and email was needed, and the majority felt only one of those should be required</li>
+    <li>most users questioned how often they'd get updates on the page where they chose text or email. They didn't realise that question was on the following page. It appears they would prefer to set the regularity before choosing text or email, or better still on the same page (although this may go against 'one thing per page' standards)</li>
+    <li>the success banner was universally liked, although it led to chats where we realised there was no option to change duration or method of contact (we had only designed a 'stop updates' option). This needs to be added to a later iteration.
+  </ul>
+
+  <h3 class="govuk-heading-s" style="text-decoration:underline">How effective would a check info page be in advising a candidate on progress / timescales?</h3>
+  <p>As above! The lack of comms / timescales is a huge issue when a candidate goes through the PEC process. Not knowing how long checks will take leads to unnecessary contact, frustration with timescales, and candidates leaving the process to take other jobs.</p>
+  <h3 class="govuk-heading-s">What we tried</h3>
+  <p>For each check, a candidate could click through to an info page which told them (a) what the check was about, (b) how long it usually took and (c) why it might take longer than usual.</p>
+  <h3 class="govuk-heading-s">What we found</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the option was well received, with candidates taking the time to read the info and see what it meant for them personally</li>
+    <li>the green 'passed check' page was felt to be too brief for some, and it was suggested it could still show what the check was about</li>
+    <li>the 'not started' version made sense although there was sometimes a feeling that the candidate may have to do something to get the check started</li>
+    <li>most users liked that the 'in progress' page told them they didn't have to do anything</li>
+    <li>the 'action needed' page was well received and the message shown was felt to be appropriately pitched</li>
+    <li>with all versions, the content was key: vagueness or lack of info was not appreciated</li>
+  </ul>
+
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
 
   <h3 class="govuk-heading-m" id="cv2">Candidate v2</h3>
 
