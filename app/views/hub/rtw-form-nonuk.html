@@ -196,7 +196,7 @@
           </div>
           <div class="govuk-summary-card__content">
             <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
+              <div class="govuk-summary-list__row"  style="border-bottom:none">
                 <dt class="govuk-summary-list__key">
                   Right to Work outcome
                 </dt>
@@ -223,8 +223,44 @@
                     </div>
                   </fieldset>
                 </div>
+
                 </dd>
               </div>
+
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dt class="govuk-summary-list__key">
+                  Visa type
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dt class="govuk-summary-list__key">
+                  Restrictions
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row" style="border-bottom:none">
+                <dt class="govuk-summary-list__key">
+                  Is visa time limited?
+                </dt>
+                <select class="govuk-select" id="sort" name="sort" for="width-3">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  If yes, for how long?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  <input class="govuk-input" id="event-name" name="event-name" type="text">
+                </dd>
+              </div>
+
             </dl>
           </div>
         </div>
