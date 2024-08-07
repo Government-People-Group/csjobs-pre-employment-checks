@@ -174,13 +174,10 @@
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue"
-        }) }}<br><br>
-
-
-{% if data ['from-pec-list'] == 'yes' %}
-      <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
-{% endif %}
-      </div>
+        }) }}
+      </div>{% if data ['from-pec-list'] == 'yes' %}
+            <a class="govuk-link" href="tab-pec-list">Back to list of checks</a>
+      {% endif %}
       </form>
 
         </div>
